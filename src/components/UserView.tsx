@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { translations, Language, Post } from '../data/content';
 import { BacktestChart } from './BacktestChart';
 import { ArrowRight, BarChart3, Shield, Zap } from 'lucide-react';
@@ -12,6 +12,9 @@ interface UserViewProps {
 
 export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) => {
   const t = translations[lang];
+  const [showAllPosts, setShowAllPosts] = useState(false);
+
+  const displayedPosts = showAllPosts ? posts : posts.slice(0, 3);
 
   const featureIcons = [
     <BarChart3 size={32} style={{ color: themeColor }} />,
@@ -134,14 +137,19 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{t.actualReturns.title}</h2>
             <div className="w-24 h-1 mx-auto rounded-full mb-8" style={{ backgroundColor: themeColor }}></div>
-            <button className="text-gray-400 hover:text-white transition-colors flex items-center justify-center mx-auto group">
-              {t.actualReturns.readMore}
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
-            </button>
+            {posts.length > 3 && (
+              <button 
+                onClick={() => setShowAllPosts(!showAllPosts)}
+                className="text-gray-400 hover:text-white transition-colors flex items-center justify-center mx-auto group"
+              >
+                {showAllPosts ? t.actualReturns.viewLess : t.actualReturns.viewAll}
+                <ArrowRight className={`ml-2 transition-transform ${showAllPosts ? '-rotate-90' : 'group-hover:translate-x-1'}`} size={16} />
+              </button>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post, index) => (
+            {displayedPosts.map((post, index) => (
               <motion.div
                 key={post.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -160,7 +168,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="flex items-center text-sm text-gray-500 mb-3">
-                  <span style={{ color: themeColor }} className="font-medium mr-4">Return</span>
+                  <span style={{ color: themeColor }} className="font-medium mr-4">RealQuant</span>
                   <span>{post.date}</span>
                 </div>
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-white text-gray-100 transition-colors line-clamp-2">
@@ -213,12 +221,12 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                 { name: 'AXI', domain: 'axi.com', logoUrl: 'https://www.axi.com/themes/custom/axi_theme/logo.svg' },
                 { name: 'AVATRADE', domain: 'avatrade.com' },
                 { name: 'FXCM', domain: 'fxcm.com' },
-                { name: 'TMGM', domain: 'tmgm.com', logoUrl: 'https://www.tmgm.com/assets/images/logo.svg' },
+                { name: 'TMGM', domain: 'tmgm.com' },
                 { name: 'EC Markets', domain: 'ecmarkets.com' },
-                { name: 'IC MARKETS', domain: 'icmarkets.com', logoUrl: 'https://www.icmarkets.com/assets/images/logo.svg' },
+                { name: 'IC MARKETS', domain: 'icmarkets.com' },
                 { name: 'XM', domain: 'xm.com' },
                 { name: 'VANTAGE', domain: 'vantagemarkets.com' },
-                { name: 'VT MARKETS', domain: 'vtmarkets.com', logoUrl: 'https://www.vtmarkets.com/wp-content/themes/vtmarkets/assets/images/logo.svg' },
+                { name: 'VT MARKETS', domain: 'vtmarkets.com' },
                 { name: 'FPMARKETS', domain: 'fpmarkets.com' },
                 { name: 'HANTEC MARKETS', domain: 'hantecmarkets.com' },
                 { name: 'PUPRIME', domain: 'puprime.com' },
@@ -231,19 +239,19 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex flex-col items-center justify-center p-4 bg-white/5 rounded-xl border border-white/10 hover:border-white/20 transition-all group h-32"
                 >
-                  <div className="h-16 w-full flex items-center justify-center bg-white/10 rounded-lg p-2 group-hover:bg-white/20 transition-colors">
+                  <div className="h-16 w-full flex items-center justify-center bg-white/10 rounded-lg p-3 group-hover:bg-white/20 transition-colors">
                     <img
-                      src={(partner as any).logoUrl || `https://logo.clearbit.com/${partner.domain}`}
+                      src={(partner as any).logoUrl || `https://logo.clearbit.com/${partner.domain}?size=200`}
                       alt={partner.name}
-                      className="max-h-full max-w-full object-contain filter grayscale invert brightness-200 opacity-70 group-hover:opacity-100 transition-all duration-300"
+                      className="max-h-full max-w-full object-contain filter grayscale brightness-200 contrast-125 opacity-80 group-hover:opacity-100 transition-all duration-300"
                       referrerPolicy="no-referrer"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = `https://www.google.com/s2/favicons?domain=${partner.domain}&sz=128`;
-                        (e.target as HTMLImageElement).className = "h-8 w-8 grayscale invert brightness-200 opacity-70 group-hover:opacity-100 transition-all duration-300";
+                        (e.target as HTMLImageElement).className = "h-8 w-8 grayscale brightness-200 opacity-80 group-hover:opacity-100 transition-all duration-300";
                       }}
                     />
                   </div>
-                  <span className="mt-2 text-[8px] font-bold text-gray-500 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="mt-3 text-[11px] font-bold text-gray-400 tracking-widest uppercase">
                     {partner.name}
                   </span>
                 </motion.div>

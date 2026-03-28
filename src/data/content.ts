@@ -3,7 +3,7 @@ export const translations = {
     nav: {
       home: '홈',
       partners: '파트너',
-      strategies: '투자 전략',
+      strategies: '알고리즘 트레이딩 전략',
       quantStrategies: 'RealQuant 전략',
       performance: '백테스팅',
       actualReturns: '실제 수익률',
@@ -54,7 +54,8 @@ export const translations = {
     },
     actualReturns: {
       title: '실제 수익률',
-      readMore: '자세히 보기',
+      viewAll: '전체보기',
+      viewLess: '줄여서보기',
     },
     footer: {
       desc: 'RealQuant는 데이터 기반의 정량적 투자 솔루션을 제공하는 퀀트 솔루션입니다.',
@@ -131,7 +132,8 @@ export const translations = {
     },
     actualReturns: {
       title: 'Actual Returns',
-      readMore: 'Read More',
+      viewAll: 'View All',
+      viewLess: 'View Less',
     },
     footer: {
       desc: 'RealQuant is a quantitative investment firm providing data-driven quantitative investment solutions.',
@@ -168,7 +170,7 @@ export const translations = {
     features: { title: '算法交易策略', items: [{ title: '基于机器学习的预测模型', desc: '实时分析数百万个市场数据点，捕捉最佳交易时机。' }, { title: '风险管理系统', desc: '通过响应市场波动的动态资产配置，最大限度地提高投资组合的稳定性。' }, { title: '超低延迟基础设施', desc: '通过最小化延迟的系统交易，抓住市场中的微小机会。' }] },
     quantStrategies: { title: 'RealQuant 策略', items: [{ name: 'Alpha 策略', desc: 'AUD/CAD 货币对' }, { name: 'Beta 策略', desc: 'MultiFOREX 多货币对' }, { name: 'Gamma 策略', desc: 'XAU/USD 黄金期货' }, { name: 'Delta 策略', desc: 'EUR/USD 货币对' }, { name: 'Epsilon 策略', desc: 'MultiFOREX2 多货币对' }, { name: 'Hexa 策略', desc: 'USDJPY 货币对' }] },
     performance: { title: 'RealQuant 回测', desc: '2025 年 RealQuant 核心策略的月度表现。' },
-    actualReturns: { title: '实际收益', readMore: '了解更多' },
+    actualReturns: { title: '实际收益', viewAll: '全部查看', viewLess: '收起' },
     footer: { desc: 'RealQuant 是一家提供数据驱动的量化投资解决方案的量化投资公司。', disclaimer: '自动化交易系统和解决方案不是保证利润的产品。由于市场的性质，存在周期性，因此利润期和亏损期并存。基于概率和统计学，我们的目标是种子资金逐渐呈上升趋势，本网站上表达的回测和实际收益对应于过去的表现。请清楚地理解，过去的表现只能预测未来的表现，绝对不保证客户的本金或利润।', rights: '© 2026 RealQuant. 版权所有।' },
     admin: { title: '管理员控制面板', tabs: { posts: '帖子管理', settings: '设计设置' }, posts: { add: '添加新帖子', edit: '编辑', delete: '删除', save: '保存', cancel: '取消', titleLabel: '标题', contentLabel: '内容', imageLabel: '图片 URL' }, settings: { themeColor: '主主题颜色', fontFamily: '主要字体', save: '保存设置' } }
   },
@@ -179,7 +181,7 @@ export const translations = {
     features: { title: 'アルゴリズム取引戦略', items: [{ title: '機械学習ベースの予測モデル', desc: '数百万の市場データポイントをリアルタイムで分析し、最適な売買タイミングを捉えます。' }, { title: 'リスク管理システム', desc: '市場の変動に対応する動的な資産配分により、ポートフォリオの安定性を最大化します。' }, { title: '超低遅延インフラストラクチャ', desc: '遅延を最小限に抑えたシステムトレードにより、市場の微細な機会を先取りします。' }] },
     quantStrategies: { title: 'RealQuant 戦略', items: [{ name: 'アルファ戦略', desc: 'AUD/CAD 通貨ペア' }, { name: 'ベータ戦略', desc: 'MultiFOREX 多通貨ペア' }, { name: 'ガンマ戦略', desc: 'XAU/USD 金先物' }, { name: 'デルタ戦略', desc: 'EUR/USD 通貨ペア' }, { name: 'イプシロン戦略', desc: 'MultiFOREX2 多通貨ペア' }, { name: 'ヘキサ戦略', desc: 'USDJPY 通貨ペア' }] },
     performance: { title: 'RealQuant バックテスト', desc: '2025 年を通じた RealQuant コア戦略の月次パフォーマンス。' },
-    actualReturns: { title: '実際の収益', readMore: '詳細を見る' },
+    actualReturns: { title: '実際の収益', viewAll: '全て表示', viewLess: '閉じる' },
     footer: { desc: 'RealQuant は、データ駆動型の計量投資ソリューションを提供するクオンツ専門企業です。', disclaimer: '自動売買システムおよびソリューションは、利益を保証する商品ではありません。市場の性質上、周期性が存在するため、利益が発生する周期と損失が発生する周期が共存します。確率と統計学に基づき、徐々にシードが右肩上がりになることを目指しており、当ウェブサイトに表示されているバックテストと実際の収益率は過去の実績に該当します。過去の実績は将来の実績を予測できるだけであり、絶対にお客様の元本を保証するものではなく、利益を保証するものではないという点を明確に認識してください。', rights: '© 2026 RealQuant. All rights reserved.' },
     admin: { title: '管理者ダッシュボード', tabs: { posts: '投稿管理', settings: 'デザイン設定' }, posts: { add: '新規投稿追加', edit: '編集', delete: '削除', save: '保存', cancel: 'キャンセル', titleLabel: 'タイトル', contentLabel: '内容', imageLabel: '画像 URL' }, settings: { themeColor: 'メインテーマカラー', fontFamily: 'メインフォント', save: '設定を保存' } }
   },
@@ -190,7 +192,7 @@ export const translations = {
     features: { title: 'Алгоритмические стратегии торговли', items: [{ title: 'Прогнозные модели на основе ML', desc: 'Анализирует миллионы рыночных данных в режиме реального времени для определения оптимального времени торговли.' }, { title: 'Система управления рисками', desc: 'Максимизирует стабильность портфеля за счет динамического распределения активов в ответ на волатильность рынка.' }, { title: 'Инфраструктура с ультранизкой задержкой', desc: 'Использует микровозможности рынка с помощью системной торговли с минимальной задержкой.' }] },
     quantStrategies: { title: 'Стратегии RealQuant', items: [{ name: 'Стратегия Альфа', desc: 'Валютная пара AUD/CAD' }, { name: 'Стратегия Бета', desc: 'Мультивалютные пары MultiFOREX' }, { name: 'Стратегия Гамма', desc: 'Золотые фьючерсы XAU/USD' }, { name: 'Стратегия Дельта', desc: 'Валютная пара EUR/USD' }, { name: 'Стратегия Эпсилон', desc: 'Мультивалютные пары MultiFOREX2' }, { name: 'Стратегия Гекса', desc: 'Валютная пара USDJPY' }] },
     performance: { title: 'Бэктестинг RealQuant', desc: 'Ежемесячные показатели основных стратегий RealQuant в течение 2025 года.' },
-    actualReturns: { title: 'Реальная доходность', readMore: 'Подробнее' },
+    actualReturns: { title: 'Реальная доходность', viewAll: 'Показать все', viewLess: 'Скрыть' },
     footer: { desc: 'RealQuant — это количественная инвестиционная фирма, предоставляющая решения для инвестиций на основе данных.', disclaimer: 'Автоматизированные торговые системы и решения не являются продуктами, гарантирующими прибыль. Из-за характера рынка существует периодичность, поэтому периоды прибыли и периоды убытков сосуществуют. Основываясь на вероятности и статистике, мы стремимся к тому, чтобы капитал постепенно рос, а бэктесты и фактическая доходность, представленные на этом веб-сайте, соответствуют прошлым показателям. Пожалуйста, четко понимайте, что прошлые показатели могут только предсказывать будущие показатели и не гарантируют абсолютно основную сумму клиента или прибыль.', rights: '© 2026 RealQuant. Все права защищены.' },
     admin: { title: 'Панель администратора', tabs: { posts: 'Управление постами', settings: 'Настройки дизайна' }, posts: { add: 'Добавить пост', edit: 'Изменить', delete: 'Удалить', save: 'Сохранить', cancel: 'Отмена', titleLabel: 'Заголовок', contentLabel: 'Контент', imageLabel: 'URL изображения' }, settings: { themeColor: 'Основной цвет темы', fontFamily: 'Основной шрифт', save: 'Сохранить настройки' } }
   },
@@ -201,7 +203,7 @@ export const translations = {
     features: { title: 'Algorithmische Handelsstrategien', items: [{ title: 'ML-basierte Prognosemodelle', desc: 'Analysiert Millionen von Marktdaten in Echtzeit, um den optimalen Handelszeitpunkt zu erfassen.' }, { title: 'Risikomanagementsystem', desc: 'Maximiert die Portfoliostabilität durch dynamische Asset-Allokation als Reaktion auf Marktvolatilität.' }, { title: 'Infrastruktur mit extrem niedriger Latenz', desc: 'Nutzt Mikrochancen am Markt durch Systemhandel mit minimierter Latenz.' }] },
     quantStrategies: { title: 'RealQuant-Strategien', items: [{ name: 'Alpha-Strategie', desc: 'Währungspaar AUD/CAD' }, { name: 'Beta-Strategie', desc: 'MultiFOREX-Währungspaare' }, { name: 'Gamma-Strategie', desc: 'XAU/USD Gold-Futures' }, { name: 'Delta-Strategie', desc: 'Währungspaar EUR/USD' }, { name: 'Epsilon-Strategie', desc: 'MultiFOREX2-Währungspaare' }, { name: 'Hexa-Strategie', desc: 'Währungspaar USDJPY' }] },
     performance: { title: 'RealQuant-Backtesting', desc: 'Monatliche Performance der RealQuant-Kernstrategien im Jahr 2025.' },
-    actualReturns: { title: 'Tatsächliche Renditen', readMore: 'Mehr lesen' },
+    actualReturns: { title: 'Tatsächliche Renditen', viewAll: 'Alle anzeigen', viewLess: 'Weniger anzeigen' },
     footer: { desc: 'RealQuant ist eine quantitative Investmentfirma, die datengesteuerte quantitative Investmentlösungen anbietet.', disclaimer: 'Automatisierte Handelssysteme und Lösungen sind keine Produkte, die Gewinne garantieren. Aufgrund der Art des Marktes besteht eine Periodizität, sodass Gewinn- und Verlustperioden nebeneinander existieren. Basierend auf Wahrscheinlichkeit und Statistik streben wir an, dass das Kapital allmählich nach oben tendiert, und die auf dieser Website ausgedrückten Backtests und tatsächlichen Renditen entsprechen der vergangenen Performance. Bitte haben Sie ein klares Verständnis dafür, dass die vergangene Performance nur die zukünftige Performance vorhersagen kann und das Kapital oder die Gewinne des Kunden nicht absolut garantiert.', rights: '© 2026 RealQuant. Alle Rechte vorbehalten.' },
     admin: { title: 'Admin-Dashboard', tabs: { posts: 'Beitragsverwaltung', settings: 'Design-Einstellungen' }, posts: { add: 'Neuen Beitrag hinzufügen', edit: 'Bearbeiten', delete: 'Löschen', save: 'Speichern', cancel: 'Abbrechen', titleLabel: 'Titel', contentLabel: 'Inhalt', imageLabel: 'Bild-URL' }, settings: { themeColor: 'Hauptthemenfarbe', fontFamily: 'Hauptschriftart', save: 'Einstellungen speichern' } }
   },
@@ -212,7 +214,7 @@ export const translations = {
     features: { title: 'Stratégies de trading algorithmique', items: [{ title: 'Modèles de prédiction basés sur le ML', desc: 'Analyse des millions de données de marché en temps réel pour capturer le moment optimal de trading.' }, { title: 'Système de gestion des risques', desc: 'Maximise la stabilité du portefeuille avec une allocation d\'actifs dynamique répondant à la volatilité du marché.' }, { title: 'Infrastructure à ultra-faible latence', desc: 'Saisit les micro-opportunités du marché grâce à un trading système à latence minimisée.' }] },
     quantStrategies: { title: 'Stratégies RealQuant', items: [{ name: 'Stratégie Alpha', desc: 'Paire de devises AUD/CAD' }, { name: 'Stratégie Bêta', desc: 'Paires de devises MultiFOREX' }, { name: 'Stratégie Gamma', desc: 'Contrats à terme sur l\'or XAU/USD' }, { name: 'Stratégie Delta', desc: 'Paire de devises EUR/USD' }, { name: 'Stratégie Epsilon', desc: 'Paires de devises MultiFOREX2' }, { name: 'Stratégie Hexa', desc: 'Paire de devises USDJPY' }] },
     performance: { title: 'Backtesting RealQuant', desc: 'Performance mensuelle des stratégies de base de RealQuant tout au long de 2025.' },
-    actualReturns: { title: 'Rendements réels', readMore: 'En savoir plus' },
+    actualReturns: { title: 'Rendements réels', viewAll: 'Tout afficher', viewLess: 'Afficher moins' },
     footer: { desc: 'RealQuant est une société d\'investissement quantitative fournissant des solutions d\'investissement quantitatives basées sur les données.', disclaimer: 'Les systèmes et solutions de trading automatisés ne sont pas des produits garantissant des profits. En raison de la nature du marché, une périodicité existe, de sorte que les périodes de profit et les périodes de perte coexistent. Basés sur les probabilités et les statistiques, nous visons à ce que le capital tende progressivement vers le haut, et les backtests et rendements réels exprimés sur ce site Web correspondent aux performances passées. Veuillez comprendre clairement que les performances passées ne peuvent que prédire les performances futures et ne garantissent absolument pas le capital ou les bénéfices du client.', rights: '© 2026 RealQuant. Tous droits réservés.' },
     admin: { title: 'Tableau de bord administrateur', tabs: { posts: 'Gestion des messages', settings: 'Paramètres de conception' }, posts: { add: 'Ajouter un message', edit: 'Modifier', delete: 'Supprimer', save: 'Enregistrer', cancel: 'Annuler', titleLabel: 'Titre', contentLabel: 'Contenu', imageLabel: 'URL de l\'image' }, settings: { themeColor: 'Couleur principale du thème', fontFamily: 'Police principale', save: 'Enregistrer les paramètres' } }
   },
@@ -223,7 +225,7 @@ export const translations = {
     features: { title: 'एल्गोरिथम ट्रेडिंग रणनीतियाँ', items: [{ title: 'एमएल-आधारित भविष्यवाणी मॉडल', desc: 'इष्टतम ट्रेडिंग समय को पकड़ने के लिए वास्तविक समय में लाखों बाजार डेटा बिंदुओं का विश्लेषण करता है।' }, { title: 'जोखिम प्रबंधन प्रणाली', desc: 'बाजार की अस्थिरता का जवाब देने वाले गतिशील परिसंपत्ति आवंटन के साथ पोर्टफोलियो स्थिरता को अधिकतम करता है।' }, { title: 'अल्ट्रा-लो लेटेंसी इन्फ्रास्ट्रक्चर', desc: 'न्यूनतम विलंबता सिस्टम ट्रेडिंग के साथ बाजार में सूक्ष्म अवसरों को जब्त करता है।' }] },
     quantStrategies: { title: 'RealQuant रणनीतियाँ', items: [{ name: 'अल्फा रणनीति', desc: 'AUD/CAD मुद्रा जोड़ी' }, { name: 'बीटा रणनीति', desc: 'MultiFOREX मुद्रा जोड़े' }, { name: 'गामा रणनीति', desc: 'XAU/USD गोल्ड फ्यूचर्स' }, { name: 'डेल्टा रणनीति', desc: 'EUR/USD मुद्रा जोड़ी' }, { name: 'एप्सिलॉन रणनीति', desc: 'MultiFOREX2 मुद्रा जोड़े' }, { name: 'हेक्सा रणनीति', desc: 'USDJPY मुद्रा जोड़ी' }] },
     performance: { title: 'RealQuant बैकटेस्टिंग', desc: '2025 के दौरान RealQuant मुख्य रणनीतियों का मासिक प्रदर्शन।' },
-    actualReturns: { title: 'वास्तविक रिटर्न', readMore: 'और पढ़ें' },
+    actualReturns: { title: 'वास्तविक रिटर्न', viewAll: 'सभी देखें', viewLess: 'कम देखें' },
     footer: { desc: 'RealQuant एक मात्रात्मक निवेश फर्म है जो डेटा-संचालित मात्रात्मक निवेश समाधान प्रदान करती है।', disclaimer: 'स्वचालित ट्रेडिंग सिस्टम और समाधान ऐसे उत्पाद नहीं हैं जो लाभ की गारंटी देते हैं। बाजार की प्रकृति के कारण, आवधिकता मौजूद है, इसलिए लाभ की अवधि और हानि की अवधि सह-अस्तित्व में है। संभावना और सांख्यिकी के आधार पर, हमारा लक्ष्य है कि बीज धीरे-धीरे ऊपर की ओर बढ़े, और इस वेबसाइट पर व्यक्त बैकटेस्ट और वास्तविक रिटर्न पिछले प्रदर्शन के अनुरूप हैं। कृपया स्पष्ट रूप से समझें कि पिछला प्रदर्शन केवल भविष्य के प्रदर्शन की भविष्यवाणी कर सकता है और ग्राहक के मूलधन या लाभ की पूर्ण गारंटी नहीं देता है।', rights: '© 2026 RealQuant. सर्वाधिकार सुरक्षित।' },
     admin: { title: 'व्यवस्थापक डैशबोर्ड', tabs: { posts: 'पोस्ट प्रबंधन', settings: 'डिज़ाइन सेटिंग्स' }, posts: { add: 'नई पोस्ट जोड़ें', edit: 'संपादित करें', delete: 'हटाएं', save: 'सहेजें', cancel: 'रद्द करें', titleLabel: 'शीर्षक', contentLabel: 'सामग्री', imageLabel: 'छवि URL' }, settings: { themeColor: 'मुख्य थीम रंग', fontFamily: 'प्राथमिक फ़ॉन्ट', save: 'सेटिंग्स सहेजें' } }
   },
@@ -234,7 +236,7 @@ export const translations = {
     features: { title: 'Estrategias de trading algorítmico', items: [{ title: 'Modelos de predicción basados en ML', desc: 'Analiza millones de datos de mercado en tiempo real para capturar el momento óptimo de negociación.' }, { title: 'Sistema de gestión de riesgos', desc: 'Maximiza la estabilidad de la cartera con una asignación dinámica de activos que responde a la volatilidad del mercado.' }, { title: 'Infraestructura de latencia ultrabaja', desc: 'Aprovecha las microoportunidades del mercado con un sistema de trading de latencia minimizada.' }] },
     quantStrategies: { title: 'Estrategias RealQuant', items: [{ name: 'Estrategia Alfa', desc: 'Par de divisas AUD/CAD' }, { name: 'Estrategia Beta', desc: 'Pares de divisas MultiFOREX' }, { name: 'Estrategia Gamma', desc: 'Futuros de oro XAU/USD' }, { name: 'Estrategia Delta', desc: 'Par de divisas EUR/USD' }, { name: 'Estrategia Epsilon', desc: 'Pares de divisas MultiFOREX2' }, { name: 'Estrategia Hexa', desc: 'Par de divisas USDJPY' }] },
     performance: { title: 'Backtesting RealQuant', desc: 'Rendimiento mensual de las estrategias principales de RealQuant a lo largo de 2025.' },
-    actualReturns: { title: 'Rentabilidades reales', readMore: 'Leer más' },
+    actualReturns: { title: 'Rentabilidades reales', viewAll: 'Ver todo', viewLess: 'Ver menos' },
     footer: { desc: 'RealQuant es una firma de inversión cuantitativa que ofrece soluciones de inversión cuantitativa basadas en datos.', disclaimer: 'Los sistemas y soluciones de trading automatizados no son productos que garanticen beneficios. Debido a la naturaleza del mercado, existe periodicidad, por lo que coexisten periodos de ganancias y periodos de pérdidas. Basándonos en la probabilidad y la estadística, nuestro objetivo es que el capital tienda gradualmente al alza, y los backtests y rendimientos reales expresados en este sitio web corresponden al rendimiento pasado. Por favor, comprenda claramente que el rendimiento pasado solo puede predecir el rendimiento futuro y no garantiza absolutamente el capital ni los beneficios del cliente.', rights: '© 2026 RealQuant. Todos los derechos reservados.' },
     admin: { title: 'Panel de administración', tabs: { posts: 'Gestión de publicaciones', settings: 'Ajustes de diseño' }, posts: { add: 'Añadir publicación', edit: 'Editar', delete: 'Eliminar', save: 'Guardar', cancel: 'Cancelar', titleLabel: 'Título', contentLabel: 'Contenido', imageLabel: 'URL de la imagen' }, settings: { themeColor: 'Color principal del tema', fontFamily: 'Fuente principal', save: 'Guardar ajustes' } }
   },
@@ -245,7 +247,7 @@ export const translations = {
     features: { title: 'استراتيجيات التداول الخوارزمي', items: [{ title: 'نماذج التنبؤ القائمة على تعلم الآلة', desc: 'تحلل الملايين من نقاط بيانات السوق في الوقت الفعلي لالتقاط التوقيت الأمثل للتداول.' }, { title: 'نظام إدارة المخاطر', desc: 'يزيد من استقرار المحفظة من خلال تخصيص الأصول الديناميكي الذي يستجيب لتقلبات السوق.' }, { title: 'بنية تحتية ذات زمن وصول منخفض للغاية', desc: 'تغتنم الفرص الدقيقة في السوق من خلال تداول النظام بزمن وصول ضئيل.' }] },
     quantStrategies: { title: 'استراتيجيات RealQuant', items: [{ name: 'استراتيجية ألفا', desc: 'زوج العملات AUD/CAD' }, { name: 'استراتيجية بيتا', desc: 'أزواج العملات MultiFOREX' }, { name: 'استراتيجية غاما', desc: 'عقود الذهب الآجلة XAU/USD' }, { name: 'استراتيجية دلتا', desc: 'زوج العملات EUR/USD' }, { name: 'استراتيجية إبسيلون', desc: 'أزواج العملات MultiFOREX2' }, { name: 'استراتيجية هيكسا', desc: 'زوج العملات USDJPY' }] },
     performance: { title: 'الاختبار العكسي لـ RealQuant', desc: 'الأداء الشهري لاستراتيجيات RealQuant الأساسية طوال عام 2025.' },
-    actualReturns: { title: 'العوائد الحقيقية', readMore: 'اقرأ المزيد' },
+    actualReturns: { title: 'العوائد الحقيقية', viewAll: 'عرض الكل', viewLess: 'عرض أقل' },
     footer: { desc: 'RealQuant هي شركة استثمار كمي تقدم حلول استثمار كمي قائمة على البيانات.', disclaimer: 'أنظمة وحلول التداول الآلي ليست منتجات تضمن الأرباح. نظراً لطبيعة السوق، توجد دورية، لذا تتعايش فترات الربح وفترات الخسارة. بناءً على الاحتمالات والإحصاءات، نهدف إلى أن يتجه رأس المال تدريجياً نحو الأعلى، وتتوافق الاختبارات العكسية والعوائد الفعلية المعبر عنها في هذا الموقع مع الأداء السابق. يرجى فهم بوضوح أن الأداء السابق يمكنه فقط التنبؤ بالأداء المستقبلي ولا يضمن بشكل مطلق رأس مال العميل أو أرباحه.', rights: '© 2026 RealQuant. جميع الحقوق محفوظة.' },
     admin: { title: 'لوحة تحكم المسؤول', tabs: { posts: 'إدارة المنشورات', settings: 'إعدادات التصميم' }, posts: { add: 'إضافة منشور جديد', edit: 'تعديل', delete: 'حذف', save: 'حفظ', cancel: 'إلغاء', titleLabel: 'العنوان', contentLabel: 'المحتوى', imageLabel: 'رابط الصورة' }, settings: { themeColor: 'لون السمات الرئيسي', fontFamily: 'الخط الأساسي', save: 'حفظ الإعدادات' } }
   },

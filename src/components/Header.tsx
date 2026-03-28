@@ -40,17 +40,17 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
             )}
           </nav>
 
-          {/* Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Actions (Desktop & Mobile) */}
+          <div className="flex items-center space-x-2 md:space-x-4">
             <div className="relative group">
               <button
-                className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-md border border-white/10 hover:border-white/30"
+                className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors px-2 py-1.5 md:px-3 md:py-2 rounded-md border border-white/10 hover:border-white/30"
               >
                 <Globe size={16} />
-                <span className="text-sm font-medium uppercase">{lang}</span>
+                <span className="text-xs md:text-sm font-medium uppercase">{lang}</span>
               </button>
-              <div className="absolute right-0 mt-2 w-48 bg-zinc-900 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
-                <div className="py-1 grid grid-cols-1">
+              <div className="absolute right-0 mt-2 w-40 md:w-48 bg-zinc-900 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+                <div className="py-1 grid grid-cols-1 max-h-[70vh] overflow-y-auto">
                   {[
                     { code: 'ko', name: '한국어' },
                     { code: 'en', name: 'English' },
@@ -59,7 +59,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
                     { code: 'ru', name: 'Русский' },
                     { code: 'de', name: 'Deutsch' },
                     { code: 'fr', name: 'Français' },
-                    { code: 'hi', name: 'हिन्दी' },
+                    { code: 'hi', name: '히न्दी' },
                     { code: 'es', name: 'Español' },
                     { code: 'ar', name: 'العربية' },
                   ].map((l) => (
@@ -75,23 +75,16 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
                 </div>
               </div>
             </div>
-            <button
-              onClick={() => setView(view === 'user' ? 'admin' : 'user')}
-              className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-md border border-white/10 hover:border-white/30"
-            >
-              <Settings size={16} />
-              <span className="text-sm font-medium">{view === 'user' ? t.admin : t.home}</span>
-            </button>
-          </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-white p-2"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-gray-300 hover:text-white p-2"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -109,42 +102,6 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
                 <a href="#partners" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.partners}</a>
               </>
             )}
-            <div className="px-3 py-4 border-t border-white/10 mt-2">
-              <div className="flex items-center space-x-2 text-gray-300 mb-4">
-                <Globe size={18} />
-                <span className="text-sm font-medium">Language</span>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { code: 'ko', name: '한국어' },
-                  { code: 'en', name: 'English' },
-                  { code: 'zh', name: '中文' },
-                  { code: 'ja', name: '日本語' },
-                  { code: 'ru', name: 'Русский' },
-                  { code: 'de', name: 'Deutsch' },
-                  { code: 'fr', name: 'Français' },
-                  { code: 'hi', name: 'हिन्दी' },
-                  { code: 'es', name: 'Español' },
-                  { code: 'ar', name: 'العربية' },
-                ].map((l) => (
-                  <button
-                    key={l.code}
-                    onClick={() => { setLang(l.code as Language); setIsMenuOpen(false); }}
-                    className={`px-3 py-2 text-xs rounded-md border border-white/5 text-left ${lang === l.code ? 'bg-white/10 text-white' : 'text-gray-400'}`}
-                    style={lang === l.code ? { borderColor: themeColor, color: themeColor } : {}}
-                  >
-                    {l.name}
-                  </button>
-                ))}
-              </div>
-              <button
-                onClick={() => { setView(view === 'user' ? 'admin' : 'user'); setIsMenuOpen(false); }}
-                className="flex items-center space-x-2 text-gray-300 hover:text-white mt-6 w-full px-3 py-2 border border-white/10 rounded-md"
-              >
-                <Settings size={18} />
-                <span>{view === 'user' ? t.admin : t.home}</span>
-              </button>
-            </div>
           </div>
         </div>
       )}

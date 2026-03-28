@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { translations, Language, Post } from '../data/content';
-import { Plus, Edit2, Trash2, Save, X, Image as ImageIcon } from 'lucide-react';
+import { Plus, Edit2, Trash2, Save, X, Image as ImageIcon, LogOut } from 'lucide-react';
 
 interface AdminViewProps {
   lang: Language;
@@ -8,9 +8,10 @@ interface AdminViewProps {
   setThemeColor: (color: string) => void;
   posts: Post[];
   setPosts: (posts: Post[]) => void;
+  onLogout: () => void;
 }
 
-export const AdminView: React.FC<AdminViewProps> = ({ lang, themeColor, setThemeColor, posts, setPosts }) => {
+export const AdminView: React.FC<AdminViewProps> = ({ lang, themeColor, setThemeColor, posts, setPosts, onLogout }) => {
   const t = translations[lang].admin;
   const [activeTab, setActiveTab] = useState<'posts' | 'settings'>('posts');
   const [editingPost, setEditingPost] = useState<Post | null>(null);
@@ -111,7 +112,16 @@ export const AdminView: React.FC<AdminViewProps> = ({ lang, themeColor, setTheme
     <div className="min-h-screen bg-black pt-24 pb-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-white mb-8 tracking-tight">{t.title}</h1>
+          <div className="flex justify-between items-start mb-8">
+            <h1 className="text-4xl font-bold text-white tracking-tight">{t.title}</h1>
+            <button
+              onClick={onLogout}
+              className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-all font-medium text-sm"
+            >
+              <LogOut size={16} />
+              <span>{lang === 'ko' ? '로그아웃' : 'Logout'}</span>
+            </button>
+          </div>
           
           {/* Tabs */}
           <div className="flex space-x-1 bg-zinc-900 p-1 rounded-xl w-fit border border-white/5">

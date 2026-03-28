@@ -9,12 +9,15 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { UserView } from './components/UserView';
 import { AdminView } from './components/AdminView';
+import { AdminLogin } from './components/AdminLogin';
+import { ChatSupport } from './components/ChatSupport';
 
 export default function App() {
   const [lang, setLang] = useState<Language>('ko');
   const [view, setView] = useState<ViewMode>('user');
   const [themeColor, setThemeColor] = useState<string>('#2563eb'); // Default blue
   const [posts, setPosts] = useState<Post[]>(initialPosts);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
   // Update document title based on language
   useEffect(() => {
@@ -33,6 +36,12 @@ export default function App() {
       
       {view === 'user' ? (
         <UserView lang={lang} themeColor={themeColor} posts={posts} />
+      ) : !isAuthenticated ? (
+        <AdminLogin 
+          lang={lang} 
+          themeColor={themeColor} 
+          onLogin={() => setIsAuthenticated(true)} 
+        />
       ) : (
         <AdminView
           lang={lang}
@@ -40,10 +49,21 @@ export default function App() {
           setThemeColor={setThemeColor}
           posts={posts}
           setPosts={setPosts}
+          onLogout={() => setIsAuthenticated(false)}
         />
       )}
 
-      {view === 'user' && <Footer lang={lang} themeColor={themeColor} />}
+      {view === 'user' && (
+        <>
+          <Footer 
+            lang={lang} 
+            themeColor={themeColor} 
+            view={view}
+            setView={setView}
+          />
+          <ChatSupport lang={lang} themeColor={themeColor} />
+        </>
+      )}
     </div>
   );
 }
