@@ -139,7 +139,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                     <h3 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">
                       {asset.title}
                     </h3>
-                    <p className="text-base md:text-lg text-gray-400 font-medium tracking-tight whitespace-nowrap">
+                    <p className="text-xs sm:text-sm md:text-base text-gray-400 font-medium tracking-tight whitespace-nowrap">
                       {asset.sub}
                     </p>
                   </div>
@@ -191,6 +191,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{t.actualReturns.title}</h2>
             <div className="w-24 h-1 mx-auto rounded-full mb-8" style={{ backgroundColor: themeColor }}></div>
+            <p className="text-lg text-gray-400 font-light mb-8">{t.actualReturns.weeklyNotice}</p>
             {posts.length > 3 && (
               <button 
                 onClick={() => setShowAllPosts(!showAllPosts)}
