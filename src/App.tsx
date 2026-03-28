@@ -18,7 +18,7 @@ export default function App() {
 
   // Update document title based on language
   useEffect(() => {
-    document.title = lang === 'ko' ? '일공퀀트 (10quant)' : '10quant';
+    document.title = lang === 'ko' ? '리얼퀀트 (RealQuant)' : 'RealQuant';
   }, [lang]);
 
   return (

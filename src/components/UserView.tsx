@@ -83,7 +83,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
         </div>
       </section>
 
-      {/* 10Quant Strategies Section */}
+      {/* RealQuant Strategies Section */}
       <section id="quant-strategies" className="py-32 bg-black border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -118,11 +118,15 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
             <div className="flex items-center space-x-6">
               <div className="flex items-center">
                 <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: themeColor }}></div>
-                <span className="text-sm text-gray-300">10quant Strategy</span>
+                <span className="text-sm text-gray-300">RealQuant Strategy</span>
               </div>
               <div className="flex items-center">
-                <div className="w-3 h-3 rounded-full bg-zinc-500 mr-2"></div>
-                <span className="text-sm text-gray-300">S&P 500</span>
+                <div className="w-3 h-3 rounded-full bg-[#10b981] mr-2"></div>
+                <span className="text-sm text-gray-300">KOSPI</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-3 h-3 rounded-full bg-[#fdba74] mr-2"></div>
+                <span className="text-sm text-gray-300">NASDAQ</span>
               </div>
             </div>
           </div>
@@ -133,7 +137,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <BacktestChart themeColor={themeColor} />
+            <BacktestChart themeColor={themeColor} lang={lang} />
           </motion.div>
         </div>
       </section>
@@ -190,7 +194,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{t.contact.title}</h2>
           <p className="text-xl text-gray-400 font-light mb-12">{t.contact.desc}</p>
           <a
-            href="https://t.me/onezeroquant"
+            href="https://t.me/realquant"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105 bg-[#229ED9] text-white hover:bg-[#1c88ba]"

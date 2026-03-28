@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, themeColor }) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <span className="text-2xl font-bold tracking-tighter text-white mb-4 block">
-              10<span style={{ color: themeColor }}>quant</span>
+              Real<span style={{ color: themeColor }}>Quant</span>
             </span>
             <p className="text-gray-400 max-w-sm">
               {t.desc}

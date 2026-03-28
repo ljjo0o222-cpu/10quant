@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => setView('user')}>
             <span className="text-2xl font-bold tracking-tighter text-white">
-              10<span style={{ color: themeColor }}>quant</span>
+              Real<span style={{ color: themeColor }}>Quant</span>
             </span>
           </div>
 

@@ -3,7 +3,7 @@ export const translations = {
     nav: {
       home: '홈',
       strategies: '투자 전략',
-      quantStrategies: '10Quant 전략',
+      quantStrategies: 'RealQuant 전략',
       performance: '백테스팅',
       actualReturns: '실제 수익률',
       contact: '문의하기',
@@ -11,7 +11,7 @@ export const translations = {
     },
     hero: {
       title: '월10%, 퀀트로 도달하는 새로운 기준',
-      subtitle: '일공퀀트는 고도화된 알고리즘과 빅데이터 분석을 통해 감정을 배제하고, 수익에만 집중하여 안정적인 수익을 창출합니다.',
+      subtitle: 'RealQuant는 고도화된 알고리즘과 빅데이터 분석을 통해 감정을 배제하고, 수익에만 집중하여 안정적인 수익을 창출합니다.',
       cta: '전략 알아보기',
     },
     features: {
@@ -32,7 +32,7 @@ export const translations = {
       ],
     },
     quantStrategies: {
-      title: '10Quant 전략',
+      title: 'RealQuant 전략',
       items: [
         { name: '알파 전략', desc: 'AUD/CAD 통화쌍' },
         { name: '베타 전략', desc: 'MultiFOREX 다중 통화쌍' },
@@ -43,8 +43,8 @@ export const translations = {
       ],
     },
     performance: {
-      title: '일공퀀트(10quant) 백테스팅',
-      desc: '과거 10년간의 데이터를 바탕으로 검증된 일공퀀트의 핵심 전략 성과입니다.',
+      title: 'RealQuant 백테스팅',
+      desc: '2025년 한 해 동안의 RealQuant 핵심 전략 월별 성과입니다.',
     },
     actualReturns: {
       title: '실제 수익률',
@@ -52,12 +52,12 @@ export const translations = {
     },
     contact: {
       title: '문의하기',
-      desc: '일공퀀트의 전략과 서비스에 대해 더 궁금하신 점이 있다면 언제든 문의해 주세요.',
+      desc: 'RealQuant의 전략과 서비스에 대해 더 궁금하신 점이 있다면 언제든 문의해 주세요.',
       telegram: '텔레그램으로 문의하기',
     },
     footer: {
-      desc: '일공퀀트(10quant)는 데이터 기반의 정량적 투자 솔루션을 제공하는 퀀트 전문 기업입니다.',
-      rights: '© 2026 10quant. All rights reserved.',
+      desc: 'RealQuant는 데이터 기반의 정량적 투자 솔루션을 제공하는 퀀트 전문 기업입니다.',
+      rights: '© 2026 RealQuant. All rights reserved.',
     },
     admin: {
       title: '관리자 대시보드',
@@ -86,7 +86,7 @@ export const translations = {
     nav: {
       home: 'Home',
       strategies: 'Strategies',
-      quantStrategies: '10Quant Strategies',
+      quantStrategies: 'RealQuant Strategies',
       performance: 'Backtesting',
       actualReturns: 'Actual Returns',
       contact: 'Inquiry',
@@ -94,7 +94,7 @@ export const translations = {
     },
     hero: {
       title: '10% Monthly, A New Standard in Quant',
-      subtitle: '10quant generates stable returns by eliminating emotions and focusing solely on profit through advanced algorithms and big data analysis.',
+      subtitle: 'RealQuant generates stable returns by eliminating emotions and focusing solely on profit through advanced algorithms and big data analysis.',
       cta: 'Explore Strategies',
     },
     features: {
@@ -115,7 +115,7 @@ export const translations = {
       ],
     },
     quantStrategies: {
-      title: '10Quant Strategies',
+      title: 'RealQuant Strategies',
       items: [
         { name: 'Alpha Strategy', desc: 'AUD/CAD Currency Pair' },
         { name: 'Beta Strategy', desc: 'MultiFOREX Currency Pairs' },
@@ -126,8 +126,8 @@ export const translations = {
       ],
     },
     performance: {
-      title: '10quant Backtesting',
-      desc: 'The core strategy performance of 10quant, verified based on the past 10 years of data.',
+      title: 'RealQuant Backtesting',
+      desc: 'Monthly performance of RealQuant core strategies throughout 2025.',
     },
     actualReturns: {
       title: 'Actual Returns',
@@ -135,12 +135,12 @@ export const translations = {
     },
     contact: {
       title: 'Inquiry',
-      desc: 'If you have any questions about 10quant strategies and services, please feel free to contact us.',
+      desc: 'If you have any questions about RealQuant strategies and services, please feel free to contact us.',
       telegram: 'Contact via Telegram',
     },
     footer: {
-      desc: '10quant is a quantitative investment firm providing data-driven quantitative investment solutions.',
-      rights: '© 2026 10quant. All rights reserved.',
+      desc: 'RealQuant is a quantitative investment firm providing data-driven quantitative investment solutions.',
+      rights: '© 2026 RealQuant. All rights reserved.',
     },
     admin: {
       title: 'Admin Dashboard',
