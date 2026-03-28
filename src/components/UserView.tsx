@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { translations, Language, Post } from '../data/content';
 import { BacktestChart } from './BacktestChart';
-import { ArrowRight, BarChart3, Shield, Zap } from 'lucide-react';
+import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface UserViewProps {
@@ -19,6 +19,9 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
   const featureIcons = [
     <BarChart3 size={32} style={{ color: themeColor }} />,
     <Shield size={32} style={{ color: themeColor }} />,
+    <RefreshCw size={32} style={{ color: themeColor }} />,
+    <GitBranch size={32} style={{ color: themeColor }} />,
+    <Activity size={32} style={{ color: themeColor }} />,
     <Zap size={32} style={{ color: themeColor }} />,
   ];
 
@@ -75,7 +78,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
             <div className="w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: themeColor }}></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-20">
             {t.features.items.map((item, index) => (
               <motion.div
                 key={index}
@@ -90,6 +93,57 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Operable Items Title */}
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">운용가능 종목</h3>
+            <div className="w-16 h-0.5 mx-auto rounded-full" style={{ backgroundColor: themeColor }}></div>
+          </div>
+
+          {/* Asset Cards Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { 
+                label: '원자재', 
+                title: 'XAUUSD', 
+                sub: 'GOLD' 
+              },
+              { 
+                label: '통화쌍', 
+                title: 'AUDCAD', 
+                sub: 'Australian Dollar / Canadian Dollar' 
+              }
+            ].map((asset, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.2 }}
+                className="relative p-10 rounded-2xl bg-zinc-900/50 border border-white/10 overflow-hidden group hover:border-white/20 transition-all"
+              >
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity" style={{ 
+                  backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', 
+                  backgroundSize: '20px 20px' 
+                }} />
+                
+                <div className="relative z-10">
+                  <div className="flex-1 min-w-0">
+                    <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-8 block">
+                      {asset.label}
+                    </span>
+                    <h3 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">
+                      {asset.title}
+                    </h3>
+                    <p className="text-base md:text-lg text-gray-400 font-medium tracking-tight whitespace-nowrap">
+                      {asset.sub}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

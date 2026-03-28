@@ -3,7 +3,7 @@ export const translations = {
     nav: {
       home: '홈',
       partners: '파트너',
-      strategies: '알고리즘 트레이딩 전략',
+      strategies: 'RealQuant 전략',
       quantStrategies: 'RealQuant 전략',
       performance: '백테스팅',
       actualReturns: '실제 수익률',
@@ -21,7 +21,7 @@ export const translations = {
       viewMore: '더 보기 +',
     },
     features: {
-      title: '알고리즘 트레이딩 전략',
+      title: 'RealQuant 전략',
       items: [
         {
           title: '머신러닝 기반 예측 모델',
@@ -30,6 +30,18 @@ export const translations = {
         {
           title: '리스크 관리 시스템',
           desc: '시장 변동성에 대응하는 동적 자산 배분으로 포트폴리오의 안정성을 극대화합니다.',
+        },
+        {
+          title: '순환매 시스템',
+          desc: '시장의 자금 흐름을 추적하여 순환매가 발생하는 섹터와 종목을 선제적으로 포착합니다.',
+        },
+        {
+          title: '추세+역추세 혼합 작동',
+          desc: '강한 추세 구간과 박스권 역추세 구간을 구분하여 최적의 로직을 자동으로 전환합니다.',
+        },
+        {
+          title: '적응형 회복 논리',
+          desc: '손실 발생 시 시장 상황에 맞춰 회복 속도를 조절하는 지능형 복구 알고리즘을 가동합니다.',
         },
         {
           title: '초고속 매매 인프라',
@@ -86,7 +98,7 @@ export const translations = {
     },
   },
   en: {
-    nav: { home: 'Home', partners: 'Partners', strategies: 'Strategies', quantStrategies: 'RealQuant Strategies', performance: 'Backtesting', actualReturns: 'Actual Returns', admin: 'Admin' },
+    nav: { home: 'Home', partners: 'Partners', strategies: 'RealQuant Strategies', quantStrategies: 'RealQuant Strategies', performance: 'Backtesting', actualReturns: 'Actual Returns', admin: 'Admin' },
     hero: {
       title: 'Real returns proven by data. RealQuant',
       subtitle: 'RealQuant generates stable returns by eliminating emotions and focusing solely on profit through advanced algorithms and big data analysis.',
@@ -99,7 +111,7 @@ export const translations = {
       viewMore: 'VIEW MORE +',
     },
     features: {
-      title: 'Algorithmic Trading Strategies',
+      title: 'RealQuant Strategies',
       items: [
         {
           title: 'ML-Based Prediction Models',
@@ -108,6 +120,18 @@ export const translations = {
         {
           title: 'Risk Management System',
           desc: 'Maximizes portfolio stability with dynamic asset allocation responding to market volatility.',
+        },
+        {
+          title: 'Rotation System',
+          desc: 'Tracks market fund flows to capture sectors and stocks where rotation occurs.',
+        },
+        {
+          title: 'Trend + Counter-Trend Mixed Operation',
+          desc: 'Distinguishes between strong trend and range-bound sections to automatically switch logic.',
+        },
+        {
+          title: 'Adaptive Recovery Logic',
+          desc: 'Activates an intelligent recovery algorithm that adjusts recovery speed based on market conditions.',
         },
         {
           title: 'Ultra-Low Latency Infrastructure',
@@ -164,10 +188,10 @@ export const translations = {
     },
   },
   zh: {
-    nav: { home: '首页', partners: '合作伙伴', strategies: '投资策略', quantStrategies: 'RealQuant 策略', performance: '回测', actualReturns: '实际收益', admin: '管理员' },
+    nav: { home: '首页', partners: '合作伙伴', strategies: 'RealQuant 策略', quantStrategies: 'RealQuant 策略', performance: '回测', actualReturns: '实际收益', admin: '管理员' },
     hero: { title: '数据证明的真实收益。RealQuant', subtitle: 'RealQuant 通过先进的算法和大数据分析，排除情感干扰，专注于盈利，创造稳定的收益。', cta: '加入社区' },
     partners: { tag: '01 / 合作伙伴', title: '受到行业领导者和机构的支持', desc: '深受全球领先金融机构和技术合作伙伴的信赖。', viewMore: '查看更多 +' },
-    features: { title: '算法交易策略', items: [{ title: '基于机器学习的预测模型', desc: '实时分析数百万个市场数据点，捕捉最佳交易时机。' }, { title: '风险管理系统', desc: '通过响应市场波动的动态资产配置，最大限度地提高投资组合的稳定性。' }, { title: '超低延迟基础设施', desc: '通过最小化延迟的系统交易，抓住市场中的微小机会。' }] },
+    features: { title: 'RealQuant 策略', items: [{ title: '基于机器学习的预测模型', desc: '实时分析数百万个市场数据点，捕捉最佳交易时机。' }, { title: '风险管理系统', desc: '通过响应市场波动的动态资产配置，最大限度地提高投资组合的稳定性。' }, { title: '轮动系统', desc: '通过追踪市场资金流向，抢先捕捉发生轮动的行业和个股。' }, { title: '趋势+逆趋势混合运行', desc: '区分强趋势区间和震荡逆趋势区间，自动切换最佳逻辑。' }, { title: '自适应恢复逻辑', desc: '启动智能恢复算法，根据市场情况调节亏损时的恢复速度。' }, { title: '超低延迟基础设施', desc: '通过最小化延迟的系统交易，抓住市场中的微小机会。' }] },
     quantStrategies: { title: 'RealQuant 策略', items: [{ name: 'Alpha 策略', desc: 'AUD/CAD 货币对' }, { name: 'Beta 策略', desc: 'MultiFOREX 多货币对' }, { name: 'Gamma 策略', desc: 'XAU/USD 黄金期货' }, { name: 'Delta 策略', desc: 'EUR/USD 货币对' }, { name: 'Epsilon 策略', desc: 'MultiFOREX2 多货币对' }, { name: 'Hexa 策略', desc: 'USDJPY 货币对' }] },
     performance: { title: 'RealQuant 回测', desc: '2025 年 RealQuant 核心策略的月度表现。' },
     actualReturns: { title: '实际收益', viewAll: '全部查看', viewLess: '收起' },
@@ -175,10 +199,10 @@ export const translations = {
     admin: { title: '管理员控制面板', tabs: { posts: '帖子管理', settings: '设计设置' }, posts: { add: '添加新帖子', edit: '编辑', delete: '删除', save: '保存', cancel: '取消', titleLabel: '标题', contentLabel: '内容', imageLabel: '图片 URL' }, settings: { themeColor: '主主题颜色', fontFamily: '主要字体', save: '保存设置' } }
   },
   ja: {
-    nav: { home: 'ホーム', partners: 'パートナー', strategies: '投資戦略', quantStrategies: 'RealQuant 戦略', performance: 'バックテスト', actualReturns: '実際の収益', admin: '管理者' },
+    nav: { home: 'ホーム', partners: 'パートナー', strategies: 'RealQuant 戦略', quantStrategies: 'RealQuant 戦略', performance: 'バックテスト', actualReturns: '実際の収益', admin: '管理者' },
     hero: { title: 'データで証明するリアルな収益。RealQuant', subtitle: 'RealQuant は、高度なアルゴリズムとビッグデータ分析を通じて感情を排除し、利益のみに集中することで、安定した収益を創出します。', cta: 'コミュニティに参加' },
     partners: { tag: '01 / パートナー', title: '業界のリーダーや機関からサポートを受けています', desc: '世界をリードする金融機関や技術パートナーから信頼されています。', viewMore: 'もっと見る +' },
-    features: { title: 'アルゴリズム取引戦略', items: [{ title: '機械学習ベースの予測モデル', desc: '数百万の市場データポイントをリアルタイムで分析し、最適な売買タイミングを捉えます。' }, { title: 'リスク管理システム', desc: '市場の変動に対応する動的な資産配分により、ポートフォリオの安定性を最大化します。' }, { title: '超低遅延インフラストラクチャ', desc: '遅延を最小限に抑えたシステムトレードにより、市場の微細な機会を先取りします。' }] },
+    features: { title: 'RealQuant 戦略', items: [{ title: '機械学習ベースの予測モデル', desc: '数百万の市場データポイントをリアルタイムで分析し、最適な売買タイミングを捉えます。' }, { title: 'リスク管理システム', desc: '市場の変動に対応する動的な資産配分により、ポートフォリオの安定性を最大化します。' }, { title: '循環物色システム', desc: '市場の資金の流れを追跡し、循環物色が発生するセクターや銘柄を先取りして捉えます。' }, { title: 'トレンド+逆トレンド混合作動', desc: '強いトレンド区間とボックス圏の逆トレンド区間を区別し、最適なロジックを自動的に切り替えます。' }, { title: '適応型回復ロジック', desc: '損失発生時に市場状況に合わせて回復速度を調節するインテリジェントな復旧アルゴリズムを稼働させます。' }, { title: '超低遅延インフラストラクチャ', desc: '遅延を最小限に抑えたシステムトレードにより、市場の微細な機会を先取りします。' }] },
     quantStrategies: { title: 'RealQuant 戦略', items: [{ name: 'アルファ戦略', desc: 'AUD/CAD 通貨ペア' }, { name: 'ベータ戦略', desc: 'MultiFOREX 多通貨ペア' }, { name: 'ガンマ戦略', desc: 'XAU/USD 金先物' }, { name: 'デルタ戦略', desc: 'EUR/USD 通貨ペア' }, { name: 'イプシロン戦略', desc: 'MultiFOREX2 多通貨ペア' }, { name: 'ヘキサ戦略', desc: 'USDJPY 通貨ペア' }] },
     performance: { title: 'RealQuant バックテスト', desc: '2025 年を通じた RealQuant コア戦略の月次パフォーマンス。' },
     actualReturns: { title: '実際の収益', viewAll: '全て表示', viewLess: '閉じる' },
@@ -186,10 +210,10 @@ export const translations = {
     admin: { title: '管理者ダッシュボード', tabs: { posts: '投稿管理', settings: 'デザイン設定' }, posts: { add: '新規投稿追加', edit: '編集', delete: '削除', save: '保存', cancel: 'キャンセル', titleLabel: 'タイトル', contentLabel: '内容', imageLabel: '画像 URL' }, settings: { themeColor: 'メインテーマカラー', fontFamily: 'メインフォント', save: '設定を保存' } }
   },
   ru: {
-    nav: { home: 'Главная', partners: 'Партнеры', strategies: 'Стратегии', quantStrategies: 'Стратегии RealQuant', performance: 'Бэктестинг', actualReturns: 'Реальная доходность', admin: 'Админ' },
+    nav: { home: 'Главная', partners: 'Партнеры', strategies: 'Стратегии RealQuant', quantStrategies: 'Стратегии RealQuant', performance: 'Бэктестинг', actualReturns: 'Реальная доходность', admin: 'Админ' },
     hero: { title: 'Реальная доходность, подтвержденная данными. RealQuant', subtitle: 'RealQuant генерирует стабильную прибыль, исключая эмоции и сосредотачиваясь исключительно на прибыли с помощью передовых алгоритмов и анализа больших данных.', cta: 'Вступить в сообщество' },
     partners: { tag: '01 / ПАРТНЕРЫ', title: 'Поддержка лидеров отрасли и институтов', desc: 'Нам доверяют ведущие финансовые институты и технологические партнеры по всему миру.', viewMore: 'ПОКАЗАТЬ БОЛЬШЕ +' },
-    features: { title: 'Алгоритмические стратегии торговли', items: [{ title: 'Прогнозные модели на основе ML', desc: 'Анализирует миллионы рыночных данных в режиме реального времени для определения оптимального времени торговли.' }, { title: 'Система управления рисками', desc: 'Максимизирует стабильность портфеля за счет динамического распределения активов в ответ на волатильность рынка.' }, { title: 'Инфраструктура с ультранизкой задержкой', desc: 'Использует микровозможности рынка с помощью системной торговли с минимальной задержкой.' }] },
+    features: { title: 'Стратегии RealQuant', items: [{ title: 'Прогнозные модели на основе ML', desc: 'Анализирует миллионы рыночных данных в режиме реального времени для определения оптимального времени торговли.' }, { title: 'Система управления рисками', desc: 'Максимизирует стабильность портфеля за счет динамического распределения активов в ответ на волатильность рынка.' }, { title: 'Система ротации', desc: 'Отслеживает потоки рыночных средств для упреждающего захвата секторов и акций, в которых происходит ротация.' }, { title: 'Смешанная работа тренда и контртренда', desc: 'Различает участки сильного тренда и участки бокового контртренда для автоматического переключения логики.' }, { title: 'Адаптивная логика восстановления', desc: 'Запускает интеллектуальный алгоритм восстановления, который регулирует скорость восстановления в соответствии с рыночными условиями.' }, { title: 'Инфраструктура с ультранизкой задержкой', desc: 'Использует микровозможности рынка с помощью системной торговли с минимальной задержкой.' }] },
     quantStrategies: { title: 'Стратегии RealQuant', items: [{ name: 'Стратегия Альфа', desc: 'Валютная пара AUD/CAD' }, { name: 'Стратегия Бета', desc: 'Мультивалютные пары MultiFOREX' }, { name: 'Стратегия Гамма', desc: 'Золотые фьючерсы XAU/USD' }, { name: 'Стратегия Дельта', desc: 'Валютная пара EUR/USD' }, { name: 'Стратегия Эпсилон', desc: 'Мультивалютные пары MultiFOREX2' }, { name: 'Стратегия Гекса', desc: 'Валютная пара USDJPY' }] },
     performance: { title: 'Бэктестинг RealQuant', desc: 'Ежемесячные показатели основных стратегий RealQuant в течение 2025 года.' },
     actualReturns: { title: 'Реальная доходность', viewAll: 'Показать все', viewLess: 'Скрыть' },
@@ -197,10 +221,10 @@ export const translations = {
     admin: { title: 'Панель администратора', tabs: { posts: 'Управление постами', settings: 'Настройки дизайна' }, posts: { add: 'Добавить пост', edit: 'Изменить', delete: 'Удалить', save: 'Сохранить', cancel: 'Отмена', titleLabel: 'Заголовок', contentLabel: 'Контент', imageLabel: 'URL изображения' }, settings: { themeColor: 'Основной цвет темы', fontFamily: 'Основной шрифт', save: 'Сохранить настройки' } }
   },
   de: {
-    nav: { home: 'Startseite', partners: 'Partner', strategies: 'Strategien', quantStrategies: 'RealQuant-Strategien', performance: 'Backtesting', actualReturns: 'Tatsächliche Renditen', admin: 'Admin' },
+    nav: { home: 'Startseite', partners: 'Partner', strategies: 'RealQuant-Strategien', quantStrategies: 'RealQuant-Strategien', performance: 'Backtesting', actualReturns: 'Tatsächliche Renditen', admin: 'Admin' },
     hero: { title: 'Durch Daten belegte reale Renditen. RealQuant', subtitle: 'RealQuant generiert stabile Renditen, indem es Emotionen eliminiert und sich durch fortschrittliche Algorithmen und Big-Data-Analysen ausschließlich auf den Gewinn konzentriert.', cta: 'Community beitreten' },
     partners: { tag: '01 / PARTNER', title: 'Unterstützt von Branchenführern und Institutionen', desc: 'Weltweit vertrauen uns führende Finanzinstitute und Technologiepartner.', viewMore: 'MEHR ANZEIGEN +' },
-    features: { title: 'Algorithmische Handelsstrategien', items: [{ title: 'ML-basierte Prognosemodelle', desc: 'Analysiert Millionen von Marktdaten in Echtzeit, um den optimalen Handelszeitpunkt zu erfassen.' }, { title: 'Risikomanagementsystem', desc: 'Maximiert die Portfoliostabilität durch dynamische Asset-Allokation als Reaktion auf Marktvolatilität.' }, { title: 'Infrastruktur mit extrem niedriger Latenz', desc: 'Nutzt Mikrochancen am Markt durch Systemhandel mit minimierter Latenz.' }] },
+    features: { title: 'RealQuant-Strategien', items: [{ title: 'ML-basierte Prognosemodelle', desc: 'Analysiert Millionen von Marktdaten in Echtzeit, um den optimalen Handelszeitpunkt zu erfassen.' }, { title: 'Risikomanagementsystem', desc: 'Maximiert die Portfoliostabilität durch dynamische Asset-Allokation als Reaktion auf Marktvolatilität.' }, { title: 'Rotationssystem', desc: 'Verfolgt Marktmittelflüsse, um Sektoren und Aktien zu erfassen, in denen eine Rotation stattfindet.' }, { title: 'Trend + Gegentrend-Mischbetrieb', desc: 'Unterscheidet zwischen starken Trend- und Seitwärtsphasen, um die Logik automatisch umzuschalten.' }, { title: 'Adaptive Erholungslogik', desc: 'Aktiviert einen intelligenten Erholungsalgorithmus, der die Erholungsgeschwindigkeit an die Marktbedingungen anpasst.' }, { title: 'Infrastruktur mit extrem niedriger Latenz', desc: 'Nutzt Mikrochancen am Markt durch Systemhandel mit minimierter Latenz.' }] },
     quantStrategies: { title: 'RealQuant-Strategien', items: [{ name: 'Alpha-Strategie', desc: 'Währungspaar AUD/CAD' }, { name: 'Beta-Strategie', desc: 'MultiFOREX-Währungspaare' }, { name: 'Gamma-Strategie', desc: 'XAU/USD Gold-Futures' }, { name: 'Delta-Strategie', desc: 'Währungspaar EUR/USD' }, { name: 'Epsilon-Strategie', desc: 'MultiFOREX2-Währungspaare' }, { name: 'Hexa-Strategie', desc: 'Währungspaar USDJPY' }] },
     performance: { title: 'RealQuant-Backtesting', desc: 'Monatliche Performance der RealQuant-Kernstrategien im Jahr 2025.' },
     actualReturns: { title: 'Tatsächliche Renditen', viewAll: 'Alle anzeigen', viewLess: 'Weniger anzeigen' },
@@ -208,10 +232,10 @@ export const translations = {
     admin: { title: 'Admin-Dashboard', tabs: { posts: 'Beitragsverwaltung', settings: 'Design-Einstellungen' }, posts: { add: 'Neuen Beitrag hinzufügen', edit: 'Bearbeiten', delete: 'Löschen', save: 'Speichern', cancel: 'Abbrechen', titleLabel: 'Titel', contentLabel: 'Inhalt', imageLabel: 'Bild-URL' }, settings: { themeColor: 'Hauptthemenfarbe', fontFamily: 'Hauptschriftart', save: 'Einstellungen speichern' } }
   },
   fr: {
-    nav: { home: 'Accueil', partners: 'Partenaires', strategies: 'Stratégies', quantStrategies: 'Stratégies RealQuant', performance: 'Backtesting', actualReturns: 'Rendements réels', admin: 'Admin' },
+    nav: { home: 'Accueil', partners: 'Partenaires', strategies: 'Stratégies RealQuant', quantStrategies: 'Stratégies RealQuant', performance: 'Backtesting', actualReturns: 'Rendements réels', admin: 'Admin' },
     hero: { title: 'Des rendements réels prouvés par les données. RealQuant', subtitle: 'RealQuant génère des rendements stables en éliminant les émotions et en se concentrant uniquement sur le profit grâce à des algorithmes avancés et à l\'analyse de données massives.', cta: 'Rejoindre la communauté' },
     partners: { tag: '01 / PARTENAIRES', title: 'Soutenu par les leaders de l\'industrie et les institutions', desc: 'Fait confiance par les plus grandes institutions financières et partenaires technologiques du monde entier.', viewMore: 'VOIR PLUS +' },
-    features: { title: 'Stratégies de trading algorithmique', items: [{ title: 'Modèles de prédiction basés sur le ML', desc: 'Analyse des millions de données de marché en temps réel pour capturer le moment optimal de trading.' }, { title: 'Système de gestion des risques', desc: 'Maximise la stabilité du portefeuille avec une allocation d\'actifs dynamique répondant à la volatilité du marché.' }, { title: 'Infrastructure à ultra-faible latence', desc: 'Saisit les micro-opportunités du marché grâce à un trading système à latence minimisée.' }] },
+    features: { title: 'Stratégies RealQuant', items: [{ title: 'Modèles de prédiction basés sur le ML', desc: 'Analyse des millions de données de marché en temps réel pour capturer le moment optimal de trading.' }, { title: 'Système de gestion des risques', desc: 'Maximise la stabilité du portefeuille avec une allocation d\'actifs dynamique répondant à la volatilité du marché.' }, { title: 'Système de rotation', desc: 'Suit les flux de fonds du marché pour capturer les secteurs et les actions où une rotation se produit.' }, { title: 'Opération mixte tendance + contre-tendance', desc: 'Distingue les sections de tendance forte et les sections de contre-tendance pour changer automatiquement de logique.' }, { title: 'Logique de récupération adaptative', desc: 'Active un algorithme de récupération intelligent qui ajuste la vitesse de récupération en fonction des conditions du marché.' }, { title: 'Infrastructure à ultra-faible latence', desc: 'Saisit les micro-opportunités du marché grâce à un trading système à latence minimisée.' }] },
     quantStrategies: { title: 'Stratégies RealQuant', items: [{ name: 'Stratégie Alpha', desc: 'Paire de devises AUD/CAD' }, { name: 'Stratégie Bêta', desc: 'Paires de devises MultiFOREX' }, { name: 'Stratégie Gamma', desc: 'Contrats à terme sur l\'or XAU/USD' }, { name: 'Stratégie Delta', desc: 'Paire de devises EUR/USD' }, { name: 'Stratégie Epsilon', desc: 'Paires de devises MultiFOREX2' }, { name: 'Stratégie Hexa', desc: 'Paire de devises USDJPY' }] },
     performance: { title: 'Backtesting RealQuant', desc: 'Performance mensuelle des stratégies de base de RealQuant tout au long de 2025.' },
     actualReturns: { title: 'Rendements réels', viewAll: 'Tout afficher', viewLess: 'Afficher moins' },
@@ -219,10 +243,10 @@ export const translations = {
     admin: { title: 'Tableau de bord administrateur', tabs: { posts: 'Gestion des messages', settings: 'Paramètres de conception' }, posts: { add: 'Ajouter un message', edit: 'Modifier', delete: 'Supprimer', save: 'Enregistrer', cancel: 'Annuler', titleLabel: 'Titre', contentLabel: 'Contenu', imageLabel: 'URL de l\'image' }, settings: { themeColor: 'Couleur principale du thème', fontFamily: 'Police principale', save: 'Enregistrer les paramètres' } }
   },
   hi: {
-    nav: { home: 'होम', partners: 'साझेदार', strategies: 'रणनीतियाँ', quantStrategies: 'RealQuant रणनीतियाँ', performance: 'बैकटेस्टिंग', actualReturns: 'वास्तविक रिटर्न', admin: 'व्यवस्थापक' },
+    nav: { home: 'होम', partners: 'साझेदार', strategies: 'RealQuant रणनीतियाँ', quantStrategies: 'RealQuant रणनीतियाँ', performance: 'बैकटेस्टिंग', actualReturns: 'वास्तविक रिटर्न', admin: 'व्यवस्थापक' },
     hero: { title: 'डेटा द्वारा सिद्ध वास्तविक रिटर्न। RealQuant', subtitle: 'RealQuant उन्नत एल्गोरिदम और बड़े डेटा विश्लेषण के माध्यम से भावनाओं को समाप्त करके और पूरी तरह से लाभ पर ध्यान केंद्रित करके स्थिर रिटर्न उत्पन्न करता है।', cta: 'समुदाय में शामिल हों' },
     partners: { tag: '01 / साझेदार', title: 'उद्योग के नेताओं और संस्थानों द्वारा समर्थित', desc: 'दुनिया भर के प्रमुख वित्तीय संस्थानों और प्रौद्योगिकी भागीदारों द्वारा विश्वसनीय।', viewMore: 'और देखें +' },
-    features: { title: 'एल्गोरिथम ट्रेडिंग रणनीतियाँ', items: [{ title: 'एमएल-आधारित भविष्यवाणी मॉडल', desc: 'इष्टतम ट्रेडिंग समय को पकड़ने के लिए वास्तविक समय में लाखों बाजार डेटा बिंदुओं का विश्लेषण करता है।' }, { title: 'जोखिम प्रबंधन प्रणाली', desc: 'बाजार की अस्थिरता का जवाब देने वाले गतिशील परिसंपत्ति आवंटन के साथ पोर्टफोलियो स्थिरता को अधिकतम करता है।' }, { title: 'अल्ट्रा-लो लेटेंसी इन्फ्रास्ट्रक्चर', desc: 'न्यूनतम विलंबता सिस्टम ट्रेडिंग के साथ बाजार में सूक्ष्म अवसरों को जब्त करता है।' }] },
+    features: { title: 'RealQuant रणनीतियाँ', items: [{ title: 'एमएल-आधारित भविष्यवाणी मॉडल', desc: 'इष्टतम ट्रेडिंग समय को पकड़ने के लिए वास्तविक समय में लाखों बाजार डेटा बिंदुओं का विश्लेषण करता है।' }, { title: 'जोख임 प्रबंधन प्रणाली', desc: 'बाजार की अस्थिरता का जवाब देने वाले गतिशील परिसंपत्ति आवंटन के साथ पोर्टफोलियो स्थिरता को अधिकतम करता है।' }, { title: 'रोटेशन सिस्टम', desc: 'बाजार निधि प्रवाह को ट्रैक करता है ताकि उन क्षेत्रों और शेयरों को पकड़ा जा सके जहां रोटेशन होता है।' }, { title: 'ट्रेंड + काउंटर-ट्रेंड मिश्रित ऑपरेशन', desc: 'लॉजिक को स्वचालित रूप से स्विच करने के लिए मजबूत ट्रेंड और रेंज-बाउंड सेक्शन के बीच अंतर करता है।' }, { title: 'अनुकूली पुनर्प्राप्ति तर्क', desc: 'एक बुद्धिमान पुनर्प्राप्ति एल्गोरिदम को सक्रिय करता है जो बाजार की स्थितियों के आधार पर पुनर्प्राप्ति गति को समायोजित करता है।' }, { title: 'अल्ट्रा-लो लेटेंसी इन्फ्रास्ट्रक्चर', desc: 'न्यूनतम विलंबता सिस्टम ट्रेडिंग के साथ बाजार में सूक्ष्म अवसरों को जब्त करता है।' }] },
     quantStrategies: { title: 'RealQuant रणनीतियाँ', items: [{ name: 'अल्फा रणनीति', desc: 'AUD/CAD मुद्रा जोड़ी' }, { name: 'बीटा रणनीति', desc: 'MultiFOREX मुद्रा जोड़े' }, { name: 'गामा रणनीति', desc: 'XAU/USD गोल्ड फ्यूचर्स' }, { name: 'डेल्टा रणनीति', desc: 'EUR/USD मुद्रा जोड़ी' }, { name: 'एप्सिलॉन रणनीति', desc: 'MultiFOREX2 मुद्रा जोड़े' }, { name: 'हेक्सा रणनीति', desc: 'USDJPY मुद्रा जोड़ी' }] },
     performance: { title: 'RealQuant बैकटेस्टिंग', desc: '2025 के दौरान RealQuant मुख्य रणनीतियों का मासिक प्रदर्शन।' },
     actualReturns: { title: 'वास्तविक रिटर्न', viewAll: 'सभी देखें', viewLess: 'कम देखें' },
@@ -230,10 +254,10 @@ export const translations = {
     admin: { title: 'व्यवस्थापक डैशबोर्ड', tabs: { posts: 'पोस्ट प्रबंधन', settings: 'डिज़ाइन सेटिंग्स' }, posts: { add: 'नई पोस्ट जोड़ें', edit: 'संपादित करें', delete: 'हटाएं', save: 'सहेजें', cancel: 'रद्द करें', titleLabel: 'शीर्षक', contentLabel: 'सामग्री', imageLabel: 'छवि URL' }, settings: { themeColor: 'मुख्य थीम रंग', fontFamily: 'प्राथमिक फ़ॉन्ट', save: 'सेटिंग्स सहेजें' } }
   },
   es: {
-    nav: { home: 'Inicio', partners: 'Socios', strategies: 'Estrategias', quantStrategies: 'Estrategias RealQuant', performance: 'Backtesting', actualReturns: 'Rentabilidades reales', admin: 'Admin' },
+    nav: { home: 'Inicio', partners: 'Socios', strategies: 'Estrategias RealQuant', quantStrategies: 'Estrategias RealQuant', performance: 'Backtesting', actualReturns: 'Rentabilidades reales', admin: 'Admin' },
     hero: { title: 'Rentabilidades reales probadas por datos. RealQuant', subtitle: 'RealQuant genera rendimientos estables al eliminar las emociones y centrarse únicamente en el beneficio a través de algoritmos avanzados y análisis de grandes datos.', cta: 'Unirse a la comunidad' },
     partners: { tag: '01 / SOCIOS', title: 'Respaldado por líderes de la industria e instituciones', desc: 'Confiado por las principales instituciones financieras y socios tecnológicos de todo el mundo.', viewMore: 'VER MÁS +' },
-    features: { title: 'Estrategias de trading algorítmico', items: [{ title: 'Modelos de predicción basados en ML', desc: 'Analiza millones de datos de mercado en tiempo real para capturar el momento óptimo de negociación.' }, { title: 'Sistema de gestión de riesgos', desc: 'Maximiza la estabilidad de la cartera con una asignación dinámica de activos que responde a la volatilidad del mercado.' }, { title: 'Infraestructura de latencia ultrabaja', desc: 'Aprovecha las microoportunidades del mercado con un sistema de trading de latencia minimizada.' }] },
+    features: { title: 'Estrategias RealQuant', items: [{ title: 'Modelos de predicción basados en ML', desc: 'Analiza millones de datos de market en tiempo real para capturar el momento óptimo de negociación.' }, { title: 'Sistema de gestión de riesgos', desc: 'Maximiza la estabilidad de la cartera con una asignación dinámica de activos que responde a la volatilidad del mercado.' }, { title: 'Sistema de rotación', desc: 'Rastrea los flujos de fondos del mercado para capturar sectores y acciones donde ocurre la rotación.' }, { title: 'Operación mixta de tendencia + contratendencia', desc: 'Distingue entre secciones de tendencia fuerte y secciones de rango para cambiar automáticamente la lógica.' }, { title: 'Lógica de recuperación adaptativa', desc: 'Activa un algoritmo de recuperación inteligente que ajusta la velocidad de recuperación según las condiciones del mercado.' }, { title: 'Infraestructura de latencia ultrabaja', desc: 'Aprovecha las microoportunidades del mercado con un sistema de trading de latencia minimizada.' }] },
     quantStrategies: { title: 'Estrategias RealQuant', items: [{ name: 'Estrategia Alfa', desc: 'Par de divisas AUD/CAD' }, { name: 'Estrategia Beta', desc: 'Pares de divisas MultiFOREX' }, { name: 'Estrategia Gamma', desc: 'Futuros de oro XAU/USD' }, { name: 'Estrategia Delta', desc: 'Par de divisas EUR/USD' }, { name: 'Estrategia Epsilon', desc: 'Pares de divisas MultiFOREX2' }, { name: 'Estrategia Hexa', desc: 'Par de divisas USDJPY' }] },
     performance: { title: 'Backtesting RealQuant', desc: 'Rendimiento mensual de las estrategias principales de RealQuant a lo largo de 2025.' },
     actualReturns: { title: 'Rentabilidades reales', viewAll: 'Ver todo', viewLess: 'Ver menos' },
@@ -241,10 +265,10 @@ export const translations = {
     admin: { title: 'Panel de administración', tabs: { posts: 'Gestión de publicaciones', settings: 'Ajustes de diseño' }, posts: { add: 'Añadir publicación', edit: 'Editar', delete: 'Eliminar', save: 'Guardar', cancel: 'Cancelar', titleLabel: 'Título', contentLabel: 'Contenido', imageLabel: 'URL de la imagen' }, settings: { themeColor: 'Color principal del tema', fontFamily: 'Fuente principal', save: 'Guardar ajustes' } }
   },
   ar: {
-    nav: { home: 'الرئيسية', partners: 'الشركاء', strategies: 'الاستراتيجيات', quantStrategies: 'استراتيجيات RealQuant', performance: 'الاختبار العكسي', actualReturns: 'العوائد الحقيقية', admin: 'المسؤول' },
+    nav: { home: 'الرئيسية', partners: 'الشركاء', strategies: 'استراتيجيات RealQuant', quantStrategies: 'استراتيجيات RealQuant', performance: 'الاختبار العكسي', actualReturns: 'العوائد الحقيقية', admin: 'المسؤول' },
     hero: { title: 'عوائد حقيقية مثبتة بالبيانات. RealQuant', subtitle: 'تحقق RealQuant عوائد مستقرة من خلال القضاء على العواطف والتركيز فقط على الربح من خلال الخوارزميات المتقدمة وتحليل البيانات الضخمة.', cta: 'انضم إلى المجتمع' },
     partners: { tag: '01 / الشركاء', title: 'مدعوم من قادة الصناعة والمؤسسات', desc: 'موثوق به من قبل المؤسسات المالية الرائدة وشركاء التكنولوجيا في جميع أنحاء العالم.', viewMore: 'عرض المزيد +' },
-    features: { title: 'استراتيجيات التداول الخوارزمي', items: [{ title: 'نماذج التنبؤ القائمة على تعلم الآلة', desc: 'تحلل الملايين من نقاط بيانات السوق في الوقت الفعلي لالتقاط التوقيت الأمثل للتداول.' }, { title: 'نظام إدارة المخاطر', desc: 'يزيد من استقرار المحفظة من خلال تخصيص الأصول الديناميكي الذي يستجيب لتقلبات السوق.' }, { title: 'بنية تحتية ذات زمن وصول منخفض للغاية', desc: 'تغتنم الفرص الدقيقة في السوق من خلال تداول النظام بزمن وصول ضئيل.' }] },
+    features: { title: 'استراتيجيات RealQuant', items: [{ title: 'نماذج التنبؤ القائمة على تعلم الآلة', desc: 'تحلل الملايين من نقاط بيانات السوق في الوقت الفعلي لالتقاط التوقيت الأمثل للتداول.' }, { title: 'نظام إدارة المخاطر', desc: 'يزيد من استقرار المحفظة من خلال تخصيص الأصول الديناميكي الذي يستجيب لتقلبات السوق.' }, { title: 'نظام التدوير', desc: 'يتتبع تدفقات أموال السوق لالتقاط القطاعات والأسهم التي يحدث فيها التدوير.' }, { title: 'عملية مختلطة للاتجاه + الاتجاه المعاكس', desc: 'يميز بين أقسام الاتجاه القوي وأقسام النطاق لتبديل المنطق تلقائياً.' }, { title: 'منطق الاسترداد التكيفي', desc: 'ينشط خوارزمية استرداد ذكية تضبط سرعة الاسترداد بناءً على ظروف السوق.' }, { title: 'بنية تحتية ذات زمن وصول منخفض للغاية', desc: 'تغتنم الفرص الدقيقة في السوق من خلال تداول النظام بزمن وصول ضئيل.' }] },
     quantStrategies: { title: 'استراتيجيات RealQuant', items: [{ name: 'استراتيجية ألفا', desc: 'زوج العملات AUD/CAD' }, { name: 'استراتيجية بيتا', desc: 'أزواج العملات MultiFOREX' }, { name: 'استراتيجية غاما', desc: 'عقود الذهب الآجلة XAU/USD' }, { name: 'استراتيجية دلتا', desc: 'زوج العملات EUR/USD' }, { name: 'استراتيجية إبسيلون', desc: 'أزواج العملات MultiFOREX2' }, { name: 'استراتيجية هيكسا', desc: 'زوج العملات USDJPY' }] },
     performance: { title: 'الاختبار العكسي لـ RealQuant', desc: 'الأداء الشهري لاستراتيجيات RealQuant الأساسية طوال عام 2025.' },
     actualReturns: { title: 'العوائد الحقيقية', viewAll: 'عرض الكل', viewLess: 'عرض أقل' },
