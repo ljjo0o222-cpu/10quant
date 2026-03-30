@@ -12,9 +12,7 @@ interface UserViewProps {
 
 export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) => {
   const t = translations[lang];
-  const [showAllPosts, setShowAllPosts] = useState(false);
-
-  const displayedPosts = showAllPosts ? posts : posts.slice(0, 3);
+  const displayedPosts = posts.slice(0, 6);
 
   const featureIcons = [
     <BarChart3 size={32} style={{ color: themeColor }} />,
@@ -43,29 +41,56 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
             transition={{ duration: 0.8 }}
             className="w-full px-2"
           >
-            <h1 className="text-[5.5vw] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-tight mb-8 whitespace-nowrap">
+            <h1 className="text-[5vw] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-tight mb-8 whitespace-nowrap">
               {t.hero.title.includes('리얼퀀트') ? (
                 <>
-                  {t.hero.title.split('리얼퀀트')[0]}리얼<span style={{ color: themeColor }}>퀀트</span>
+                  {t.hero.title.split('리얼퀀트')[0]}리얼<span style={{ color: themeColor }}>퀀트</span>{t.hero.title.split('리얼퀀트')[1]}
                 </>
               ) : t.hero.title.includes('RealQuant') ? (
                 <>
-                  {t.hero.title.split('RealQuant')[0]}Real<span style={{ color: themeColor }}>Quant</span>
+                  {t.hero.title.split('RealQuant')[0]}Real<span style={{ color: themeColor }}>Quant</span>{t.hero.title.split('RealQuant')[1]}
                 </>
               ) : (
                 t.hero.title
               )}
             </h1>
-            <p className="text-[2.8vw] sm:text-sm md:text-lg lg:text-xl text-gray-400 mx-auto mb-12 font-light leading-relaxed whitespace-nowrap">
-              {t.hero.subtitle}
+            <p className="text-[3.5vw] sm:text-sm md:text-lg lg:text-xl text-gray-400 mx-auto mb-12 font-light leading-relaxed whitespace-normal">
+              {lang === 'ko' ? (
+                <>
+                  RealQuant는 고도화된 알고리즘과<br className="block sm:hidden" />
+                  빅데이터 분석을 통해 감정을 배제하고,<br className="block sm:hidden" />
+                  수익에만 집중하여 안정적인 수익을 창출합니다.
+                </>
+              ) : lang === 'en' ? (
+                <>
+                  RealQuant creates stable returns by<br className="block sm:hidden" />
+                  excluding emotions and focusing solely on profit<br className="block sm:hidden" />
+                  through advanced algorithms and big data analysis.
+                </>
+              ) : lang === 'zh' ? (
+                <>
+                  RealQuant 通过先进的算法和大数据分析，<br className="block sm:hidden" />
+                  排除情感干扰，专注于盈利，<br className="block sm:hidden" />
+                  创造稳定的收益。
+                </>
+              ) : lang === 'ja' ? (
+                <>
+                  RealQuant は、高度なアルゴリズムと<br className="block sm:hidden" />
+                  ビッグデータ分析を通じて感情を排除し、<br className="block sm:hidden" />
+                  利益のみに集中することで、安定した収益を創出します。
+                </>
+              ) : t.hero.subtitle}
             </p>
-            <button
+            <a
+              href="https://t.me/realquant7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105"
               style={{ backgroundColor: themeColor, color: '#fff' }}
             >
               {t.hero.cta}
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -78,7 +103,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
             <div className="w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: themeColor }}></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-20">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-12 mb-20">
             {t.features.items.map((item, index) => (
               <motion.div
                 key={index}
@@ -86,35 +111,35 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-white/20 transition-colors group"
+                className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-900 border border-white/5 hover:border-white/20 transition-colors group"
               >
-                <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                  {featureIcons[index]}
+                <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-black flex items-center justify-center mb-4 sm:mb-8 group-hover:scale-110 transition-transform">
+                  {React.cloneElement(featureIcons[index] as React.ReactElement, { size: window.innerWidth < 640 ? 20 : 32 })}
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{item.desc}</p>
+                <h3 className="text-sm sm:text-2xl font-semibold mb-2 sm:mb-4">{item.title}</h3>
+                <p className="text-[10px] sm:text-base text-gray-400 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Operable Items Title */}
           <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">운용가능 종목</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{t.operableItems.title}</h3>
             <div className="w-16 h-0.5 mx-auto rounded-full" style={{ backgroundColor: themeColor }}></div>
           </div>
 
           {/* Asset Cards Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-4 sm:gap-8">
             {[
               { 
-                label: '원자재', 
+                label: t.operableItems.commodities, 
                 title: 'XAUUSD', 
                 sub: 'GOLD' 
               },
               { 
-                label: '통화쌍', 
+                label: t.operableItems.currencyPairs, 
                 title: 'AUDCAD', 
-                sub: 'Australian Dollar / Canadian Dollar' 
+                sub: 'AUD / CAD' 
               }
             ].map((asset, i) => (
               <motion.div
@@ -123,7 +148,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.2 }}
-                className="relative p-10 rounded-2xl bg-zinc-900/50 border border-white/10 overflow-hidden group hover:border-white/20 transition-all"
+                className="relative p-6 sm:p-10 rounded-2xl bg-zinc-900/50 border border-white/10 overflow-hidden group hover:border-white/20 transition-all"
               >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity" style={{ 
@@ -133,13 +158,13 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                 
                 <div className="relative z-10">
                   <div className="flex-1 min-w-0">
-                    <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-8 block">
+                    <span className="text-[10px] sm:text-sm font-bold text-gray-500 uppercase tracking-widest mb-4 sm:mb-8 block">
                       {asset.label}
                     </span>
-                    <h3 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">
+                    <h3 className="text-2xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter mb-2 sm:mb-4">
                       {asset.title}
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-400 font-medium tracking-tight whitespace-nowrap">
+                    <p className="text-[10px] sm:text-sm md:text-base text-gray-400 font-medium tracking-tight whitespace-nowrap">
                       {asset.sub}
                     </p>
                   </div>
@@ -153,30 +178,13 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
       {/* Performance Section */}
       <section id="performance" className="py-32 bg-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{t.performance.title}</h2>
-            <div className="w-24 h-1 mx-auto rounded-full mb-8" style={{ backgroundColor: themeColor }}></div>
-            <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto mb-12">{t.performance.desc}</p>
-            
-            <div className="flex flex-wrap items-center justify-center gap-6">
-              <div className="flex items-center">
-                <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: themeColor }}></div>
-                <span className="text-sm text-gray-300">RealQuant Strategy</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 rounded-full bg-[#10b981] mr-2"></div>
-                <span className="text-sm text-gray-300">KOSPI</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 rounded-full bg-[#fdba74] mr-2"></div>
-                <span className="text-sm text-gray-300">NASDAQ</span>
-              </div>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{t.nav.performance}</h2>
+            <div className="w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: '#3b82f6' }}></div>
           </div>
-
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
@@ -191,19 +199,10 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{t.actualReturns.title}</h2>
             <div className="w-24 h-1 mx-auto rounded-full mb-8" style={{ backgroundColor: themeColor }}></div>
-            <p className="text-lg text-gray-400 font-light mb-8">{t.actualReturns.weeklyNotice}</p>
-            {posts.length > 3 && (
-              <button 
-                onClick={() => setShowAllPosts(!showAllPosts)}
-                className="text-gray-400 hover:text-white transition-colors flex items-center justify-center mx-auto group"
-              >
-                {showAllPosts ? t.actualReturns.viewLess : t.actualReturns.viewAll}
-                <ArrowRight className={`ml-2 transition-transform ${showAllPosts ? '-rotate-90' : 'group-hover:translate-x-1'}`} size={16} />
-              </button>
-            )}
+            <p className="text-[3.2vw] sm:text-lg text-gray-400 font-light mb-8 whitespace-nowrap">{t.actualReturns.weeklyNotice}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {displayedPosts.map((post, index) => (
               <motion.div
                 key={post.id}
@@ -213,7 +212,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group cursor-pointer"
               >
-                <div className="relative h-64 mb-6 overflow-hidden rounded-2xl">
+                <div className="relative h-40 sm:h-64 mb-4 sm:mb-6 overflow-hidden rounded-xl sm:rounded-2xl">
                   <img
                     src={post.imageUrl}
                     alt={post.title}
@@ -222,14 +221,14 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="flex items-center text-sm text-gray-500 mb-3">
-                  <span style={{ color: themeColor }} className="font-medium mr-4">RealQuant</span>
+                <div className="flex items-center text-[10px] sm:text-sm text-gray-500 mb-2 sm:mb-3">
+                  <span style={{ color: themeColor }} className="font-medium mr-2 sm:mr-4">RealQuant</span>
                   <span>{post.date}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-white text-gray-100 transition-colors line-clamp-2">
+                <h3 className="text-sm sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-white text-gray-100 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-gray-400 line-clamp-3 leading-relaxed">
+                <p className="text-[10px] sm:text-base text-gray-400 line-clamp-2 sm:line-clamp-3 leading-relaxed">
                   {post.content}
                 </p>
               </motion.div>
@@ -256,16 +255,20 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
               transition={{ duration: 0.8 }}
               className="mb-16"
             >
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">파트너</h2>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{t.partners.tag.split(' / ')[1]}</h2>
               <div className="w-24 h-1 mx-auto rounded-full mb-8" style={{ backgroundColor: themeColor }}></div>
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight mb-8 lg:whitespace-nowrap">
-                {t.partners.title.split(' ').map((word, i) => (
-                  <span key={i} className={i >= 2 && i <= 5 ? 'text-blue-500' : ''}>
-                    {word}{' '}
-                  </span>
-                ))}
+                {lang === 'ko' || lang === 'en' ? (
+                  t.partners.title.split(' ').map((word, i) => (
+                    <span key={i} className={i >= 2 && i <= 5 ? 'text-blue-500' : ''}>
+                      {word}{' '}
+                    </span>
+                  ))
+                ) : (
+                  t.partners.title
+                )}
               </h3>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
                 {t.partners.desc}
               </p>
             </motion.div>
