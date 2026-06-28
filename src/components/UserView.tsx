@@ -137,6 +137,26 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                 sub: 'GOLD' 
               },
               { 
+                label: t.operableItems.indices, 
+                title: 'USTECH100', 
+                sub: 'NASDAQ100' 
+              },
+              { 
+                label: t.operableItems.indices, 
+                title: 'US30', 
+                sub: 'DOW JONES' 
+              },
+              { 
+                label: t.operableItems.currencyPairs, 
+                title: 'EURUSD', 
+                sub: 'EUR / USD' 
+              },
+              { 
+                label: t.operableItems.currencyPairs, 
+                title: 'GBPUSD', 
+                sub: 'GBP / USD' 
+              },
+              { 
                 label: t.operableItems.currencyPairs, 
                 title: 'AUDCAD', 
                 sub: 'AUD / CAD' 
@@ -199,40 +219,35 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{t.actualReturns.title}</h2>
             <div className="w-24 h-1 mx-auto rounded-full mb-8" style={{ backgroundColor: themeColor }}></div>
-            <p className="text-[3.2vw] sm:text-lg text-gray-400 font-light mb-8 whitespace-nowrap">{t.actualReturns.weeklyNotice}</p>
+            <p className="text-[3.2vw] sm:text-lg text-gray-400 font-light mb-8 whitespace-pre-line">{t.actualReturns.weeklyNotice}</p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-            {displayedPosts.map((post, index) => (
-              <motion.div
-                key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group cursor-pointer"
-              >
-                <div className="relative h-40 sm:h-64 mb-4 sm:mb-6 overflow-hidden rounded-xl sm:rounded-2xl">
-                  <img
-                    src={post.imageUrl}
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-zinc-900 rounded-2xl p-4 sm:p-8 border border-zinc-800"
+            >
+              <div className="relative w-full overflow-hidden rounded-xl bg-zinc-950 mb-8 border border-zinc-800/50">
+                <img
+                  src="/return.jpg"
+                  alt="Actual Returns Chart"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4 sm:gap-8">
+                <div className="bg-zinc-950 p-6 rounded-xl border border-zinc-800/50 text-center">
+                  <div className="text-sm sm:text-base text-gray-400 mb-2">{t.actualReturns.totalGrowth}</div>
+                  <div className="text-2xl sm:text-5xl font-bold" style={{ color: themeColor }}>49.56%</div>
                 </div>
-                <div className="flex items-center text-[10px] sm:text-sm text-gray-500 mb-2 sm:mb-3">
-                  <span style={{ color: themeColor }} className="font-medium mr-2 sm:mr-4">RealQuant</span>
-                  <span>{post.date}</span>
+                <div className="bg-zinc-950 p-6 rounded-xl border border-zinc-800/50 text-center">
+                  <div className="text-sm sm:text-base text-gray-400 mb-2">{t.actualReturns.maxDrawdown}</div>
+                  <div className="text-2xl sm:text-5xl font-bold text-red-400">0.922%</div>
                 </div>
-                <h3 className="text-sm sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-white text-gray-100 transition-colors line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-[10px] sm:text-base text-gray-400 line-clamp-2 sm:line-clamp-3 leading-relaxed">
-                  {post.content}
-                </p>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

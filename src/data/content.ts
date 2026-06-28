@@ -98,12 +98,15 @@ export const translations = {
       title: '실제 수익률',
       viewAll: '전체보기',
       viewLess: '줄여서보기',
-      weeklyNotice: '상세한 수익률 내용은 커뮤니티에서 확인이 가능합니다.',
+      weeklyNotice: '실제 매매 기간 : 2026.04.01~2026.06.31\n상세한 수익률 내용은 커뮤니티에서 확인이 가능합니다.',
+      totalGrowth: '수익률',
+      maxDrawdown: '최대손실률'
     },
     operableItems: {
       title: '운용가능 종목',
       commodities: '원자재',
       currencyPairs: '통화쌍',
+      indices: '지수'
     },
     chatSupport: {
       title: '자주 묻는 질문',
@@ -114,10 +117,10 @@ export const translations = {
       floatingButton: '1:1 채팅',
       faqs: [
         { question: '백테스팅과 실제 수익률은 진짜인가요?', answer: '백테스팅과 실제 수익률은 100% 사실이며, 거래 플랫폼에서 제공하는 화면이기 때문에 조작할 수 없습니다.' },
-        { question: 'RealQuant는 무료인가요?', answer: '네. 100% 무료입니다. 수익에 대한 운용보수를 받거나, 프로그램의 월결제 비용 등을 별도로 받지 않습니다.' },
+        { question: 'RealQuant는 무료인가요?', answer: '프로그램의 월결제 비용 등 별도의 비용은 없으나, 수익분에 대한 운용보수가 존재합니다. 손실이 발생하였을 경우에는 운용보수가 없습니다.' },
         { question: '최소 투자 금액은 얼마인가요?', answer: '포지션의 최소 계약 수량이 있기 때문에 500 USDT(테더)부터 가능합니다.' },
         { question: '내 투자금은 안전한가요?', answer: 'RealQuant는 고객의 자금을 직접 수취하지 않습니다. 고객님의 거래소 계정과 RealQuant가 연동되는 시스템이며, 저희는 포지션에 대한 진입과 청산 권한만 가질 뿐 입출금 권한은 없기 때문에 고객님의 자산은 안전합니다.' },
-        { question: '어떤 전략으로 수익을 내나요?', answer: 'RealQuant는 고도화된 알고리즘(순환매 시스템, 동적 변동성 적응, 추세+역추세 혼합 작동, 적응형 회복 논리)을 결합하여 만든 퀀트 프로그램입니다. AUDCAD(호주달러/캐나다달러 통화쌍)와 XAUUSD(금)를 거래하여 수익을 창출합니다.' },
+        { question: '어떤 전략으로 수익을 내나요?', answer: 'RealQuant는 고도화된 알고리즘(순환매 시스템, 동적 변동성 적응, 추세+역추세 혼합 작동, 적응형 회복 논리)을 결합하여 만든 퀀트 프로그램입니다. XAUUSD(금), USTECH100(나스닥 100), US30(다우존스), AUDCAD(호주달러/캐나다달러 통화쌍), EURUSD(유로/달러 통화쌍), GBPUSD(파운드/달러 통화쌍) 등 다양한 종목을 거래하여 수익을 창출합니다.' },
         { question: '전략 설정은 어떻게 하나요?', answer: '전략 설정은 고객 개개인의 의사가 필요하지 않으며 별도의 설정이 필요 없습니다. (100% 자동화 24/7) 커뮤니티 입장 시 가이드가 준비되어 있습니다. 가이드를 참고해 주세요.' },
         { question: '수익금 출금은 어떻게 하나요?', answer: '커뮤니티 입장 시 가이드가 준비되어 있습니다. 가이드를 참고해 주세요.' }
       ]
@@ -178,16 +181,16 @@ export const translations = {
       floatingButton: '1:1 Chat',
       faqs: [
         { question: 'Are backtests and actual returns real?', answer: 'Backtests and actual returns are 100% real, and since they are screens provided by the trading platform, they cannot be manipulated.' },
-        { question: 'Is RealQuant free?', answer: 'Yes. It is 100% free. We do not receive management fees for profits, nor do we charge separate monthly fees for the program.' },
+        { question: 'Is RealQuant free?', answer: 'There are no separate costs such as monthly program fees, but there is a management fee on profits. In the event of a loss, there is no management fee.' },
         { question: 'What is the minimum investment amount?', answer: 'Since there is a minimum contract quantity for positions, it is possible from 500 USDT (Tether).' },
         { question: 'Is my investment safe?', answer: 'RealQuant does not directly receive customer funds. It is a system where your exchange account and RealQuant are linked, and we only have the authority to make buy and sell decisions for positions, not the authority to deposit or withdraw funds, so your assets are safe.' },
-        { question: 'What strategy do you use to make profit?', answer: 'RealQuant is a quant program created by combining advanced algorithms (Rotation System, Dynamic Volatility Adaptation, Trend + Counter-Trend Mixed Operation, Adaptive Recovery Logic). It creates profit by trading AUDCAD (AUD/CAD currency pair) and XAUUSD (Gold).' },
+        { question: 'What strategy do you use to make profit?', answer: 'RealQuant is a quant program created by combining advanced algorithms (Rotation System, Dynamic Volatility Adaptation, Trend + Counter-Trend Mixed Operation, Adaptive Recovery Logic). It creates profit by trading various instruments such as XAUUSD (Gold), USTECH100 (Nasdaq 100), US30 (Dow Jones), AUDCAD (AUD/CAD currency pair), EURUSD (EUR/USD currency pair), and GBPUSD (GBP/USD currency pair).' },
         { question: 'How do I set up the strategy?', answer: 'Setting up the strategy does not require the customer\'s individual intention and no separate setting is required. (100% automated 24/7) A guide is prepared when you enter the community. Please refer to the guide.' },
         { question: 'How do I withdraw profits?', answer: 'A guide is prepared when you enter the community. Please refer to the guide.' }
       ]
     },
-    actualReturns: { title: 'Actual Returns', viewAll: 'View All', viewLess: 'View Less', weeklyNotice: 'Detailed return information can be checked in the community.' },
-    operableItems: { title: 'Operable Items', commodities: 'Commodities', currencyPairs: 'Currency Pairs' },
+    actualReturns: { title: 'Actual Returns', viewAll: 'View All', viewLess: 'View Less', weeklyNotice: 'Actual trading period: 2026.04.01~2026.06.31\nDetailed return information can be checked in the community.', totalGrowth: 'Total Growth', maxDrawdown: 'Max Drawdown' },
+    operableItems: { title: 'Operable Items', commodities: 'Commodities', currencyPairs: 'Currency Pairs', indices: 'Indices' },
     footer: {
       desc: 'RealQuant is a quant investment company that provides data-driven quantitative investment solutions.',
       disclaimer: 'Automated trading systems and solutions are not products that guarantee profits. Due to the nature of the market, periodicity exists, so profit periods and loss periods coexist. Based on probability and statistics, we aim for the seed to gradually trend upward, and the backtests and actual returns expressed on this website correspond to past performance. Please clearly understand that past performance can only predict future performance and does not absolutely guarantee the customer\'s principal or profit.',
@@ -244,16 +247,16 @@ export const translations = {
       floatingButton: '1:1 聊天',
       faqs: [
         { question: '回测和实际收益是真实的吗？', answer: '回测和实际收益是 100% 真实的，由于它们是交易平台提供的屏幕，因此无法操纵。' },
-        { question: 'RealQuant 是免费的吗？', answer: '是的。它是 100% 免费的。我们不收取利润管理费，也不收取程序的单独月费。' },
+        { question: 'RealQuant 是免费的吗？', answer: '没有程序月费等额外费用，但对利润收取管理费。发生亏损时不收取管理费。' },
         { question: '最低投资金额是多少？', answer: '由于头寸有最低合约数量，因此可以从 500 USDT（泰达币）开始。' },
         { question: '我的投资安全吗？', answer: 'RealQuant 不直接接收客户资金。这是一个您的交易所账户和 RealQuant 连接的系统，我们只有权对头寸做出买卖决策，而无权存款或取款，因此您的资产是安全的。' },
-        { question: '使用什么策略来实现利润？', answer: 'RealQuant 是一个通过结合先进算法（轮换系统、动态波动率适应、趋势 + 逆趋势混合操作、自适应恢复逻辑）创建的量化程序。它通过交易 AUDCAD（澳元/加元货币对）和 XAUUSD（黄金）来创造利润。' },
+        { question: '使用什么策略来实现利润？', answer: 'RealQuant 是一个通过结合先进算法（轮换系统、动态波动率适应、趋势 + 逆趋势混合操作、自适应恢复逻辑）创建的量化程序。它通过交易 XAUUSD（黄金）、USTECH100（纳斯达克 100）、US30（道琼斯）、AUDCAD（澳元/加元货币对）、EURUSD（欧元/美元货币对）和 GBPUSD（英镑/美元货币对）等各种工具来创造利润。' },
         { question: '我该如何设置策略？', answer: '设置策略不需要客户的个人意愿，也不需要单独设置。（100% 全自动 24/7）当您进入社区时，会准备一份指南。请参考该指南。' },
         { question: '我该如何提取利润？', answer: '当您进入社区时，会准备一份指南。请参考该指南。' }
       ]
     },
-    actualReturns: { title: '实际收益', viewAll: '全部查看', viewLess: '收起', weeklyNotice: '详细的收益率内容可以在社区中查看。' },
-    operableItems: { title: '可操作项目', commodities: '大宗商品', currencyPairs: '货币对' },
+    actualReturns: { title: '实际收益', viewAll: '全部查看', viewLess: '收起', weeklyNotice: '实际交易期间：2026.04.01~2026.06.31\n详细的收益率内容可以在社区中查看。', totalGrowth: '总收益率', maxDrawdown: '最大回撤' },
+    operableItems: { title: '可操作项目', commodities: '大宗商品', currencyPairs: '货币对', indices: '指数' },
     footer: { desc: 'RealQuant 是一家提供数据驱动的量化投资解决方案的量化投资公司。', disclaimer: '自动化交易系统和解决方案不是保证利润的产品。由于市场的性质，存在周期性，因此利润期和亏损期并存。基于概率和统计学，我们的目标是种子资金逐渐呈上升趋势，本网站上表达的回测和实际收益对应于过去的表现。请清楚地理解，过去的表现只能预测未来的表现，绝对不保证客户的本金或利润。', rights: '© 2026 RealQuant. 版权所有।' },
     admin: { title: '管理员控制面板', tabs: { posts: '帖子管理', settings: '设计设置' }, posts: { add: '添加新帖子', edit: '编辑', delete: '删除', save: '保存', cancel: '取消', titleLabel: '标题', contentLabel: '内容', imageLabel: '图片 URL' }, settings: { themeColor: '主主题颜色', fontFamily: '主要字体', save: '保存设置' } }
   },
@@ -306,16 +309,16 @@ export const translations = {
       floatingButton: '1:1 チャット',
       faqs: [
         { question: 'バックテストと実際の収益は本物ですか？', answer: 'バックテストと実際の収益は100%本物であり、取引プラットフォームが提供する画面であるため、偽造することはできません。' },
-        { question: 'RealQuantは無料ですか？', answer: 'はい。100%無料です。収益に対する運用報酬を受け取ったり、プログラムの月額費用などを別途受け取ることはありません。' },
+        { question: 'RealQuantは無料ですか？', answer: 'プログラムの月額利用料などの別途費用はありませんが、利益に対する運用報酬が発生します。損失が発生した場合は運用報酬はありません。' },
         { question: '最低投資金額はいくらですか？', answer: 'ポジションの最小契約数があるため、500 USDT (テザー) から可能です。' },
         { question: '私の投資は安全ですか？', answer: 'RealQuantは顧客の資金を直接受け取りません。お客様の取引所口座とRealQuantが連携され、ポジションの売買決定権のみを持ち、入出金権限はないため、お客様의資産は安全です。' },
-        { question: '利益を出すためにどのような戦略が使われていますか？', answer: 'RealQuantは、高度なアルゴリズム（循環物色システム、動的なボラティリティ適応、トレンド+逆トレンド混合作動、適応型回復ロジック）を組み合わせて作成されたクオンツプログラムです。AUDCAD（豪ドル/カナダドル）とXAUUSD（ゴールド）を取引して利益を創出します。' },
+        { question: '利益を出すためにどのような戦略が使われていますか？', answer: 'RealQuantは、高度なアルゴリズム（循環物色システム、動的なボラティリティ適応、トレンド+逆トレンド混合作動、適応型回復ロジック）を組み合わせて作成されたクオンツプログラムです。XAUUSD（金）、USTECH100（ナスダック100）、US30（ダウ・ジョーンズ）、AUDCAD（豪ドル/カナダドル）、EURUSD（ユーロ/米ドル）、GBPUSD（英ポンド/米ドル）などの様々な商品を取引して利益を創出します。' },
         { question: '戦略をどのように設定すればよいですか？', answer: '戦略の設定は、お客様の個別の意図を必要とせず、別途設定する必要もありません。（24時間365日100%自動化）コミュニティに参加するとガイドが用意されています。ガイドを参照してください。' },
         { question: '利益をどのように出金すればよいですか？', answer: 'コミュニティに参加するとガイドが用意されています。ガイドを参照してください。' }
       ]
     },
-    actualReturns: { title: '実際の収益', viewAll: '全て表示', viewLess: '閉じる', weeklyNotice: '詳細な収益率の内容はコミュニティで確認できます。' },
-    operableItems: { title: '運用可能銘柄', commodities: 'コモディティ', currencyPairs: '通貨ペア' },
+    actualReturns: { title: '実際の収益', viewAll: '全て表示', viewLess: '閉じる', weeklyNotice: '実際の取引期間：2026.04.01~2026.06.31\n詳細な収益率の内容はコミュニティで確認できます。', totalGrowth: '総収益率', maxDrawdown: '最大ドローダウン' },
+    operableItems: { title: '運用可能銘柄', commodities: 'コモディティ', currencyPairs: '通貨ペア', indices: '指数' },
     footer: { desc: 'RealQuant は、データ駆動型の計量投資ソリューションを提供するクオンツ専門企業です。', disclaimer: '自動売買システムおよびソリューションは、利益を保証する商品ではありません。市場の性質上、周期性が存在するため、利益が発生する周期と損失が発生する周期が共存します。確率と統計学に基づき、徐々にシードが右肩上がりになることを目指しており、当ウェブサイトに表示されているバックテストと実際の収益率は過去の実績に該当します。過去の実績は将来の実績を予測できるだけであり、絶対にお客様の元本を保証するものではなく、利益を保証するものではないという点を明確に認識してください。', rights: '© 2026 RealQuant. All rights reserved.' },
     admin: { title: '管理者ダッシュボード', tabs: { posts: '投稿管理', settings: 'デザイン設定' }, posts: { add: '新規投稿追加', edit: '編集', delete: '削除', save: '保存', cancel: 'キャンセル', titleLabel: 'タイトル', contentLabel: '内容', imageLabel: '画像 URL' }, settings: { themeColor: 'メインテーマカラー', fontFamily: 'メインフォント', save: '設定を保存' } }
   },
@@ -376,8 +379,8 @@ export const translations = {
         { question: 'Как мне вывести прибыль?', answer: 'Руководство подготавливается при вступлении в сообщество. Пожалуйста, обратитесь к руководству.' }
       ]
     },
-    actualReturns: { title: 'Реальная доходность', viewAll: 'Показать все', viewLess: 'Скрыть', weeklyNotice: 'Еженедельную доходность можно проверить в сообществе.' },
-    operableItems: { title: 'Доступные инструменты', commodities: 'Сырьевые товары', currencyPairs: 'Валютные пары' },
+    actualReturns: { title: 'Реальная доходность', viewAll: 'Показать все', viewLess: 'Скрыть', weeklyNotice: 'Фактический период торгов: 2026.04.01~2026.06.31\nПодробную информацию о доходности можно проверить в сообществе.', totalGrowth: 'Общая доходность', maxDrawdown: 'Максимальная просадка' },
+    operableItems: { title: 'Доступные инструменты', commodities: 'Сырьевые товары', currencyPairs: 'Валютные пары', indices: 'Индексы' },
     footer: { desc: 'RealQuant — это количественная инвестиционная фирма, предоставляющая решения для инвестиций на основе данных.', disclaimer: 'Автоматизированные торговые системы и решения не являются продуктами, гарантирующими прибыль. Из-за характера рынка существует периодичность, поэтому периоды прибыли и периоды убытков сосуществуют. Основываясь на вероятности и статистике, мы стремимся к тому, чтобы капитал постепенно рос, а бэктесты и фактическая доходность, представленные на этом веб-сайте, соответствуют прошлым показателям. Пожалуйста, четко понимайте, что прошлые показатели могут только предсказывать будущие показатели и не гарантируют абсолютно основную сумму клиента или прибыль.', rights: '© 2026 RealQuant. Все права защищены.' },
     admin: { title: 'Панель администратора', tabs: { posts: 'Управление постами', settings: 'Настройки дизайна' }, posts: { add: 'Добавить пост', edit: 'Изменить', delete: 'Удалить', save: 'Сохранить', cancel: 'Отмена', titleLabel: 'Заголовок', contentLabel: 'Контент', imageLabel: 'URL изображения' }, settings: { themeColor: 'Основной цвет темы', fontFamily: 'Основной шрифт', save: 'Сохранить настройки' } }
   },
@@ -438,8 +441,8 @@ export const translations = {
         { question: 'Wie hebe ich Gewinne ab?', answer: 'Ein Leitfaden wird erstellt, wenn Sie der Community beitreten. Bitte beachten Sie den Leitfaden.' }
       ]
     },
-    actualReturns: { title: 'Tatsächliche Renditen', viewAll: 'Alle anzeigen', viewLess: 'Weniger anzeigen', weeklyNotice: 'Detaillierte Renditeinformationen können in der Community überprüft werden.' },
-    operableItems: { title: 'Handelbare Instrumente', commodities: 'Rohstoffe', currencyPairs: 'Währungspaare' },
+    actualReturns: { title: 'Tatsächliche Renditen', viewAll: 'Alle anzeigen', viewLess: 'Weniger anzeigen', weeklyNotice: 'Tatsächlicher Handelszeitraum: 2026.04.01~2026.06.31\nDetaillierte Renditeinformationen können in der Community überprüft werden.', totalGrowth: 'Gesamtwachstum', maxDrawdown: 'Maximaler Drawdown' },
+    operableItems: { title: 'Handelbare Instrumente', commodities: 'Rohstoffe', currencyPairs: 'Währungspaare', indices: 'Indizes' },
     footer: { desc: 'RealQuant ist eine quantitative Investmentfirma, die datengesteuerte quantitative Investmentlösungen anbietet.', disclaimer: 'Automatisierte Handelssysteme und Lösungen sind keine Produkte, die Gewinne garantieren. Aufgrund der Art des Marktes besteht eine Periodizität, sodass Gewinn- und Verlustperioden nebeneinander existieren. Basierend auf Wahrscheinlichkeit und Statistik streben wir an, dass das Kapital allmählich nach oben tendiert, und die auf dieser Website ausgedrückten Backtests und tatsächlichen Renditen entsprechen der vergangenen Performance. Bitte haben Sie ein klares Verständnis dafür, dass die vergangene Performance nur die zukünftige Performance vorhersagen kann und das Kapital oder die Gewinne des Kunden nicht absolut garantiert.', rights: '© 2026 RealQuant. Alle Rechte vorbehalten.' },
     admin: { title: 'Admin-Dashboard', tabs: { posts: 'Beitragsverwaltung', settings: 'Design-Einstellungen' }, posts: { add: 'Neuen Beitrag hinzufügen', edit: 'Bearbeiten', delete: 'Löschen', save: 'Speichern', cancel: 'Abbrechen', titleLabel: 'Titel', contentLabel: 'Inhalt', imageLabel: 'Bild-URL' }, settings: { themeColor: 'Hauptthemenfarbe', fontFamily: 'Hauptschriftart', save: 'Einstellungen speichern' } }
   },
@@ -500,8 +503,8 @@ export const translations = {
         { question: 'Comment retirer des profits ?', answer: 'Un guide est préparé lorsque vous entrez dans la communauté. Veuillez vous référer au guide.' }
       ]
     },
-    actualReturns: { title: 'Rendements réels', viewAll: 'Tout afficher', viewLess: 'Afficher moins', weeklyNotice: 'Les rendements hebdomadaires peuvent être consultés dans la communauté.' },
-    operableItems: { title: 'Instruments négociables', commodities: 'Matières premières', currencyPairs: 'Paires de devises' },
+    actualReturns: { title: 'Rendements réels', viewAll: 'Tout afficher', viewLess: 'Afficher moins', weeklyNotice: 'Période de trading réelle : 2026.04.01~2026.06.31\nLes informations détaillées sur les rendements peuvent être consultées dans la communauté.', totalGrowth: 'Croissance totale', maxDrawdown: 'Perte maximale' },
+    operableItems: { title: 'Instruments négociables', commodities: 'Matières premières', currencyPairs: 'Paires de devises', indices: 'Indices' },
     footer: { desc: 'RealQuant est une société d\'investissement quantitative fournissant des solutions d\'investissement quantitatives basées sur les données.', disclaimer: 'Les systèmes et solutions de trading automatisés ne sont pas des produits garantissant des profits. En raison de la nature du marché, une périodicité existe, de sorte que les périodes de profit et les périodes de perte coexistent. Basés sur les probabilités et les statistiques, nous visons à ce que le capital tende progressivement vers le haut, et les backtests et rendements réels exprimés sur ce site Web correspondent aux performances passées. Veuillez comprendre clairement que les performances passées ne peuvent que prédire les performances futures et ne garantissent absolument pas le capital ou les bénéfices du client.', rights: '© 2026 RealQuant. Tous droits réservés.' },
     admin: { title: 'Tableau de bord administrateur', tabs: { posts: 'Gestion des messages', settings: 'Paramètres de conception' }, posts: { add: 'Ajouter un message', edit: 'Modifier', delete: 'Supprimer', save: 'Enregistrer', cancel: 'Annuler', titleLabel: 'Titre', contentLabel: 'Contenu', imageLabel: 'URL de l\'image' }, settings: { themeColor: 'Couleur principale du thème', fontFamily: 'Police principale', save: 'Enregistrer les paramètres' } }
   },
@@ -562,8 +565,8 @@ export const translations = {
         { question: 'मैं लाभ कैसे निकालूँ?', answer: 'जब आप समुदाय में शामिल होते हैं तो एक गाइड तैयार की जाती है। कृपया गाइड देखें।' }
       ]
     },
-    actualReturns: { title: 'वास्तविक रिटर्न', viewAll: 'सभी देखें', viewLess: 'कम देखें', weeklyNotice: 'साप्ताहिक रिटर्न समुदाय में देखे जा सकते हैं।' },
-    operableItems: { title: 'संचालन योग्य आइटम', commodities: 'वस्तुएं', currencyPairs: 'मुद्रा जोड़े' },
+    actualReturns: { title: 'वास्तविक रिटर्न', viewAll: 'सभी देखें', viewLess: 'कम देखें', weeklyNotice: 'वास्तविक ट्रेडिंग अवधि: 2026.04.01~2026.06.31\nविस्तृत रिटर्न जानकारी समुदाय में जांची जा सकती है।', totalGrowth: 'कुल वृद्धि', maxDrawdown: 'अधिकतम गिरावट' },
+    operableItems: { title: 'संचालन योग्य आइटम', commodities: 'वस्तुएं', currencyPairs: 'मुद्रा जोड़े', indices: 'सूचकांक' },
     footer: { desc: 'RealQuant एक मात्रात्मक निवेश फर्म है जो डेटा-संचालित मात्रात्मक निवेश समाधान प्रदान करती है।', disclaimer: 'स्वचालित ट्रेडिंग सिस्टम और समाधान ऐसे उत्पाद नहीं हैं जो लाभ की गारंटी देते हैं। बाजार की प्रकृति के कारण, आवधिकता मौजूद है, इसलिए लाभ की अवधि और हानि की अवधि सह-अस्तित्व में है। संभावना और सांख्यिकी के आधार पर, हमारा लक्ष्य है कि बीज धीरे-धीरे ऊपर की ओर बढ़े, और इस वेबसाइट पर व्यक्त बैकटेस्ट और वास्तविक रिटर्न पिछले प्रदर्शन के अनुरूप हैं। कृपया स्पष्ट रूप से समझें कि पिछला प्रदर्शन केवल भविष्य के प्रदर्शन की भविष्यवाणी कर सकता है और ग्राहक के मूलधन या लाभ की पूर्ण गारंटी नहीं देता है।', rights: '© 2026 RealQuant. सर्वाधिकार सुरक्षित।' },
     admin: { title: 'व्यवस्थापक डैशबोर्ड', tabs: { posts: 'पोस्ट प्रबंधन', settings: 'डिज़ाइन सेटिंग्स' }, posts: { add: 'नई पोस्ट जोड़ें', edit: 'संपादित करें', delete: 'हटाएं', save: 'सहेजें', cancel: 'रद्द करें', titleLabel: 'शीर्षक', contentLabel: 'सामग्री', imageLabel: 'छवि URL' }, settings: { themeColor: 'मुख्य थीम रंग', fontFamily: 'प्राथमिक फ़ॉन्ट', save: 'सेटिंग्स सहेजें' } }
   },
@@ -624,8 +627,8 @@ export const translations = {
         { question: '¿Cómo retiro los beneficios?', answer: 'Se prepara una guía cuando ingresas a la comunidad. Por favor, consulta la guía.' }
       ]
     },
-    actualReturns: { title: 'Rentabilidades reales', viewAll: 'Ver todo', viewLess: 'Ver menos', weeklyNotice: 'Los rendimientos semanales se pueden consultar en la comunidad.' },
-    operableItems: { title: 'Instrumentos operables', commodities: 'Materias primas', currencyPairs: 'Pares de divisas' },
+    actualReturns: { title: 'Rentabilidades reales', viewAll: 'Ver todo', viewLess: 'Ver menos', weeklyNotice: 'Período de trading real: 2026.04.01~2026.06.31\nLa información detallada de los rendimientos se puede verificar en la comunidad.', totalGrowth: 'Crecimiento total', maxDrawdown: 'Drawdown máximo' },
+    operableItems: { title: 'Instrumentos operables', commodities: 'Materias primas', currencyPairs: 'Pares de divisas', indices: 'Índices' },
     footer: { desc: 'RealQuant es una firma de inversión cuantitativa que ofrece soluciones de inversión cuantitativa basadas en datos.', disclaimer: 'Los sistemas y soluciones de trading automatizados no son productos que garanticen beneficios. Debido a la naturaleza del mercado, existe periodicidad, por lo que coexisten periodos de ganancias y periodos de pérdidas. Basándonos en la probabilidad y la estadística, nuestro objetivo es que el capital tienda gradualmente al alza, y los backtests y rendimientos reales expresados en este sitio web corresponden al rendimiento pasado. Por favor, comprenda claramente que el rendimiento pasado solo puede predecir el rendimiento futuro y no garantiza absolutamente el capital ni los beneficios del cliente.', rights: '© 2026 RealQuant. Todos los derechos reservados.' },
     admin: { title: 'Panel de administración', tabs: { posts: 'Gestión de publicaciones', settings: 'Ajustes de diseño' }, posts: { add: 'Añadir publicación', edit: 'Editar', delete: 'Eliminar', save: 'Guardar', cancel: 'Cancelar', titleLabel: 'Título', contentLabel: 'Contenido', imageLabel: 'URL de la imagen' }, settings: { themeColor: 'Color principal del tema', fontFamily: 'Fuente principal', save: 'Guardar ajustes' } }
   },
@@ -686,8 +689,8 @@ export const translations = {
         { question: 'كيف أسحب الأرباح؟', answer: 'يتم إعداد دليل عند دخولك المجتمع. يرجى الرجوع إلى الدليل.' }
       ]
     },
-    actualReturns: { title: 'العوائد الحقيقية', viewAll: 'عرض الكل', viewLess: 'عرض أقل', weeklyNotice: 'يمكن التحقق من العوائد الأسبوعية في المجتمع.' },
-    operableItems: { title: 'الأدوات القابلة للتداول', commodities: 'السلع', currencyPairs: 'أزواج العملات' },
+    actualReturns: { title: 'العوائد الحقيقية', viewAll: 'عرض الكل', viewLess: 'عرض أقل', weeklyNotice: 'فترة التداول الفعلية: 2026.04.01~2026.06.31\nيمكن التحقق من معلومات العائد التفصيلية في المجتمع.', totalGrowth: 'إجمالي النمو', maxDrawdown: 'الحد الأقصى للتراجع' },
+    operableItems: { title: 'الأدوات القابلة للتداول', commodities: 'السلع', currencyPairs: 'أزواج العملات', indices: 'مؤشرات' },
     footer: { desc: 'RealQuant هي شركة استثمار كمي تقدم حلول استثمار كمي قائمة على البيانات.', disclaimer: 'أنظمة وحلول التداول الآلي ليست منتجات تضمن الأرباح. نظراً لطبيعة السوق، توجد دورية، لذا تتعايش فترات الربح وفترات الخسارة. بناءً على الاحتمالات والإحصاءات، نهدف إلى أن يتجه رأس المال تدريجياً نحو الأعلى، وتتوافق الاختبارات العكسية والعوائد الفعلية المعبر عنها في هذا الموقع مع الأداء السابق. يرجى فهم بوضوح أن الأداء السابق يمكنه فقط التنبؤ بالأداء المستقبلي ولا يضمن بشكل مطلق رأس مال العميل أو أرباحه.', rights: '© 2026 RealQuant. جميع الحقوق محفوظة.' },
     admin: { title: 'لوحة تحكم المسؤول', tabs: { posts: 'إدارة المنشورات', settings: 'إعدادات التصميم' }, posts: { add: 'إضافة منشور جديد', edit: 'تعديل', delete: 'حذف', save: 'حفظ', cancel: 'إلغاء', titleLabel: 'العنوان', contentLabel: 'المحتوى', imageLabel: 'رابط الصورة' }, settings: { themeColor: 'لون السمات الرئيسي', fontFamily: 'الخط الأساسي', save: 'حفظ الإعدادات' } }
   },
