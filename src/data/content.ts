@@ -118,7 +118,7 @@ export const translations = {
       faqs: [
         { question: '백테스팅과 실제 수익률은 진짜인가요?', answer: '백테스팅과 실제 수익률은 100% 사실이며, 거래 플랫폼에서 제공하는 화면이기 때문에 조작할 수 없습니다.' },
         { question: 'RealQuant는 무료인가요?', answer: '프로그램의 월결제 비용 등 별도의 비용은 없으나, 수익분에 대한 운용보수가 존재합니다. 손실이 발생하였을 경우에는 운용보수가 없습니다.' },
-        { question: '최소 투자 금액은 얼마인가요?', answer: '포지션의 최소 계약 수량이 있기 때문에 500 USDT(테더)부터 가능합니다.' },
+        { question: '최소 투자 금액은 얼마인가요?', answer: '포지션의 최소 계약 수량이 있기 때문에 $1,000부터 가능합니다.' },
         { question: '내 투자금은 안전한가요?', answer: 'RealQuant는 고객의 자금을 직접 수취하지 않습니다. 고객님의 거래소 계정과 RealQuant가 연동되는 시스템이며, 저희는 포지션에 대한 진입과 청산 권한만 가질 뿐 입출금 권한은 없기 때문에 고객님의 자산은 안전합니다.' },
         { question: '어떤 전략으로 수익을 내나요?', answer: 'RealQuant는 고도화된 알고리즘(순환매 시스템, 동적 변동성 적응, 추세+역추세 혼합 작동, 적응형 회복 논리)을 결합하여 만든 퀀트 프로그램입니다. XAUUSD(금), USTECH100(나스닥 100), US30(다우존스), AUDCAD(호주달러/캐나다달러 통화쌍), EURUSD(유로/달러 통화쌍), GBPUSD(파운드/달러 통화쌍) 등 다양한 종목을 거래하여 수익을 창출합니다.' },
         { question: '전략 설정은 어떻게 하나요?', answer: '전략 설정은 고객 개개인의 의사가 필요하지 않으며 별도의 설정이 필요 없습니다. (100% 자동화 24/7) 커뮤니티 입장 시 가이드가 준비되어 있습니다. 가이드를 참고해 주세요.' },
@@ -182,7 +182,7 @@ export const translations = {
       faqs: [
         { question: 'Are backtests and actual returns real?', answer: 'Backtests and actual returns are 100% real, and since they are screens provided by the trading platform, they cannot be manipulated.' },
         { question: 'Is RealQuant free?', answer: 'There are no separate costs such as monthly program fees, but there is a management fee on profits. In the event of a loss, there is no management fee.' },
-        { question: 'What is the minimum investment amount?', answer: 'Since there is a minimum contract quantity for positions, it is possible from 500 USDT (Tether).' },
+        { question: 'What is the minimum investment amount?', answer: 'Since there is a minimum contract quantity for positions, it is possible from $1,000.' },
         { question: 'Is my investment safe?', answer: 'RealQuant does not directly receive customer funds. It is a system where your exchange account and RealQuant are linked, and we only have the authority to make buy and sell decisions for positions, not the authority to deposit or withdraw funds, so your assets are safe.' },
         { question: 'What strategy do you use to make profit?', answer: 'RealQuant is a quant program created by combining advanced algorithms (Rotation System, Dynamic Volatility Adaptation, Trend + Counter-Trend Mixed Operation, Adaptive Recovery Logic). It creates profit by trading various instruments such as XAUUSD (Gold), USTECH100 (Nasdaq 100), US30 (Dow Jones), AUDCAD (AUD/CAD currency pair), EURUSD (EUR/USD currency pair), and GBPUSD (GBP/USD currency pair).' },
         { question: 'How do I set up the strategy?', answer: 'Setting up the strategy does not require the customer\'s individual intention and no separate setting is required. (100% automated 24/7) A guide is prepared when you enter the community. Please refer to the guide.' },
@@ -248,7 +248,7 @@ export const translations = {
       faqs: [
         { question: '回测和实际收益是真实的吗？', answer: '回测和实际收益是 100% 真实的，由于它们是交易平台提供的屏幕，因此无法操纵。' },
         { question: 'RealQuant 是免费的吗？', answer: '没有程序月费等额外费用，但对利润收取管理费。发生亏损时不收取管理费。' },
-        { question: '最低投资金额是多少？', answer: '由于头寸有最低合约数量，因此可以从 500 USDT（泰达币）开始。' },
+        { question: '最低投资金额是多少？', answer: '由于头寸有最低合约数量，因此可以从 $1,000 开始。' },
         { question: '我的投资安全吗？', answer: 'RealQuant 不直接接收客户资金。这是一个您的交易所账户和 RealQuant 连接的系统，我们只有权对头寸做出买卖决策，而无权存款或取款，因此您的资产是安全的。' },
         { question: '使用什么策略来实现利润？', answer: 'RealQuant 是一个通过结合先进算法（轮换系统、动态波动率适应、趋势 + 逆趋势混合操作、自适应恢复逻辑）创建的量化程序。它通过交易 XAUUSD（黄金）、USTECH100（纳斯达克 100）、US30（道琼斯）、AUDCAD（澳元/加元货币对）、EURUSD（欧元/美元货币对）和 GBPUSD（英镑/美元货币对）等各种工具来创造利润。' },
         { question: '我该如何设置策略？', answer: '设置策略不需要客户的个人意愿，也不需要单独设置。（100% 全自动 24/7）当您进入社区时，会准备一份指南。请参考该指南。' },
@@ -310,7 +310,7 @@ export const translations = {
       faqs: [
         { question: 'バックテストと実際の収益は本物ですか？', answer: 'バックテストと実際の収益は100%本物であり、取引プラットフォームが提供する画面であるため、偽造することはできません。' },
         { question: 'RealQuantは無料ですか？', answer: 'プログラムの月額利用料などの別途費用はありませんが、利益に対する運用報酬が発生します。損失が発生した場合は運用報酬はありません。' },
-        { question: '最低投資金額はいくらですか？', answer: 'ポジションの最小契約数があるため、500 USDT (テザー) から可能です。' },
+        { question: '最低投資金額はいくらですか？', answer: 'ポジションの最小契約数があるため、$1,000から可能です。' },
         { question: '私の投資は安全ですか？', answer: 'RealQuantは顧客の資金を直接受け取りません。お客様の取引所口座とRealQuantが連携され、ポジションの売買決定権のみを持ち、入出金権限はないため、お客様의資産は安全です。' },
         { question: '利益を出すためにどのような戦略が使われていますか？', answer: 'RealQuantは、高度なアルゴリズム（循環物色システム、動的なボラティリティ適応、トレンド+逆トレンド混合作動、適応型回復ロジック）を組み合わせて作成されたクオンツプログラムです。XAUUSD（金）、USTECH100（ナスダック100）、US30（ダウ・ジョーンズ）、AUDCAD（豪ドル/カナダドル）、EURUSD（ユーロ/米ドル）、GBPUSD（英ポンド/米ドル）などの様々な商品を取引して利益を創出します。' },
         { question: '戦略をどのように設定すればよいですか？', answer: '戦略の設定は、お客様の個別の意図を必要とせず、別途設定する必要もありません。（24時間365日100%自動化）コミュニティに参加するとガイドが用意されています。ガイドを参照してください。' },
@@ -372,7 +372,7 @@ export const translations = {
       faqs: [
         { question: 'Являются ли бэктестинг и реальная доходность настоящими?', answer: 'Бэктестинг и реальная доходность на 100% реальны и не могут быть подделаны, так как это экраны, предоставляемые торговой платформой.' },
         { question: 'Является ли RealQuant бесплатным?', answer: 'Да. Это 100% бесплатно. Мы не получаем комиссионных за управление прибылью и не взимаем отдельную ежемесячную плату за программу.' },
-        { question: 'Какова минимальная сумма инвестиций?', answer: 'Поскольку существует минимальное количество контрактов для позиций, это возможно от 500 USDT (Tether).' },
+        { question: 'Какова минимальная сумма инвестиций?', answer: 'Поскольку существует минимальное количество контрактов для позиций, это возможно от $1,000.' },
         { question: 'Безопасны ли мои инвестиции?', answer: 'RealQuant не получает средства клиентов напрямую. Это система, в которой ваш биржевой счет и RealQuant связаны, и у нас есть полномочия только принимать решения о покупке и продаже позиций, а не полномочия на ввод или вывод средств, поэтому ваши активы в безопасности.' },
         { question: 'Какая стратегия используется для достижения прибыли?', answer: 'RealQuant — это квантовая программа, созданная путем сочетания передовых алгоритмов (система ротации, динамическая адаптация к волатильности, смешанная работа тренда и контртренда, адаптивная логика восстановления). Она создает прибыль, торгуя AUDCAD (валютная пара австралийский доллар/канадский доллар) и XAUUSD (золото).' },
         { question: 'Как мне настроить стратегию?', answer: 'Настройка стратегии не требует индивидуального намерения клиента и не требует отдельной настройки. (100% автоматизировано 24/7) Руководство подготавливается при вступлении в сообщество. Пожалуйста, обратитесь к руководству.' },
@@ -434,7 +434,7 @@ export const translations = {
       faqs: [
         { question: 'Sind Backtesting und tatsächliche Renditen echt?', answer: 'Backtesting und tatsächliche Renditen sind zu 100 % echt und können nicht manipuliert werden, da es sich um Bildschirme handelt, die von der Handelsplattform bereitgestellt werden.' },
         { question: 'Ist RealQuant kostenlos?', answer: 'Ja. Es ist 100 % kostenlos. Wir erhalten keine Verwaltungsgebühren auf Gewinne und erheben keine separaten monatlichen Gebühren für das Programm.' },
-        { question: 'Was ist der Mindestanlagebetrag?', answer: 'Da es eine Mindestkontraktmenge für Positionen gibt, ist dies ab 500 USDT (Tether) möglich.' },
+        { question: 'Was ist der Mindestanlagebetrag?', answer: 'Da es eine Mindestkontraktmenge für Positionen gibt, ist dies ab $1,000 möglich.' },
         { question: 'Ist meine Investition sicher?', answer: 'RealQuant erhält keine Kundengelder direkt. Es ist ein System, bei dem Ihr Börsenkonto und RealQuant verbunden sind, und wir haben nur die Befugnis, Kauf- und Verkaufsentscheidungen für Positionen zu treffen, nicht die Befugnis, Gelder einzuzahlen oder abzuheben, sodass Ihr Vermögen sicher ist.' },
         { question: 'Welche Strategie wird verwendet, um Gewinne zu erzielen?', answer: 'RealQuant ist ein Quant-Programm, das durch die Kombination fortschrittlicher Algorithmen (Rotationssystem, dynamische Volatilitätsanpassung, Trend + Gegentrend-Mischbetrieb, adaptive Erholungslogik) erstellt wurde. Es erzielt Gewinne durch den Handel mit AUDCAD (Währungspaar Australischer Dollar/Kanadischer Dollar) und XAUUSD (Gold).' },
         { question: 'Wie richte ich die Strategie ein?', answer: 'Die Einrichtung der Strategie erfordert keine individuelle Absicht des Kunden und es ist keine separate Einrichtung erforderlich. (100 % automatisiert rund um die Uhr) Ein Leitfaden wird erstellt, wenn Sie der Community beitreten. Bitte beachten Sie den Leitfaden.' },
@@ -496,7 +496,7 @@ export const translations = {
       faqs: [
         { question: 'Le backtesting et les rendements réels sont-ils réels ?', answer: 'Le backtesting et les rendements réels sont 100 % réels et ne peuvent pas être manipulés car il s\'agit d\'écrans fournis par la plateforme de trading.' },
         { question: 'RealQuant est-il gratuit ?', answer: 'Oui. C\'est 100 % gratuit. Nous ne percevons pas de frais de gestion sur les bénéfices, et nous ne facturons pas de frais mensuels distincts pour le programme.' },
-        { question: 'Quel est le montant minimum d\'investissement ?', answer: 'Puisqu\'il existe une quantité minimale de contrat pour les positions, c\'est possible à partir de 500 USDT (Tether).' },
+        { question: 'Quel est le montant minimum d\'investissement ?', answer: 'Puisqu\'il existe une quantité minimale de contrat pour les positions, c\'est possible à partir de $1,000.' },
         { question: 'Mon investissement est-il sûr ?', answer: 'RealQuant ne reçoit pas directement les fonds des clients. C\'est un système où votre compte d\'échange et RealQuant sont connectés, et nous n\'avons que l\'autorité de prendre des décisions d\'achat et de vente pour les positions, pas l\'autorité de déposer ou de retirer des fonds, donc vos actifs sont en sécurité.' },
         { question: 'Quelle stratégie est utilisée pour réaliser des profits ?', answer: 'RealQuant est un programme quant créé en combinant des algorithmes avancés (système de rotation, adaptation dynamique à la volatilité, opération mixte tendance + contre-tendance, logique de récupération adaptative). Il crée des profits en négociant l\'AUDCAD (paire de devises Dollar australien/Dollar canadien) et l\'XAUUSD (Or).' },
         { question: 'Comment configurer la stratégie ?', answer: 'La configuration de la stratégie ne nécessite pas l\'intention individuelle du client et aucune configuration séparée n\'est requise. (100 % automatisé 24h/24, 7j/7) Un guide est préparé lorsque vous entrez dans la communauté. Veuillez vous référer au guide.' },
@@ -558,7 +558,7 @@ export const translations = {
       faqs: [
         { question: 'क्या बैकटेस्टिंग और वास्तविक रिटर्न वास्तविक हैं?', answer: 'बैकटेस्टिंग और वास्तविक रिटर्न 100% वास्तविक हैं और इनके साथ छेड़छाड़ नहीं की जा सकती क्योंकि ये ट्रेडिंग प्लेटफॉर्म द्वारा प्रदान की गई स्क्रीन हैं।' },
         { question: 'क्या RealQuant मुफ़्त है?', answer: 'हाँ। यह 100% मुफ़्त है। हम लाभ के लिए प्रबंधन शुल्क नहीं लेते हैं, और न ही हम कार्यक्रम के लिए अलग से मासिक शुल्क लेते हैं।' },
-        { question: 'न्यूनतम निवेश राशि क्या है?', answer: 'चूंकि पोजीशन के लिए न्यूनतम अनुबंध राशि होती है, इसलिए यह 500 USDT (Tether) से संभव है।' },
+        { question: 'न्यूनतम निवेश राशि क्या है?', answer: 'चूंकि पोजीशन के लिए न्यूनतम अनुबंध राशि होती है, इसलिए यह $1,000 से संभव है।' },
         { question: 'क्या मेरा निवेश सुरक्षित है?', answer: 'RealQuant सीधे ग्राहकों से धन प्राप्त नहीं करता है। यह एक ऐसी प्रणाली है जहाँ आपका एक्सचेंज खाता और RealQuant जुड़े हुए हैं, और हमारे पास केवल पोजीशन खरीदने और बेचने के निर्णय लेने का अधिकार है, न कि धन जमा करने या निकालने का अधिकार, इसलिए आपकी संपत्ति सुरक्षित है।' },
         { question: 'लाभ प्राप्त करने के लिए किस रणनीति का उपयोग किया जाता है?', answer: 'RealQuant एक मात्रात्मक कार्यक्रम है जिसे उन्नत एल्गोरिदम (रोटेशन सिस्टम, गतिशील अस्थिरता अनुकूलन, ट्रेंड + काउंटर-ट्रेंड मिश्रित ऑपरेशन, अनुकूली पुनर्प्राप्ति तर्क) के संयोजन से बनाया गया है। यह AUDCAD (ऑस्ट्रेलियाई डॉलर/कनाडाई डॉलर मुद्रा जोड़ी) और XAUUSD (सोना) का व्यापार करके लाभ कमाता है।' },
         { question: 'मैं रणनीति कैसे सेट करूँ?', answer: 'रणनीति सेट करने के लिए ग्राहक के व्यक्तिगत इरादे की आवश्यकता नहीं होती है और किसी अलग सेटिंग की आवश्यकता नहीं होती है। (24/7 100% स्वचालित) जब आप समुदाय में शामिल होते हैं तो एक गाइड तैयार की जाती है। कृपया गाइड देखें।' },
@@ -620,7 +620,7 @@ export const translations = {
       faqs: [
         { question: '¿Son reales el backtesting y los rendimientos reales?', answer: 'El backtesting y los rendimientos reales son 100% reales y no pueden ser manipulados ya que son pantallas proporcionadas por la plataforma de trading.' },
         { question: '¿Es RealQuant gratis?', answer: 'Sí. Es 100% gratis. No recibimos comisiones de gestión por los beneficios, ni cobramos cuotas mensuales por el programa.' },
-        { question: '¿Cuál es el monto mínimo de inversión?', answer: 'Dado que existe una cantidad mínima de contrato para las posiciones, es posible desde 500 USDT (Tether).' },
+        { question: '¿Cuál es el monto mínimo de inversión?', answer: 'Dado que existe una cantidad mínima de contrato para las posiciones, es posible desde $1,000.' },
         { question: '¿Es segura mi inversión?', answer: 'RealQuant no recibe fondos de los clientes directamente. Es un sistema donde su cuenta de intercambio y RealQuant están conectados, y solo tenemos la autoridad para tomar decisiones de compra y venta de posiciones, no la autoridad para depositar o retirar fondos, por lo que sus activos están seguros.' },
         { question: '¿Qué estrategia se utiliza para lograr beneficios?', answer: 'RealQuant es un programa cuantitativo creado mediante la combinación de algoritmos avanzados (sistema de rotación, adaptación dinámica a la volatilidad, operación mixta de tendencia + contratendencia, lógica de recuperación adaptativa). Crea beneficios operando AUDCAD (par de divisas Dólar australiano/Dólar canadiense) y XAUUSD (Oro).' },
         { question: '¿Cómo configuro la estrategia?', answer: 'La configuración de la estrategia no requiere la intención individual del cliente y no se requiere una configuración por separado. (100% automatizado 24/7) Se prepara una guía cuando ingresas a la comunidad. Por favor, consulta la guía.' },
@@ -682,7 +682,7 @@ export const translations = {
       faqs: [
         { question: 'هل الاختبار العكسي والعوائد الفعلية حقيقية؟', answer: 'الاختبار العكسي والعوائد الفعلية حقيقية بنسبة 100% ولا يمكن التلاعب بها لأنها شاشات مقدمة من منصة التداول.' },
         { question: 'هل RealQuant مجاني؟', answer: 'نعم. إنه مجاني بنسبة 100%. نحن لا نتلقى رسوم إدارة على الأرباح، ولا نفرض رسومًا شهرية منفصلة للبرنامج.' },
-        { question: 'ما هو الحد الأدنى لمبلغ الاستثمار؟', answer: 'بما أن هناك حداً أدنى لكمية العقد للمراكز، فمن الممكن البدء من 500 USDT (Tether).' },
+        { question: 'ما هو الحد الأدنى لمبلغ الاستثمار؟', answer: 'بما أن هناك حداً أدنى لكمية العقد للمراكز، فمن الممكن البدء من $1,000.' },
         { question: 'هل استثماري آمن؟', answer: 'لا تتلقى RealQuant أموال العملاء مباشرة. إنه نظام يتم فيه ربط حساب البورصة الخاص بك و RealQuant، ولدينا السلطة فقط لاتخاذ قرارات البيع والشراء للمراكز، وليس لدينا السلطة لإيداع أو سحب الأموال، لذا فإن أصولك آمنة.' },
         { question: 'ما هي الاستراتيجية المستخدمة لتحقيق الأرباح؟', answer: 'RealQuant هو برنامج كمي تم إنشاؤه من خلال الجمع بين الخوارزميات المتقدمة (نظام التدوير، التكيف الديناميكي مع التقلبات، عملية مختلطة للاتجاه + الاتجاه المعاكس، منطق الاسترداد التكيفي). يحقق أرباحاً من خلال تداول AUDCAD (زوج عملات الدولار الأسترالي/الدولار الكندي) و XAUUSD (الذهب).' },
         { question: 'كيف أقوم بإعداد الاستراتيجية؟', answer: 'لا يتطلب إعداد الاستراتيجية نية فردية من العميل ولا يلزم إعداد منفصل. (آلي بنسبة 100% على مدار الساعة طوال أيام الأسبوع) يتم إعداد دليل عند دخولك المجتمع. يرجى الرجوع إلى الدليل.' },
