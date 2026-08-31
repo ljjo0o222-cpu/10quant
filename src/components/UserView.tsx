@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; // synced
 import { translations, Language, Post } from '../data/content';
 import { BacktestChart } from './BacktestChart';
 import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity } from 'lucide-react';
@@ -240,11 +240,11 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
               <div className="grid grid-cols-2 gap-4 sm:gap-8">
                 <div className="bg-zinc-950 p-6 rounded-xl border border-zinc-800/50 text-center">
                   <div className="text-sm sm:text-base text-gray-400 mb-2">{t.actualReturns.totalGrowth}</div>
-                  <div className="text-2xl sm:text-5xl font-bold" style={{ color: themeColor }}>49.56%</div>
+                  <div className="text-2xl sm:text-5xl font-bold" style={{ color: themeColor }}>227.8%</div>
                 </div>
                 <div className="bg-zinc-950 p-6 rounded-xl border border-zinc-800/50 text-center">
-                  <div className="text-sm sm:text-base text-gray-400 mb-2">{t.actualReturns.maxDrawdown}</div>
-                  <div className="text-2xl sm:text-5xl font-bold text-red-400">0.922%</div>
+                  <div className="text-sm sm:text-base text-gray-400 mb-2">{t.actualReturns.winRate || '승률'}</div>
+                  <div className="text-2xl sm:text-5xl font-bold text-blue-400">77.27%</div>
                 </div>
               </div>
             </motion.div>
