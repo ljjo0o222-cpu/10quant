@@ -11,7 +11,6 @@ import { UserView } from './components/UserView';
 import { AdminView } from './components/AdminView';
 import { AdminLogin } from './components/AdminLogin';
 import { ChatSupport } from './components/ChatSupport';
-import { initializePixels } from './utils/tracker';
 
 export default function App() {
   const [lang, setLang] = useState<Language>('ko');
@@ -19,11 +18,6 @@ export default function App() {
   const [themeColor, setThemeColor] = useState<string>('#2563eb'); // Default blue
   const [posts, setPosts] = useState<Post[]>(initialPosts);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-
-  // Initialize attribution and marketing pixels on mount
-  useEffect(() => {
-    initializePixels();
-  }, []);
 
   // Update document title and direction based on language
   useEffect(() => {

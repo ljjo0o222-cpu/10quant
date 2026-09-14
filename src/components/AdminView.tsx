@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { translations, Language, Post } from '../data/content';
-import { Plus, Edit2, Trash2, Save, X, Image as ImageIcon, LogOut, Activity } from 'lucide-react';
-import { TrackingPixelManager } from './TrackingPixelManager';
+import { Plus, Edit2, Trash2, Save, X, Image as ImageIcon, LogOut } from 'lucide-react';
 
 interface AdminViewProps {
   lang: Language;
@@ -14,7 +13,7 @@ interface AdminViewProps {
 
 export const AdminView: React.FC<AdminViewProps> = ({ lang, themeColor, setThemeColor, posts, setPosts, onLogout }) => {
   const t = translations[lang].admin;
-  const [activeTab, setActiveTab] = useState<'posts' | 'tracking' | 'settings'>('posts');
+  const [activeTab, setActiveTab] = useState<'posts' | 'settings'>('posts');
   const [editingPost, setEditingPost] = useState<Post | null>(null);
   const [isAdding, setIsAdding] = useState(false);
 
@@ -133,15 +132,6 @@ export const AdminView: React.FC<AdminViewProps> = ({ lang, themeColor, setTheme
               }`}
             >
               {t.tabs.posts}
-            </button>
-            <button
-              onClick={() => setActiveTab('tracking')}
-              className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 flex items-center space-x-1.5 ${
-                activeTab === 'tracking' ? 'bg-black text-white shadow-sm' : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              <Activity size={15} className="text-emerald-400" />
-              <span>{lang === 'ko' ? '유입 추적 & 픽셀 설정' : 'Tracking & Pixels'}</span>
             </button>
             <button
               onClick={() => setActiveTab('settings')}
@@ -268,10 +258,6 @@ export const AdminView: React.FC<AdminViewProps> = ({ lang, themeColor, setTheme
               </div>
             </div>
           </div>
-        )}
-
-        {activeTab === 'tracking' && (
-          <TrackingPixelManager themeColor={themeColor} lang={lang} />
         )}
       </div>
     </div>
