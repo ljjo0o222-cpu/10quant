@@ -8,6 +8,7 @@ export const translations = {
       quantStrategies: 'RealQuant 전략',
       performance: '백테스트',
       actualReturns: '실제 수익률',
+      faq: '자주 묻는 질문',
       admin: '관리자',
     },
     hero: {
@@ -131,12 +132,12 @@ export const translations = {
       chatButton: '채팅 시작',
       floatingButton: '1:1 채팅',
       faqs: [
-        { question: '백테스팅과 실제 수익률은 진짜인가요?', answer: '백테스팅과 실제 수익률은 100% 사실이며, 거래 플랫폼에서 제공하는 화면이기 때문에 조작할 수 없습니다.' },
-        { question: '최소 투자 금액은 얼마인가요?', answer: '포지션의 최소 계약 수량이 있기 때문에 $1,000부터 가능합니다.' },
-        { question: '내 투자금은 안전한가요?', answer: 'RealQuant는 고객의 자금을 직접 수취하지 않습니다. 고객님의 거래소 계정과 RealQuant가 연동되는 시스템이며, 저희는 포지션에 대한 진입과 청산 권한만 가질 뿐 입출금 권한은 없습니다.' },
-        { question: '어떤 전략으로 수익을 내나요?', answer: 'RealQuant는 독립적으로 작동하는 브레이크아웃 전략을 결합하여 다양한 돌파 조건과 가격 확장 구간을 포착하여 거래하도록 설계되었습니다. 퍼센트 기반 위험 관리(Stop Loss), 고영향 뉴스 필터, 시장 마감 보호 등을 통해 안정성을 높였습니다.(Martingale, Grid, 손실 후 계약수 증가 등을 사용하지 않습니다.)' },
-        { question: '전략 설정은 어떻게 하나요?', answer: '전략 설정은 고객 개개인의 의사가 필요하지 않으며 별도의 설정이 필요 없습니다. (100% 자동화 24/7) 커뮤니티 입장 시 가이드가 준비되어 있습니다. 가이드를 참고해 주세요.' },
-        { question: '수익금 출금은 어떻게 하나요?', answer: '커뮤니티 입장 시 가이드가 준비되어 있습니다. 가이드를 참고해 주세요.' }
+        { question: '백테스팅 데이터와 실제 수익률은 검증되었나요?', answer: '리얼퀀트의 백테스팅 및 실계좌 거래 수익률 데이터는 100% 검증된 수치입니다. 공인된 글로벌 거래 플랫폼(MT4/MT5)과 외환 규제기관의 표준 거래 환경에서 기록된 데이터로서 임의로 조작할 수 없습니다. 6년 이상의 정밀 틱 데이터 백테스트와 실제 계좌 운용을 통해 4.18의 프로핏 팩터와 13.23%의 최대 낙폭(MDD) 제어를 완벽히 입증했습니다. 투명한 검증을 위해 커뮤니티에서 실시간 계좌 내역을 상시 공개하고 있습니다.' },
+        { question: '최소 투자 금액은 얼마부터 시작할 수 있나요?', answer: '리얼퀀트 솔루션은 계약 단위별 정밀한 리스크 관리와 포지션 분할 매매를 위해 최소 $1,000부터 운용이 가능합니다. 자본 규모에 맞추어 사전에 정의된 리스크 비율에 따라 계약 수가 최적으로 자동 계산되므로 안정적인 복리 운용을 지원합니다. 무리한 고레버리지를 지양하고 철저한 자금 관리 원칙을 준수합니다.' },
+        { question: '투자 원금과 예치 자산은 어떻게 안전하게 보호되나요?', answer: '리얼퀀트는 고객의 투자금을 절대 직접 수취하거나 관리하지 않습니다. 고객 본인 명의의 글로벌 정식 규제 외환·CFD 거래소 계정에 자금을 예치하고, 리얼퀀트는 API 연동 또는 공인 카피트레이딩 시스템을 통해 오직 주문 진입과 청산 권한만을 가집니다. 입출금에 대한 모든 통제권은 전적으로 고객에게 귀속되어 있으므로 자금 유용이나 사기 리스크로부터 100% 안전합니다.' },
+        { question: '어떤 퀀트 알고리즘 전략과 원리로 수익을 창출하나요?', answer: '리얼퀀트는 독립적으로 작동하는 다중 브레이크아웃(Breakout) 전략을 상호 유기적으로 결합하여 시장의 변동성 확대 및 추세 돌파 구간을 정밀하게 포착합니다. 특히 계좌 파산의 주원인이 되는 마틴게일(Martingale, 손실 시 2배 베팅)과 그리드(Grid, 물타기 분할 매수) 방식을 절대 사용하지 않습니다. 모든 포지션에 100% 필수 손절(Stop Loss)을 적용하며, 미국 CPI·FOMC 등 고위험 경제지표 발표 시점 자동 거래 회피 및 주말 갭 리스크 방지 기술이 탑재되어 있어 어떠한 급변 장세에서도 시드가 안전하게 보호됩니다.' },
+        { question: '초보자도 쉽게 이용할 수 있나요? 별도의 프로그램 설치가 필요한가요?', answer: '초보자도 즉시 참여하실 수 있습니다. 복잡한 지표 설정이나 개인 PC에 프로그램을 24시간 켜둘 필요가 없으며, 전용 클라우드 서버와 거래소 연동을 통해 24시간 100% 전자동으로 작동합니다. 공식 텔레그램 커뮤니티 입장 시 계좌 개설부터 연동까지 단계별 상세 가이드와 1:1 전담 매니저 지원을 제공해 드립니다.' },
+        { question: '수익금 및 원금 출금은 언제든지 가능한가요?', answer: '네, 언제든지 전액 출금이 가능합니다. 고객 본인 명의의 거래소 계좌이므로 의무 락업(Lock-up) 기간이나 수수료 페널티가 전혀 없으며, 본인이 원하실 때 실시간으로 원하는 금액만큼 본인의 은행 계좌나 가상자산 지갑으로 자유롭게 출금하실 수 있습니다.' }
       ]
     },
     footer: {
@@ -147,7 +148,7 @@ export const translations = {
     admin: { title: '관리자 대시보드', tabs: { posts: '게시물 관리', settings: '디자인 설정' }, posts: { add: '새 게시물 추가', edit: '수정', delete: '삭제', save: '저장', cancel: '취소', titleLabel: '제목', contentLabel: '내용', imageLabel: '이미지 URL' }, settings: { themeColor: '메인 테마 컬러', fontFamily: '메인 폰트', save: '설정 저장' } }
   },
   en: {
-    nav: { home: 'Home', partners: 'Partners', strategies: 'RealQuant Strategy', quantStrategies: 'RealQuant Strategy', performance: 'Backtest', actualReturns: 'Actual Returns', admin: 'Admin' },
+    nav: { home: 'Home', partners: 'Partners', strategies: 'RealQuant Strategy', quantStrategies: 'RealQuant Strategy', performance: 'Backtest', actualReturns: 'Actual Returns', faq: 'FAQ', admin: 'Admin' },
     hero: { title: 'Real Returns Proven by Data. RealQuant', subtitle: 'RealQuant pursues stable returns by eliminating emotions and focusing solely on profit through advanced algorithms and big data analysis.', cta: 'Join Community' },
     partners: { tag: '01 / Partners', title: 'Supported by Industry Leaders and Institutions', desc: 'Trusted by the world\'s leading financial institutions and technology partners.', viewMore: 'View More +' },
     features: {
@@ -254,7 +255,7 @@ export const translations = {
     admin: { title: 'Admin Dashboard', tabs: { posts: 'Post Management', settings: 'Design Settings' }, posts: { add: 'Add New Post', edit: 'Edit', delete: 'Delete', save: 'Save', cancel: 'Cancel', titleLabel: 'Title', contentLabel: 'Content', imageLabel: 'Image URL' }, settings: { themeColor: 'Main Theme Color', fontFamily: 'Main Font', save: 'Save Settings' } }
   },
   zh: {
-    nav: { home: '首页', partners: '合作伙伴', strategies: 'RealQuant 策略', quantStrategies: 'RealQuant 策略', performance: '回测', actualReturns: '实际收益', admin: '管理员' },
+    nav: { home: '首页', partners: '合作伙伴', strategies: 'RealQuant 策略', quantStrategies: 'RealQuant 策略', performance: '回测', actualReturns: '实际收益', faq: '常见问题', admin: '管理员' },
     hero: { title: '数据证明的真实收益。RealQuant', subtitle: 'RealQuant 通过先进的算法和大数据分析，排除情感干扰，专注于盈利，追求稳定的收益。', cta: '加入社区' },
     partners: { tag: '01 / 合作伙伴', title: '受到行业领导者和机构的支持', desc: '深受全球领先金融机构和技术合作伙伴的信赖。', viewMore: '查看更多 +' },
     features: {
@@ -357,7 +358,7 @@ export const translations = {
     admin: { title: '管理员控制面板', tabs: { posts: '帖子管理', settings: '设计设置' }, posts: { add: '添加新帖子', edit: '编辑', delete: '删除', save: '保存', cancel: '取消', titleLabel: '标题', contentLabel: '内容', imageLabel: '图片 URL' }, settings: { themeColor: '主主题颜色', fontFamily: '主要字体', save: '保存设置' } }
   },
   ja: {
-    nav: { home: 'ホーム', partners: 'パートナー', strategies: 'RealQuant 戦略', quantStrategies: 'RealQuant 戦略', performance: 'バックテスト', actualReturns: '実際の収益', admin: '管理者' },
+    nav: { home: 'ホーム', partners: 'パートナー', strategies: 'RealQuant 戦略', quantStrategies: 'RealQuant 戦略', performance: 'バックテスト', actualReturns: '実際の収益', faq: 'よくある質問', admin: '管理者' },
     hero: { title: 'データで証明するリアルな収益。RealQuant', subtitle: 'RealQuantは、高度なアルゴリズムとビッグデータ分析を通じて感情を排除し、利益のみに集中することで、安定した収益を追求します。', cta: 'コミュニティに参加' },
     partners: { tag: '01 / パートナー', title: '業界のリーダーや機関からサポートを受けています', desc: '世界をリードする金融機関や技術パートナーから信頼されています。', viewMore: 'もっと見る +' },
     features: {
@@ -460,7 +461,7 @@ export const translations = {
     admin: { title: '管理者ダッシュボード', tabs: { posts: '投稿管理', settings: 'デザイン設定' }, posts: { add: '新規投稿追加', edit: '編集', delete: '削除', save: '保存', cancel: 'キャンセル', titleLabel: 'タイトル', contentLabel: '内容', imageLabel: '画像 URL' }, settings: { themeColor: 'メインテーマカラー', fontFamily: 'メインフォント', save: '設定を保存' } }
   },
   ru: {
-    nav: { home: 'Главная', partners: 'Партнеры', strategies: 'Стратегии RealQuant', quantStrategies: 'Стратегии RealQuant', performance: 'Бэктестинг', actualReturns: 'Реальная доходность', admin: 'Админ' },
+    nav: { home: 'Главная', partners: 'Партнеры', strategies: 'Стратегии RealQuant', quantStrategies: 'Стратегии RealQuant', performance: 'Бэктестинг', actualReturns: 'Реальная доходность', faq: 'FAQ', admin: 'Админ' },
     hero: { title: 'Реальная доходность, подтвержденная данными. RealQuant', subtitle: 'RealQuant стремится к стабильной доходности, исключая эмоции и фокусируясь исключительно на прибыли благодаря передовым алгоритмам и анализу больших данных.', cta: 'Вступить в сообщество' },
     partners: { tag: '01 / ПАРТНЕРЫ', title: 'Поддержка лидеров отрасли и институтов', desc: 'Нам доверяют ведущие финансовые институты и технологические партнеры по всему миру.', viewMore: 'ПОКАЗАТЬ БОЛЬШЕ +' },
     features: {
@@ -563,7 +564,7 @@ export const translations = {
     admin: { title: 'Панель администратора', tabs: { posts: 'Управление постами', settings: 'Настройки дизайна' }, posts: { add: 'Добавить пост', edit: 'Изменить', delete: 'Удалить', save: 'Сохранить', cancel: 'Отмена', titleLabel: 'Заголовок', contentLabel: 'Контент', imageLabel: 'URL изображения' }, settings: { themeColor: 'Основной цвет темы', fontFamily: 'Основной шрифт', save: 'Сохранить настройки' } }
   },
   de: {
-    nav: { home: 'Startseite', partners: 'Partner', strategies: 'RealQuant-Strategien', quantStrategies: 'RealQuant-Strategien', performance: 'Backtesting', actualReturns: 'Tatsächliche Renditen', admin: 'Admin' },
+    nav: { home: 'Startseite', partners: 'Partner', strategies: 'RealQuant-Strategien', quantStrategies: 'RealQuant-Strategien', performance: 'Backtesting', actualReturns: 'Tatsächliche Renditen', faq: 'FAQ', admin: 'Admin' },
     hero: { title: 'Durch Daten belegte reale Renditen. RealQuant', subtitle: 'RealQuant strebt stabile Erträge an, indem Emotionen ausgeschaltet werden und der Fokus durch fortschrittliche Algorithmen und Big-Data-Analysen ausschließlich auf Profitabilität liegt.', cta: 'Community beitreten' },
     partners: { tag: '01 / PARTNER', title: 'Unterstützt von Branchenführern und Institutionen', desc: 'Weltweit vertrauen uns führende Finanzinstitute und Technologiepartner.', viewMore: 'MEHR ANZEIGEN +' },
     features: {
@@ -666,7 +667,7 @@ export const translations = {
     admin: { title: 'Admin-Dashboard', tabs: { posts: 'Beitragsverwaltung', settings: 'Design-Einstellungen' }, posts: { add: 'Neuen Beitrag hinzufügen', edit: 'Bearbeiten', delete: 'Löschen', save: 'Speichern', cancel: 'Abbrechen', titleLabel: 'Titel', contentLabel: 'Inhalt', imageLabel: 'Bild-URL' }, settings: { themeColor: 'Hauptthemenfarbe', fontFamily: 'Hauptschriftart', save: 'Einstellungen speichern' } }
   },
   fr: {
-    nav: { home: 'Accueil', partners: 'Partenaires', strategies: 'Stratégies RealQuant', quantStrategies: 'Stratégies RealQuant', performance: 'Backtesting', actualReturns: 'Rendements réels', admin: 'Admin' },
+    nav: { home: 'Accueil', partners: 'Partenaires', strategies: 'Stratégies RealQuant', quantStrategies: 'Stratégies RealQuant', performance: 'Backtesting', actualReturns: 'Rendements réels', faq: 'FAQ', admin: 'Admin' },
     hero: { title: 'Des rendements réels prouvés par les données. RealQuant', subtitle: 'RealQuant vise des rendements stables en éliminant les émotions et en se concentrant uniquement sur le profit grâce à des algorithmes avancés et à l\'analyse de données massives.', cta: 'Rejoindre la communauté' },
     partners: { tag: '01 / PARTENAIRES', title: 'Soutenu par les leaders de l\'industrie et les institutions', desc: 'Fait confiance par les plus grandes institutions financières et partenaires technologiques du monde entier.', viewMore: 'VOIR PLUS +' },
     features: {
@@ -769,7 +770,7 @@ export const translations = {
     admin: { title: 'Tableau de bord administrateur', tabs: { posts: 'Gestion des messages', settings: 'Paramètres de conception' }, posts: { add: 'Ajouter un message', edit: 'Modifier', delete: 'Supprimer', save: 'Enregistrer', cancel: 'Annuler', titleLabel: 'Titre', contentLabel: 'Contenu', imageLabel: 'URL de l\'image' }, settings: { themeColor: 'Couleur principale du thème', fontFamily: 'Police principale', save: 'Enregistrer les paramètres' } }
   },
   hi: {
-    nav: { home: 'होम', partners: 'साझेदार', strategies: 'RealQuant रणनीतियाँ', quantStrategies: 'RealQuant रणनीतियाँ', performance: 'बैकटेस्टिंग', actualReturns: 'वास्तविक रिटर्न', admin: 'व्यवस्थापक' },
+    nav: { home: 'होम', partners: 'साझेदार', strategies: 'RealQuant रणनीतियाँ', quantStrategies: 'RealQuant रणनीतियाँ', performance: 'बैकटेस्टिंग', actualReturns: 'वास्तविक रिटर्न', faq: 'FAQ', admin: 'व्यवस्थापक' },
     hero: { title: 'डेटा द्वारा सिद्ध वास्तविक रिटर्न। RealQuant', subtitle: 'RealQuant उन्नत एल्गोरिदम और बड़े डेटा विश्लेषण के माध्यम से भावनाओं को समाप्त करके और पूरी तरह से लाभ पर ध्यान केंद्रित करके स्थिर रिटर्न प्राप्त करने का प्रयास करता है।', cta: 'समुदाय में शामिल हों' },
     partners: { tag: '01 / साझेदार', title: 'उद्योग के नेताओं और संस्थानों द्वारा समर्थित', desc: 'दुनिया भर के प्रमुख वित्तीय संस्थानों और प्रौद्योगिकी भागीदारों द्वारा विश्वसनीय।', viewMore: 'और देखें +' },
     features: {
@@ -872,7 +873,7 @@ export const translations = {
     admin: { title: 'व्यवस्थापक डैशबोर्ड', tabs: { posts: 'पोस्ट प्रबंधन', settings: 'डिज़ाइन सेटिंग्स' }, posts: { add: 'नई पोस्ट जोड़ें', edit: 'संपादित करें', delete: 'हटाएं', save: 'सहेजें', cancel: 'रद्द करें', titleLabel: 'शीर्षक', contentLabel: 'सामग्री', imageLabel: 'छवि URL' }, settings: { themeColor: 'मुख्य थीम रंग', fontFamily: 'प्राथमिक फ़ॉन्ट', save: 'सेटिंग्स सहेजें' } }
   },
   es: {
-    nav: { home: 'Inicio', partners: 'Socios', strategies: 'Estrategias RealQuant', quantStrategies: 'Estrategias RealQuant', performance: 'Backtesting', actualReturns: 'Rentabilidades reales', admin: 'Admin' },
+    nav: { home: 'Inicio', partners: 'Socios', strategies: 'Estrategias RealQuant', quantStrategies: 'Estrategias RealQuant', performance: 'Backtesting', actualReturns: 'Rentabilidades reales', faq: 'Preguntas', admin: 'Admin' },
     hero: { title: 'Rentabilidades reales probadas por datos. RealQuant', subtitle: 'RealQuant busca rendimientos estables al eliminar las emociones y centrarse únicamente en el beneficio a través de algoritmos avanzados y análisis de big data.', cta: 'Unirse a la comunidad' },
     partners: { tag: '01 / SOCIOS', title: 'Respaldado por líderes de la industria e instituciones', desc: 'Confiado por las principales instituciones financieras y socios tecnológicos de todo el mundo.', viewMore: 'VER MÁS +' },
     features: {
@@ -975,7 +976,7 @@ export const translations = {
     admin: { title: 'Panel de administración', tabs: { posts: 'Gestión de publicaciones', settings: 'Ajustes de diseño' }, posts: { add: 'Añadir publicación', edit: 'Editar', delete: 'Eliminar', save: 'Guardar', cancel: 'Cancelar', titleLabel: 'Título', contentLabel: 'Contenido', imageLabel: 'URL de la imagen' }, settings: { themeColor: 'Color principal del tema', fontFamily: 'Fuente principal', save: 'Guardar ajustes' } }
   },
   ar: {
-    nav: { home: 'الرئيسية', partners: 'الشركاء', strategies: 'استراتيجيات RealQuant', quantStrategies: 'استراتيجيات RealQuant', performance: 'الاختبار العكسي', actualReturns: 'العوائد الحقيقية', admin: 'المسؤول' },
+    nav: { home: 'الرئيسية', partners: 'الشركاء', strategies: 'استراتيجيات RealQuant', quantStrategies: 'استراتيجيات RealQuant', performance: 'الاختبار العكسي', actualReturns: 'العوائد الحقيقية', faq: 'الأسئلة الشائعة', admin: 'المسؤول' },
     hero: { title: 'عوائد حقيقية مثبتة بالبيانات. RealQuant', subtitle: 'تسعى RealQuant لتحقيق عوائد مستقرة من خلال القضاء على العواطف والتركيز فقط على الربح عبر الخوارزميات المتقدمة وتحليل البيانات الضخمة.', cta: 'انضم إلى المجتمع' },
     partners: { tag: '01 / الشركاء', title: 'مدعوم من قادة الصناعة والمؤسسات', desc: 'موثوق به من قبل المؤسسات المالية الرائدة وشركاء التكنولوجيا في جميع أنحاء العالم.', viewMore: 'عرض المزيد +' },
     features: {
@@ -1077,6 +1078,96 @@ export const translations = {
     footer: { desc: 'RealQuant هي شركة استثمار كمي تقدم حلول استثمار كمي قائمة على البيانات.', disclaimer: 'أنظمة وحلول التداول الآلي ليست منتجات تضمن الأرباح. نظراً لطبيعة السوق، توجد دورية، لذا تتعايش فترات الربح وفترات الخسارة. بناءً على الاحتمالات والإحصاءات، نهدف إلى أن يتجه رأس المال تدريجياً نحو الأعلى، وتتوافق الاختبارات العكسية والعوائد الفعلية المعبر عنها في هذا الموقع مع الأداء السابق. يرجى فهم بوضوح أن الأداء السابق يمكنه فقط التنبؤ بالأداء المستقبلي ولا يضمن بشكل مطلق رأس مال العميل أو أرباحه.', rights: '© 2026 RealQuant. جميع الحقوق محفوظة.' },
     admin: { title: 'لوحة تحكم المسؤول', tabs: { posts: 'إدارة المنشورات', settings: 'إعدادات التصميم' }, posts: { add: 'إضافة منشور جديد', edit: 'تعديل', delete: 'حذف', save: 'حفظ', cancel: 'إلغاء', titleLabel: 'العنوان', contentLabel: 'المحتوى', imageLabel: 'رابط الصورة' }, settings: { themeColor: 'لون السمات الرئيسي', fontFamily: 'الخط الأساسي', save: 'حفظ الإعدادات' } }
   },
+};
+
+export const faqSectionTranslations: Record<Language, {
+  tag: string;
+  title: string;
+  subtitle: string;
+  moreTitle: string;
+  moreDesc: string;
+  inquiryButton: string;
+}> = {
+  ko: {
+    tag: 'FAQ & 답변',
+    title: '자주 묻는 질문',
+    subtitle: '리얼퀀트(RealQuant) 퀀트 투자 솔루션과 알고리즘 트레이딩에 대해 가장 많이 묻는 핵심 질문에 투명하게 답해 드립니다.',
+    moreTitle: '더 궁금하신 사항이 있으신가요?',
+    moreDesc: '24시간 운영되는 리얼퀀트 공식 텔레그램 커뮤니티와 1:1 상담 채널에서 즉시 답변해 드립니다.',
+    inquiryButton: '1:1 실시간 문의하기'
+  },
+  en: {
+    tag: 'FAQ & Answers',
+    title: 'Frequently Asked Questions',
+    subtitle: 'Transparent answers to the most frequently asked questions about RealQuant quant investment solutions and algorithmic trading.',
+    moreTitle: 'Have more questions?',
+    moreDesc: 'Get immediate answers in the 24/7 RealQuant official Telegram community and 1:1 consultation channel.',
+    inquiryButton: 'Start 1:1 Chat'
+  },
+  zh: {
+    tag: '常见问题与解答',
+    title: '常见问题',
+    subtitle: '关于 RealQuant 量化投资解决方案与算法交易最常见核心问题的透明解答。',
+    moreTitle: '还有更多疑问？',
+    moreDesc: '在 24/7 运营的 RealQuant 官方 Telegram 社区和 1:1 咨询通道立即获得解答。',
+    inquiryButton: '1:1 实时咨询'
+  },
+  ja: {
+    tag: 'よくある質問と回答',
+    title: 'よくある質問',
+    subtitle: 'RealQuantクオンツ投資ソリューションとアルゴリズム取引に関して最も多く寄せられる質問に透明性をもってお答えします。',
+    moreTitle: 'ご不明な点はありますか？',
+    moreDesc: '24時間体制のRealQuant公式Telegramコミュニティおよび1:1チャットサポートにてすぐにご案内いたします。',
+    inquiryButton: '1:1 リアルタイム相談'
+  },
+  ru: {
+    tag: 'Часто задаваемые вопросы',
+    title: 'Часто задаваемые вопросы',
+    subtitle: 'Прозрачные ответы на самые актуальные вопросы о квантовых инвестиционных решениях и алгоритмической торговле RealQuant.',
+    moreTitle: 'Остались вопросы?',
+    moreDesc: 'Получите мгновенные ответы в официальном круглосуточном Telegram-сообществе RealQuant и канале поддержки 1:1.',
+    inquiryButton: 'Начать чат 1:1'
+  },
+  de: {
+    tag: 'FAQ & Antworten',
+    title: 'Häufig gestellte Fragen',
+    subtitle: 'Transparente Antworten auf die wichtigsten Fragen zu den Quant-Investment-Lösungen und dem algorithmischen Handel von RealQuant.',
+    moreTitle: 'Haben Sie weitere Fragen?',
+    moreDesc: 'Erhalten Sie sofortige Antworten in der offiziellen RealQuant Telegram-Community und im 1:1-Support.',
+    inquiryButton: '1:1 Chat starten'
+  },
+  fr: {
+    tag: 'FAQ & Réponses',
+    title: 'Questions fréquemment posées',
+    subtitle: 'Des réponses claires et transparentes aux questions les plus fréquentes sur les solutions d’investissement quantitatif et le trading algorithmique RealQuant.',
+    moreTitle: 'Vous avez d’autres questions ?',
+    moreDesc: 'Obtenez des réponses immédiates sur la communauté officielle Telegram RealQuant ouverte 24/7 et le support 1:1.',
+    inquiryButton: 'Démarrer le chat 1:1'
+  },
+  hi: {
+    tag: 'अक्सर पूछे जाने वाले प्रश्न',
+    title: 'अक्सर पूछे जाने वाले प्रश्न',
+    subtitle: 'RealQuant क्वांट निवेश समाधान और एल्गोरिदमिक ट्रेडिंग के बारे में सबसे आम सवालों के पारदर्शी जवाब।',
+    moreTitle: 'क्या आपके पास और प्रश्न हैं?',
+    moreDesc: '24/7 चलने वाले RealQuant आधिकारिक टेलीग्राम समुदाय और 1:1 सहायता चैनल में तुरंत उत्तर प्राप्त करें।',
+    inquiryButton: '1:1 चैट शुरू करें'
+  },
+  es: {
+    tag: 'Preguntas frecuentes',
+    title: 'Preguntas frecuentes',
+    subtitle: 'Respuestas transparentes a las preguntas más frecuentes sobre las soluciones de inversión cuantitativa y el trading algorítmico de RealQuant.',
+    moreTitle: '¿Tiene más preguntas?',
+    moreDesc: 'Obtenga respuestas inmediatas en la comunidad oficial de Telegram 24/7 de RealQuant y el canal de soporte 1:1.',
+    inquiryButton: 'Iniciar consulta 1:1'
+  },
+  ar: {
+    tag: 'الأسئلة الشائعة والإجابات',
+    title: 'الأسئلة الشائعة',
+    subtitle: 'إجابات شفافة على أكثر الأسئلة شيوعاً حول حلول الاستثمار الكمي والتداول الخوارزمي في RealQuant.',
+    moreTitle: 'هل لديك المزيد من الأسئلة؟',
+    moreDesc: 'احصل على إجابات فورية في مجتمع RealQuant الرسمي على تيليجرام على مدار الساعة وقناة الاستشارة 1:1.',
+    inquiryButton: 'بدء محادثة 1:1'
+  }
 };
 
 export type Language = 'ko' | 'en' | 'zh' | 'ja' | 'ru' | 'de' | 'fr' | 'hi' | 'es' | 'ar';
