@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, X, Headphones, ChevronRight, HelpCircle, ExternalLink } from 'lucide-react';
 import { Language, translations } from '../data/content';
+import { trackLead } from '../utils/tracker';
 
 interface ChatSupportProps {
   lang: Language;
@@ -94,6 +95,7 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ lang, themeColor }) =>
                     href={telegramLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackLead('Telegram_1on1_Chat_Support')}
                     className="inline-flex items-center justify-center w-full py-2 sm:py-2.5 px-4 rounded-full text-white font-bold text-xs sm:text-sm transition-all duration-300 group"
                     style={{ backgroundColor: themeColor }}
                   >

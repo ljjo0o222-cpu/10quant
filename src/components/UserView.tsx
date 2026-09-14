@@ -3,6 +3,7 @@ import { translations, Language, Post } from '../data/content';
 import { BacktestChart } from './BacktestChart';
 import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity, TrendingUp, ShieldCheck, AlertTriangle, Clock, Ban, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { trackLead } from '../utils/tracker';
 
 interface UserViewProps {
   lang: Language;
@@ -85,6 +86,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
               href="https://t.me/realquant7"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackLead('Telegram_Community_Hero_CTA')}
               className="group inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105"
               style={{ backgroundColor: themeColor, color: '#fff' }}
             >
