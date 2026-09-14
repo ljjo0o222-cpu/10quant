@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { translations, Language, Post, faqSectionTranslations } from '../data/content';
 import { BacktestChart } from './BacktestChart';
+import { CompoundCalculator } from './CompoundCalculator';
 import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity, TrendingUp, ShieldCheck, AlertTriangle, Clock, Ban, CheckCircle2, ChevronDown, HelpCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -101,7 +102,13 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
       {/* Features Section */}
       <section id="strategies" className="py-32 bg-zinc-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-16 max-w-4xl mx-auto"
+          >
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">{t.features.title}</h2>
             <div className="w-24 h-1 mx-auto rounded-full mb-6" style={{ backgroundColor: themeColor }}></div>
             {(t.features as any).subtitle && (
@@ -151,7 +158,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                 </span>
               </div>
             )}
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-20">
             {t.features.items.map((item, index) => {
@@ -159,10 +166,10 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: (index % 3) * 0.12, ease: [0.22, 1, 0.36, 1] }}
                   className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-900/80 border border-white/10 hover:border-white/25 transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:shadow-black/60"
                 >
                   <div>
@@ -189,10 +196,16 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
           </div>
 
           {/* Operable Items Title */}
-          <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-12"
+          >
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{t.operableItems.title}</h3>
             <div className="w-16 h-0.5 mx-auto rounded-full" style={{ backgroundColor: themeColor }}></div>
-          </div>
+          </motion.div>
 
           {/* Asset Cards Section */}
           <div className="grid grid-cols-2 gap-4 sm:gap-8">
@@ -230,10 +243,10 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
             ].map((asset, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.2 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: (i % 2) * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className="relative p-6 sm:p-10 rounded-2xl bg-zinc-900/50 border border-white/10 overflow-hidden group hover:border-white/20 transition-all"
               >
                 {/* Background Pattern */}
@@ -405,10 +418,10 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
       <section id="faq" className="py-24 bg-zinc-950/80 border-t border-white/5 relative">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="text-center mb-16"
           >
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
@@ -426,8 +439,12 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
             {faqs.map((faq, index) => {
               const isOpen = openFaqIndex === index;
               return (
-                <div
+                <motion.div
                   key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
                   className="rounded-2xl border border-white/10 bg-zinc-900/60 overflow-hidden transition-all duration-200 hover:border-white/20"
                 >
                   <button
@@ -457,12 +474,18 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                       </p>
                     </div>
                   )}
-                </div>
+                </motion.div>
               );
             })}
           </div>
 
-          <div className="mt-12 p-6 rounded-2xl bg-zinc-900/40 border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-12 p-6 rounded-2xl bg-zinc-900/40 border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4"
+          >
             <div>
               <h4 className="text-white font-bold text-base">{faqText.moreTitle}</h4>
               <p className="text-xs sm:text-sm text-gray-400 mt-1">
@@ -478,9 +501,12 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
             >
               {faqText.inquiryButton}
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
+
+      {/* Monthly Compound Calculator Section (Directly under FAQ) */}
+      <CompoundCalculator lang={lang} themeColor={themeColor} />
     </main>
   );
 };

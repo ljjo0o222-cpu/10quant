@@ -35,6 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
                 <a href="#actual-returns" className="text-gray-300 hover:text-white transition-colors">{t.actualReturns}</a>
                 <a href="#partners" className="text-gray-300 hover:text-white transition-colors">{t.partners}</a>
                 <a href="#faq" className="text-gray-300 hover:text-white transition-colors">{t.faq || 'FAQ'}</a>
+                <a href="#compound-calculator" className="text-gray-300 hover:text-white transition-colors">{t.calculator || '월복리 계산기'}</a>
               </>
             ) : (
               <span className="text-gray-300 font-medium">{translations[lang].admin.title}</span>
@@ -102,6 +103,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
                 <a href="#actual-returns" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.actualReturns}</a>
                 <a href="#partners" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.partners}</a>
                 <a href="#faq" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.faq || 'FAQ'}</a>
+                <a href="#compound-calculator" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.calculator || '월복리 계산기'}</a>
               </>
             )}
           </div>
