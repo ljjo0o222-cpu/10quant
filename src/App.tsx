@@ -19,9 +19,11 @@ export default function App() {
   const [posts, setPosts] = useState<Post[]>(initialPosts);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
-  // Update document title based on language
+  // Update document title and direction based on language
   useEffect(() => {
     document.title = lang === 'ko' ? '리얼퀀트 (RealQuant)' : 'RealQuant';
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
   }, [lang]);
 
   return (

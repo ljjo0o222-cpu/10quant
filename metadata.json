@@ -1,5 +1,6 @@
 {
   "name": "realquant",
   "description": "데이터로 증명하는 리얼한 수익. 리얼퀀트",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

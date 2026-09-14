@@ -23,30 +23,44 @@ export const translations = {
     },
     features: {
       title: 'RealQuant 전략',
+      subtitle: 'RealQuant는 독립적으로 작동하는 브레이크아웃 전략을 결합하여 다양한 돌파 조건과 가격 확장 구간을 포착하여 거래하도록 설계되었습니다. 퍼센트 기반 위험 관리(Stop Loss), 고영향 뉴스 필터, 시장 마감 보호 등을 통해 안정성을 높였습니다.',
+      disclaimer: 'Martingale, Grid, 손실 후 계약수 증가 등을 사용하지 않습니다.',
+      safetyHighlights: [
+        { label: 'NO Martingale', desc: '마틴게일 배제' },
+        { label: 'NO Grid System', desc: '물타기 미사용' },
+        { label: 'NO Lot Escalation', desc: '손실 후 계약수 증가 없음' },
+        { label: 'Mandatory Stop Loss', desc: '퍼센트 손절 원칙' },
+      ],
       items: [
         {
-          title: '머신러닝 기반 예측 모델',
-          desc: '수백만 개의 시장 데이터를 실시간으로 분석하여 최적의 매매 타이밍을 포착합니다.',
+          tag: 'ARCHITECTURE',
+          title: '독립적 다중 브레이크아웃',
+          desc: '독립적으로 작동하는 다수의 브레이크아웃 전략을 결합하여 다양한 돌파 조건과 변동성 확장 구간을 포착합니다.',
         },
         {
-          title: '리스크 관리 시스템',
-          desc: '시장 변동성에 대응하는 동적 자산 배분으로 포트폴리오의 안정성을 극대화합니다.',
+          tag: 'MOMENTUM',
+          title: '가격 확장 구간 포착',
+          desc: '시장의 급격한 추세 모멘텀과 가격 확장이 발생하는 구간을 정밀 감지하여 높은 손익비의 거래를 실행합니다.',
         },
         {
-          title: '순환매 시스템',
-          desc: '시장의 자금 흐름을 추적하여 순환매가 발생하는 섹터와 종목을 선제적으로 포착합니다.',
+          tag: 'RISK CONTROL',
+          title: '퍼센트 기반 위험 관리',
+          desc: '모든 진입 포지션에 고정 퍼센트 손절(Stop Loss)을 필수 적용하여 예기치 못한 단일 손실 리스크를 원천 차단합니다.',
         },
         {
-          title: '추세+역추세 혼합 작동',
-          desc: '강한 추세 구간과 박스권 역추세 구간을 구분하여 최적의 로직을 자동으로 전환합니다.',
+          tag: 'FILTERING',
+          title: '고영향 뉴스 필터링',
+          desc: 'CPI, FOMC 등 시장에 비정상적 변동성을 초래하는 주요 경제 지표 발표 전후 거래를 자동 필터링하여 자산을 보호합니다.',
         },
         {
-          title: '적응형 회복 논리',
-          desc: '손실 발생 시 시장 상황에 맞춰 회복 속도를 조절하는 지능형 복구 알고리즘을 가동합니다.',
+          tag: 'PROTECTION',
+          title: '시장 마감 보호 시스템',
+          desc: '주말 갭(Gap) 위험과 장 마감 시점의 유동성 급감으로 인한 슬리피지를 방지하기 위해 포지션을 안전하게 관리합니다.',
         },
         {
-          title: '초고속 매매 인프라',
-          desc: '지연 시간을 최소화한 시스템 트레이딩으로 시장의 미세한 기회를 선점합니다.',
+          tag: 'DISCIPLINE',
+          title: '비마틴게일 원칙 운용',
+          desc: '마틴게일(Martingale), 그리드(Grid), 손실 후 계약수 증가 방식을 철저히 배제하고 수학적으로 검증된 정량적 사이징만 운용합니다.',
         },
       ],
     },
@@ -118,10 +132,9 @@ export const translations = {
       floatingButton: '1:1 채팅',
       faqs: [
         { question: '백테스팅과 실제 수익률은 진짜인가요?', answer: '백테스팅과 실제 수익률은 100% 사실이며, 거래 플랫폼에서 제공하는 화면이기 때문에 조작할 수 없습니다.' },
-        { question: 'RealQuant는 무료인가요?', answer: '프로그램의 월결제 비용 등 별도의 비용은 없으나, 수익분에 대한 운용보수가 존재합니다. 손실이 발생하였을 경우에는 운용보수가 없습니다.' },
         { question: '최소 투자 금액은 얼마인가요?', answer: '포지션의 최소 계약 수량이 있기 때문에 $1,000부터 가능합니다.' },
         { question: '내 투자금은 안전한가요?', answer: 'RealQuant는 고객의 자금을 직접 수취하지 않습니다. 고객님의 거래소 계정과 RealQuant가 연동되는 시스템이며, 저희는 포지션에 대한 진입과 청산 권한만 가질 뿐 입출금 권한은 없습니다.' },
-        { question: '어떤 전략으로 수익을 내나요?', answer: 'RealQuant는 고도화된 알고리즘(순환매 시스템, 동적 변동성 적응, 추세+역추세 혼합 작동, 적응형 회복 논리)을 결합하여 만든 퀀트 프로그램입니다. XAUUSD(금), USTECH100(나스닥 100), US30(다우존스), AUDCAD(호주달러/캐나다달러 통화쌍), EURUSD(유로/달러 통화쌍), GBPUSD(파운드/달러 통화쌍) 등 다양한 종목을 거래하여 수익을 창출합니다.' },
+        { question: '어떤 전략으로 수익을 내나요?', answer: 'RealQuant는 독립적으로 작동하는 브레이크아웃 전략을 결합하여 다양한 돌파 조건과 가격 확장 구간을 포착하여 거래하도록 설계되었습니다. 퍼센트 기반 위험 관리(Stop Loss), 고영향 뉴스 필터, 시장 마감 보호 등을 통해 안정성을 높였습니다.(Martingale, Grid, 손실 후 계약수 증가 등을 사용하지 않습니다.)' },
         { question: '전략 설정은 어떻게 하나요?', answer: '전략 설정은 고객 개개인의 의사가 필요하지 않으며 별도의 설정이 필요 없습니다. (100% 자동화 24/7) 커뮤니티 입장 시 가이드가 준비되어 있습니다. 가이드를 참고해 주세요.' },
         { question: '수익금 출금은 어떻게 하나요?', answer: '커뮤니티 입장 시 가이드가 준비되어 있습니다. 가이드를 참고해 주세요.' }
       ]
@@ -135,9 +148,51 @@ export const translations = {
   },
   en: {
     nav: { home: 'Home', partners: 'Partners', strategies: 'RealQuant Strategy', quantStrategies: 'RealQuant Strategy', performance: 'Backtest', actualReturns: 'Actual Returns', admin: 'Admin' },
-    hero: { title: 'Real Returns Proven by Data. RealQuant', subtitle: 'RealQuant creates stable returns by excluding emotions and focusing solely on profit through advanced algorithms and big data analysis.', cta: 'Join Community' },
+    hero: { title: 'Real Returns Proven by Data. RealQuant', subtitle: 'RealQuant pursues stable returns by eliminating emotions and focusing solely on profit through advanced algorithms and big data analysis.', cta: 'Join Community' },
     partners: { tag: '01 / Partners', title: 'Supported by Industry Leaders and Institutions', desc: 'Trusted by the world\'s leading financial institutions and technology partners.', viewMore: 'View More +' },
-    features: { title: 'RealQuant Strategy', items: [{ title: 'Machine Learning-Based Prediction Model', desc: 'Analyzes millions of market data points in real-time to capture optimal trading timing.' }, { title: 'Risk Management System', desc: 'Maximizes portfolio stability with dynamic asset allocation responding to market volatility.' }, { title: 'Rotation System', desc: 'Tracks market fund flows to capture sectors and stocks where rotation occurs.' }, { title: 'Trend + Counter-Trend Hybrid Operation', desc: 'Distinguishes between strong trend sections and box-range counter-trend sections to automatically switch optimal logic.' }, { title: 'Adaptive Recovery Logic', desc: 'Operates an intelligent recovery algorithm that adjusts the recovery speed according to market conditions when a loss occurs.' }, { title: 'Ultra-Low Latency Infrastructure', desc: 'Seizes minute opportunities in the market through system trading that minimizes latency.' }] },
+    features: {
+      title: 'RealQuant Strategy',
+      subtitle: 'RealQuant is designed to combine independently operating breakout strategies to capture and trade various breakout conditions and price expansion phases. Stability is prioritized through fixed percentage risk management (Stop Loss), high-impact news filters, and market close protection.',
+      disclaimer: 'We strictly do not use Martingale, Grid systems, or increasing lot sizes after losses.',
+      safetyHighlights: [
+        { label: 'NO Martingale', desc: 'Zero Martingale' },
+        { label: 'NO Grid System', desc: 'No Averaging Down' },
+        { label: 'NO Lot Escalation', desc: 'Fixed Sizing Discipline' },
+        { label: 'Mandatory Stop Loss', desc: 'Account-Wide Protection' },
+      ],
+      items: [
+        {
+          tag: 'ARCHITECTURE',
+          title: 'Multi-Breakout Engine',
+          desc: 'Combines multiple independently operating breakout algorithms to precisely capture breakout conditions across diverse market environments.',
+        },
+        {
+          tag: 'MOMENTUM',
+          title: 'Price Expansion Capture',
+          desc: 'Detects real-time market volatility expansion and momentum acceleration to execute trades with high risk-to-reward ratios.',
+        },
+        {
+          tag: 'RISK CONTROL',
+          title: 'Fixed % Risk Management',
+          desc: 'Applies mandatory percentage-based Stop Loss on every trade to eliminate catastrophic single-loss risks.',
+        },
+        {
+          tag: 'FILTERING',
+          title: 'High-Impact News Filter',
+          desc: 'Automatically halts trading around high-risk economic releases like CPI and FOMC to avoid abnormal volatility spikes.',
+        },
+        {
+          tag: 'PROTECTION',
+          title: 'Market Close Protection',
+          desc: 'Safeguards positions before market closes to eliminate weekend gap risks and severe illiquidity slippage.',
+        },
+        {
+          tag: 'DISCIPLINE',
+          title: 'Strict Non-Martingale Policy',
+          desc: 'Eliminates dangerous Martingale, grid averaging, and lot escalation after losses, adhering strictly to mathematically verified sizing.',
+        },
+      ],
+    },
     quantStrategies: { title: 'RealQuant Strategy', items: [{ name: 'Alpha Strategy', desc: 'AUD/CAD Currency Pair' }, { name: 'Beta Strategy', desc: 'MultiFOREX Multi-Currency Pair' }, { name: 'Gamma Strategy', desc: 'XAU/USD Gold Futures' }, { name: 'Delta Strategy', desc: 'EUR/USD Currency Pair' }, { name: 'Epsilon Strategy', desc: 'MultiFOREX2 Multi-Currency Pair' }, { name: 'Hexa Strategy', desc: 'USDJPY Currency Pair' }] },
     performance: {
       notice: 'Detailed backtest trading history can be checked in the community',
@@ -182,10 +237,9 @@ export const translations = {
       floatingButton: '1:1 Chat',
       faqs: [
         { question: 'Are backtests and actual returns real?', answer: 'Backtests and actual returns are 100% real, and since they are screens provided by the trading platform, they cannot be manipulated.' },
-        { question: 'Is RealQuant free?', answer: 'There are no separate costs such as monthly program fees, but there is a management fee on profits. In the event of a loss, there is no management fee.' },
         { question: 'What is the minimum investment amount?', answer: 'Since there is a minimum contract quantity for positions, it is possible from $1,000.' },
-        { question: 'Is my investment safe?', answer: 'RealQuant does not directly receive customer funds. It is a system where your exchange account and RealQuant are linked, and we only have the authority to make buy and sell decisions for positions, not the authority to deposit or withdraw funds, so your assets are safe.' },
-        { question: 'What strategy do you use to make profit?', answer: 'RealQuant is a quant program created by combining advanced algorithms (Rotation System, Dynamic Volatility Adaptation, Trend + Counter-Trend Mixed Operation, Adaptive Recovery Logic). It creates profit by trading various instruments such as XAUUSD (Gold), USTECH100 (Nasdaq 100), US30 (Dow Jones), AUDCAD (AUD/CAD currency pair), EURUSD (EUR/USD currency pair), and GBPUSD (GBP/USD currency pair).' },
+        { question: 'Is my investment safe?', answer: 'RealQuant does not directly receive customer funds. It is a system where your exchange account and RealQuant are linked, and we only have the authority to make buy and sell decisions for positions, not the authority to deposit or withdraw funds.' },
+        { question: 'What strategy do you use to make profit?', answer: 'RealQuant is designed to combine independently operating breakout strategies to capture and trade various breakout conditions and price expansion phases. Stability is enhanced through percentage-based risk management (Stop Loss), high-impact news filters, and market close protection. (We do not use Martingale, Grid, or increasing contract size after losses.)' },
         { question: 'How do I set up the strategy?', answer: 'Setting up the strategy does not require the customer\'s individual intention and no separate setting is required. (100% automated 24/7) A guide is prepared when you enter the community. Please refer to the guide.' },
         { question: 'How do I withdraw profits?', answer: 'A guide is prepared when you enter the community. Please refer to the guide.' }
       ]
@@ -201,9 +255,51 @@ export const translations = {
   },
   zh: {
     nav: { home: '首页', partners: '合作伙伴', strategies: 'RealQuant 策略', quantStrategies: 'RealQuant 策略', performance: '回测', actualReturns: '实际收益', admin: '管理员' },
-    hero: { title: '数据证明的真实收益。RealQuant', subtitle: 'RealQuant 通过先进的算法和大数据分析，排除情感干扰，专注于盈利，创造稳定的收益。', cta: '加入社区' },
+    hero: { title: '数据证明的真实收益。RealQuant', subtitle: 'RealQuant 通过先进的算法和大数据分析，排除情感干扰，专注于盈利，追求稳定的收益。', cta: '加入社区' },
     partners: { tag: '01 / 合作伙伴', title: '受到行业领导者和机构的支持', desc: '深受全球领先金融机构和技术合作伙伴的信赖。', viewMore: '查看更多 +' },
-    features: { title: 'RealQuant 策略', items: [{ title: '基于机器学习的预测模型', desc: '实时分析数百万个市场数据点，捕捉最佳交易时机。' }, { title: '风险管理系统', desc: '通过响应市场波动的动态资产配置，最大限度地提高投资组合的稳定性。' }, { title: '轮动系统', desc: '通过追踪市场资金流向，抢先捕捉发生轮动的行业和个股。' }, { title: '趋势+逆趋势混合运行', desc: '区分强趋势区间和震荡逆趋势区间，自动切换最佳逻辑。' }, { title: '自适应恢复逻辑', desc: '启动智能恢复算法，根据市场情况调节亏损时的恢复速度。' }, { title: '超低延迟基础设施', desc: '通过最小化延迟的系统交易，抓住市场中的微小机会。' }] },
+    features: {
+      title: 'RealQuant 策略',
+      subtitle: 'RealQuant 旨在结合独立运作的突破策略，捕捉并交易各种突破条件和价格扩张区间。通过基于百分比的风险管理（Stop Loss）、高影响新闻过滤器和市场收盘保护，将资金稳定性放在首位。',
+      disclaimer: '绝不使用马丁格尔（Martingale）、网格（Grid）或亏损后加仓等高风险方式。',
+      safetyHighlights: [
+        { label: 'NO Martingale', desc: '绝无马丁' },
+        { label: 'NO Grid System', desc: '杜绝网格' },
+        { label: 'NO Lot Escalation', desc: '绝不加倍手数' },
+        { label: 'Mandatory Stop Loss', desc: '强制止损保护' },
+      ],
+      items: [
+        {
+          tag: 'ARCHITECTURE',
+          title: '独立多重突破引擎',
+          desc: '结合多个独立运行的突破策略，精准捕捉不同市场环境下的突破信号与波动区间。',
+        },
+        {
+          tag: 'MOMENTUM',
+          title: '价格扩张区间捕捉',
+          desc: '实时检测市场波动扩张与动量加速区间，以优异的风险回报比捕捉强势趋势行情。',
+        },
+        {
+          tag: 'RISK CONTROL',
+          title: '百分比风险管理 (SL)',
+          desc: '所有持仓严格执行基于账户固定百分比的止损（Stop Loss），从源头阻断极端单笔损失。',
+        },
+        {
+          tag: 'FILTERING',
+          title: '高影响新闻过滤器',
+          desc: '在 CPI、FOMC 等重大经济数据公布前后自动过滤暂停交易，规避突发暴跌暴涨风险。',
+        },
+        {
+          tag: 'PROTECTION',
+          title: '市场收盘保护系统',
+          desc: '有效防范周末跳空缺口（Gap）和休市流动性枯竭导致的滑点风险，保障资金安全。',
+        },
+        {
+          tag: 'DISCIPLINE',
+          title: '非马丁纪律准则',
+          desc: '严禁亏损后加码的马丁格尔和网格补仓，坚持经过严谨数学验证的定量科学仓位。',
+        },
+      ],
+    },
     quantStrategies: { title: 'RealQuant 策略', items: [{ name: 'Alpha 策略', desc: 'AUD/CAD 货币对' }, { name: 'Beta 策略', desc: 'MultiFOREX 多货币对' }, { name: 'Gamma 策略', desc: 'XAU/USD 黄金期货' }, { name: 'Delta 策略', desc: 'EUR/USD 货币对' }, { name: 'Epsilon 策略', desc: 'MultiFOREX2 多货币对' }, { name: 'Hexa 策略', desc: 'USDJPY 货币对' }] },
     performance: {
       notice: '详细的回测交易历史可以在社区中查看',
@@ -248,10 +344,9 @@ export const translations = {
       floatingButton: '1:1 聊天',
       faqs: [
         { question: '回测和实际收益是真实的吗？', answer: '回测和实际收益是 100% 真实的，由于它们是交易平台提供的屏幕，因此无法操纵。' },
-        { question: 'RealQuant 是免费的吗？', answer: '没有程序月费等额外费用，但对利润收取管理费。发生亏损时不收取管理费。' },
         { question: '最低投资金额是多少？', answer: '由于头寸有最低合约数量，因此可以从 $1,000 开始。' },
-        { question: '我的投资安全吗？', answer: 'RealQuant 不直接接收客户资金。这是一个您的交易所账户和 RealQuant 连接的系统，我们只有权对头寸做出买卖决策，而无权存款或取款，因此您的资产是安全的。' },
-        { question: '使用什么策略来实现利润？', answer: 'RealQuant 是一个通过结合先进算法（轮换系统、动态波动率适应、趋势 + 逆趋势混合操作、自适应恢复逻辑）创建的量化程序。它通过交易 XAUUSD（黄金）、USTECH100（纳斯达克 100）、US30（道琼斯）、AUDCAD（澳元/加元货币对）、EURUSD（欧元/美元货币对）和 GBPUSD（英镑/美元货币对）等各种工具来创造利润。' },
+        { question: '我的投资安全吗？', answer: 'RealQuant 不直接接收客户资金。这是一个您的交易所账户和 RealQuant 连接的系统，我们只有权对头寸做出买卖决策，而无权存款或取款。' },
+        { question: '使用什么策略来实现利润？', answer: 'RealQuant 旨在结合独立运作的突破策略，捕捉并交易各种突破条件和价格扩张区间。通过基于百分比的风险管理（Stop Loss）、高影响新闻过滤器和市场收盘保护等措施，进一步提高了稳定性。（绝不使用马丁格尔、网格或亏损后增加合约手数等高风险方式。）' },
         { question: '我该如何设置策略？', answer: '设置策略不需要客户的个人意愿，也不需要单独设置。（100% 全自动 24/7）当您进入社区时，会准备一份指南。请参考该指南。' },
         { question: '我该如何提取利润？', answer: '当您进入社区时，会准备一份指南。请参考该指南。' }
       ]
@@ -263,9 +358,51 @@ export const translations = {
   },
   ja: {
     nav: { home: 'ホーム', partners: 'パートナー', strategies: 'RealQuant 戦略', quantStrategies: 'RealQuant 戦略', performance: 'バックテスト', actualReturns: '実際の収益', admin: '管理者' },
-    hero: { title: 'データで証明するリアルな収益。RealQuant', subtitle: 'RealQuant は、高度なアルゴリズムとビッグデータ分析を通じて感情を排除し、利益のみに集中することで、安定した収益を創出します。', cta: 'コミュニティに参加' },
+    hero: { title: 'データで証明するリアルな収益。RealQuant', subtitle: 'RealQuantは、高度なアルゴリズムとビッグデータ分析を通じて感情を排除し、利益のみに集中することで、安定した収益を追求します。', cta: 'コミュニティに参加' },
     partners: { tag: '01 / パートナー', title: '業界のリーダーや機関からサポートを受けています', desc: '世界をリードする金融機関や技術パートナーから信頼されています。', viewMore: 'もっと見る +' },
-    features: { title: 'RealQuant 戦略', items: [{ title: '機械学習ベースの予測モデル', desc: '数百万の市場データポイントをリアルタイムで分析し、最適な売買タイミングを捉えます。' }, { title: 'リスク管理システム', desc: '市場の変動に対応する動的な資産配分により、ポートフォリオの安定性を最大化します。' }, { title: '循環物色システム', desc: '市場の資金の流れを追跡し、循環物色が発生するセクターや銘柄を先取りして捉えます。' }, { title: 'トレンド+逆トレンド混合作動', desc: '強いトレンド区間とボックス圏の逆トレンド区間を区別し、最適なロジックを自動的に切り替えます。' }, { title: '適応型回復ロジック', desc: '損失発生時に市場状況に合わせて回復速度を調節するインテリジェントな復旧アルゴリズムを稼働させます。' }, { title: '超低遅延インフラストラクチャ', desc: '遅延を最小限に抑えたシステムトレードにより、市場の微細な機会を先取りします。' }] },
+    features: {
+      title: 'RealQuant 戦略',
+      subtitle: 'RealQuantは独立して作動するブレイクアウト戦略を組み合わせ、様々なブレイク条件と価格拡大区間を捉えて取引するように設計されています。パーセント基準のリスク管理（Stop Loss）、高影響ニュースフィルター、市場クローズ保護等を通じて安定性を最大化しました。',
+      disclaimer: 'Martingale、Grid、損失後のロット数増加などは一切使用しません。',
+      safetyHighlights: [
+        { label: 'NO Martingale', desc: 'マーチンゲール排除' },
+        { label: 'NO Grid System', desc: 'ナンピングリッド不使用' },
+        { label: 'NO Lot Escalation', desc: '損失後のロット増加なし' },
+        { label: 'Mandatory Stop Loss', desc: 'パーセント損切り原則' },
+      ],
+      items: [
+        {
+          tag: 'ARCHITECTURE',
+          title: '独立型マルチブレイクアウト',
+          desc: '独立して作動する複数のブレイクアウト戦略を組み合わせ、多様なブレイク条件とボラティリティ拡大区間を捉えます。',
+        },
+        {
+          tag: 'MOMENTUM',
+          title: '価格拡大区間の捕捉',
+          desc: '急激なトレンドモメンタムと価格拡大が発生する区間をリアルタイムで検知し、高いリスクリワード比で取引を実行します。',
+        },
+        {
+          tag: 'RISK CONTROL',
+          title: 'パーセント基準のリスク管理',
+          desc: 'すべてのエントリーに口座比率の固定パーセント損切り（Stop Loss）を必須適用し、不測の単一リスクを徹底遮断します。',
+        },
+        {
+          tag: 'FILTERING',
+          title: '高影響ニュースフィルター',
+          desc: 'CPIやFOMCなど、市場に異常な変動を引き起こす重要経済指標の発表前後の取引を自動でフィルタリングします。',
+        },
+        {
+          tag: 'PROTECTION',
+          title: '市場クローズ保護システム',
+          desc: '週末の窓開け（Gap）リスクや取引終了時点の流動性急減によるスリッページを防ぎ、ポジションを安全に保護します。',
+        },
+        {
+          tag: 'DISCIPLINE',
+          title: '非マーチンゲール原則運用',
+          desc: 'マーチンゲール、グリッド、損失後のロット数増加を徹底排除し、数学的に検証された定量的サイジングのみを運用します。',
+        },
+      ],
+    },
     quantStrategies: { title: 'RealQuant 戦略', items: [{ name: 'アルファ戦略', desc: 'AUD/CAD 通貨ペア' }, { name: 'ベータ戦略', desc: 'MultiFOREX 多通貨ペア' }, { name: 'ガンマ戦略', desc: 'XAU/USD 金先物' }, { name: 'デルタ戦略', desc: 'EUR/USD 通貨ペア' }, { name: 'イプシロン戦略', desc: 'MultiFOREX2 多通貨ペア' }, { name: 'ヘキサ戦略', desc: 'USDJPY 通貨ペア' }] },
     performance: {
       notice: '詳細なバックテストの取引履歴はコミュニティで確認できます',
@@ -310,10 +447,9 @@ export const translations = {
       floatingButton: '1:1 チャット',
       faqs: [
         { question: 'バックテストと実際の収益は本物ですか？', answer: 'バックテストと実際の収益は100%本物であり、取引プラットフォームが提供する画面であるため、偽造することはできません。' },
-        { question: 'RealQuantは無料ですか？', answer: 'プログラムの月額利用料などの別途費用はありませんが、利益に対する運用報酬が発生します。損失が発生した場合は運用報酬はありません。' },
         { question: '最低投資金額はいくらですか？', answer: 'ポジションの最小契約数があるため、$1,000から可能です。' },
-        { question: '私の投資は安全ですか？', answer: 'RealQuantは顧客の資金を直接受け取りません。お客様の取引所口座とRealQuantが連携され、ポジションの売買決定権のみを持ち、入出金権限はないため、お客様의資産は安全です。' },
-        { question: '利益を出すためにどのような戦略が使われていますか？', answer: 'RealQuantは、高度なアルゴリズム（循環物色システム、動的なボラティリティ適応、トレンド+逆トレンド混合作動、適応型回復ロジック）を組み合わせて作成されたクオンツプログラムです。XAUUSD（金）、USTECH100（ナスダック100）、US30（ダウ・ジョーンズ）、AUDCAD（豪ドル/カナダドル）、EURUSD（ユーロ/米ドル）、GBPUSD（英ポンド/米ドル）などの様々な商品を取引して利益を創出します。' },
+        { question: '私の投資は安全ですか？', answer: 'RealQuantは顧客の資金を直接受け取りません。お客様の取引所口座とRealQuantが連携され、ポジションの売買決定権のみを持ち、入出金権限はありません。' },
+        { question: '利益を出すためにどのような戦略が使われていますか？', answer: 'RealQuantは独立して作動するブレイクアウト戦略を組み合わせ、様々なブレイク条件と価格拡大区間を捉えて取引するように設計されています。パーセント基準のリスク管理（Stop Loss）、高影響ニュースフィルター、市場クローズ保護等を通じて安定性を高めました。（Martingale、Grid、損失後のロット数増加などは一切使用しません。）' },
         { question: '戦略をどのように設定すればよいですか？', answer: '戦略の設定は、お客様の個別の意図を必要とせず、別途設定する必要もありません。（24時間365日100%自動化）コミュニティに参加するとガイドが用意されています。ガイドを参照してください。' },
         { question: '利益をどのように出金すればよいですか？', answer: 'コミュニティに参加するとガイドが用意されています。ガイドを参照してください。' }
       ]
@@ -325,9 +461,51 @@ export const translations = {
   },
   ru: {
     nav: { home: 'Главная', partners: 'Партнеры', strategies: 'Стратегии RealQuant', quantStrategies: 'Стратегии RealQuant', performance: 'Бэктестинг', actualReturns: 'Реальная доходность', admin: 'Админ' },
-    hero: { title: 'Реальная доходность, подтвержденная данными. RealQuant', subtitle: 'RealQuant генерирует стабильную прибыль, исключая эмоции и сосредотачиваясь исключительно на прибыли с помощью передовых алгоритмов и анализа больших данных.', cta: 'Вступить в сообщество' },
+    hero: { title: 'Реальная доходность, подтвержденная данными. RealQuant', subtitle: 'RealQuant стремится к стабильной доходности, исключая эмоции и фокусируясь исключительно на прибыли благодаря передовым алгоритмам и анализу больших данных.', cta: 'Вступить в сообщество' },
     partners: { tag: '01 / ПАРТНЕРЫ', title: 'Поддержка лидеров отрасли и институтов', desc: 'Нам доверяют ведущие финансовые институты и технологические партнеры по всему миру.', viewMore: 'ПОКАЗАТЬ БОЛЬШЕ +' },
-    features: { title: 'Стратегии RealQuant', items: [{ title: 'Прогнозные модели на основе ML', desc: 'Анализирует миллионы рыночных данных в режиме реального времени для определения оптимального времени торговли.' }, { title: 'Система управления рисками', desc: 'Максимизирует стабильность портфеля за счет динамического распределения активов в ответ на волатильность рынка.' }, { title: 'Система ротации', desc: 'Отслеживает потоки рыночных средств для упреждающего захвата секторов и акций, в которых происходит ротация.' }, { title: 'Смешанная работа тренда и контртренда', desc: 'Различает участки сильного тренда и участки бокового контртренда для автоматического переключения логики.' }, { title: 'Адаптивная логика восстановления', desc: 'Запускает интеллектуальный алгоритм восстановления, который регулирует скорость восстановления в соответствии с рыночными условиями.' }, { title: 'Инфраструктура с ультранизкой задержкой', desc: 'Использует микровозможности рынка с помощью системной торговли с минимальной задержкой.' }] },
+    features: {
+      title: 'Стратегии RealQuant',
+      subtitle: 'RealQuant объединяет независимо работающие пробойные стратегии для торговли в фазах расширения цен и импульса. Стабильность максимизируется за счет процентного риск-менеджмента (Stop Loss), фильтрации новостей и защиты при закрытии рынка.',
+      disclaimer: 'Мы категорически не используем Мартингейл, сетку (Grid) или увеличение лота после убытков.',
+      safetyHighlights: [
+        { label: 'NO Martingale', desc: 'Без Мартингейла' },
+        { label: 'NO Grid System', desc: 'Без усреднений' },
+        { label: 'NO Lot Escalation', desc: 'Фиксированный сайзинг' },
+        { label: 'Mandatory Stop Loss', desc: 'Обязательный Stop Loss' },
+      ],
+      items: [
+        {
+          tag: 'ARCHITECTURE',
+          title: 'Мульти-пробойная архитектура',
+          desc: 'Объединяет независимые алгоритмы пробоя для точного захвата импульсов в различных рыночных условиях.',
+        },
+        {
+          tag: 'MOMENTUM',
+          title: 'Захват расширения цены',
+          desc: 'В режиме реального времени определяет всплески волатильности и ускорения тренда для входа с высоким риск-профитом.',
+        },
+        {
+          tag: 'RISK CONTROL',
+          title: 'Процентный риск-контроль (SL)',
+          desc: 'Обязательный процентный Stop Loss для каждой сделки надежно предотвращает катастрофические просадки.',
+        },
+        {
+          tag: 'FILTERING',
+          title: 'Фильтр важных новостей',
+          desc: 'Автоматическая пауза в торговле во время выхода ключевых данных (CPI, FOMC) исключает неконтролируемую волатильность.',
+        },
+        {
+          tag: 'PROTECTION',
+          title: 'Защита закрытия рынка',
+          desc: 'Контроль позиций перед выходными устраняет риски ценовых разрывов (Gap) и проскальзывания при нехватке ликвидности.',
+        },
+        {
+          tag: 'DISCIPLINE',
+          title: 'Безмартингейловая дисциплина',
+          desc: 'Полный отказ от токсичных сеток и удвоения лотов; торговля только по математически выверенным объемам.',
+        },
+      ],
+    },
     quantStrategies: { title: 'Стратегии RealQuant', items: [{ name: 'Стратегия Альфа', desc: 'Валютная пара AUD/CAD' }, { name: 'Стратегия Бета', desc: 'Мультивалютные пары MultiFOREX' }, { name: 'Стратегия Гамма', desc: 'Золотые фьючерсы XAU/USD' }, { name: 'Стратегия Дельта', desc: 'Валютная пара EUR/USD' }, { name: 'Стратегия Эпсилон', desc: 'Мультивалютные пары MultiFOREX2' }, { name: 'Стратегия Гекса', desc: 'Валютная пара USDJPY' }] },
     performance: {
       notice: 'Подробную историю сделок бэктеста можно проверить в сообществе',
@@ -372,10 +550,9 @@ export const translations = {
       floatingButton: 'Чат 1:1',
       faqs: [
         { question: 'Являются ли бэктестинг и реальная доходность настоящими?', answer: 'Бэктестинг и реальная доходность на 100% реальны и не могут быть подделаны, так как это экраны, предоставляемые торговой платформой.' },
-        { question: 'Является ли RealQuant бесплатным?', answer: 'Да. Это 100% бесплатно. Мы не получаем комиссионных за управление прибылью и не взимаем отдельную ежемесячную плату за программу.' },
         { question: 'Какова минимальная сумма инвестиций?', answer: 'Поскольку существует минимальное количество контрактов для позиций, это возможно от $1,000.' },
-        { question: 'Безопасны ли мои инвестиции?', answer: 'RealQuant не получает средства клиентов напрямую. Это система, в которой ваш биржевой счет и RealQuant связаны, и у нас есть полномочия только принимать решения о покупке и продаже позиций, а не полномочия на ввод или вывод средств, поэтому ваши активы в безопасности.' },
-        { question: 'Какая стратегия используется для достижения прибыли?', answer: 'RealQuant — это квантовая программа, созданная путем сочетания передовых алгоритмов (система ротации, динамическая адаптация к волатильности, смешанная работа тренда и контртренда, адаптивная логика восстановления). Она создает прибыль, торгуя AUDCAD (валютная пара австралийский доллар/канадский доллар) и XAUUSD (золото).' },
+        { question: 'Безопасны ли мои инвестиции?', answer: 'RealQuant не получает средства клиентов напрямую. Это система, в которой ваш биржевой счет и RealQuant связаны, и у нас есть полномочия только принимать решения о покупке и продаже позиций, а не полномочия на ввод или вывод средств.' },
+        { question: 'Какая стратегия используется для достижения прибыли?', answer: 'RealQuant разработан на основе объединения независимо работающих пробойных стратегий для фиксации различных условий пробоя и фаз расширения цен. Стабильность повышается за счет процентного риск-менеджмента (Stop Loss), фильтрации важных новостей и защиты при закрытии рынка. (Мы не используем Мартингейл, сетку (Grid) или увеличение размера контракта после убытков.)' },
         { question: 'Как мне настроить стратегию?', answer: 'Настройка стратегии не требует индивидуального намерения клиента и не требует отдельной настройки. (100% автоматизировано 24/7) Руководство подготавливается при вступлении в сообщество. Пожалуйста, обратитесь к руководству.' },
         { question: 'Как мне вывести прибыль?', answer: 'Руководство подготавливается при вступлении в сообщество. Пожалуйста, обратитесь к руководству.' }
       ]
@@ -387,9 +564,51 @@ export const translations = {
   },
   de: {
     nav: { home: 'Startseite', partners: 'Partner', strategies: 'RealQuant-Strategien', quantStrategies: 'RealQuant-Strategien', performance: 'Backtesting', actualReturns: 'Tatsächliche Renditen', admin: 'Admin' },
-    hero: { title: 'Durch Daten belegte reale Renditen. RealQuant', subtitle: 'RealQuant generiert stabile Renditen, indem es Emotionen eliminiert und sich durch fortschrittliche Algorithmen und Big-Data-Analysen ausschließlich auf den Gewinn konzentriert.', cta: 'Community beitreten' },
+    hero: { title: 'Durch Daten belegte reale Renditen. RealQuant', subtitle: 'RealQuant strebt stabile Erträge an, indem Emotionen ausgeschaltet werden und der Fokus durch fortschrittliche Algorithmen und Big-Data-Analysen ausschließlich auf Profitabilität liegt.', cta: 'Community beitreten' },
     partners: { tag: '01 / PARTNER', title: 'Unterstützt von Branchenführern und Institutionen', desc: 'Weltweit vertrauen uns führende Finanzinstitute und Technologiepartner.', viewMore: 'MEHR ANZEIGEN +' },
-    features: { title: 'RealQuant-Strategien', items: [{ title: 'ML-basierte Prognosemodelle', desc: 'Analysiert Millionen von Marktdaten in Echtzeit, um den optimalen Handelszeitpunkt zu erfassen.' }, { title: 'Risikomanagementsystem', desc: 'Maximiert die Portfoliostabilität durch dynamische Asset-Allokation als Reaktion auf Marktvolatilität.' }, { title: 'Rotationssystem', desc: 'Verfolgt Marktmittelflüsse, um Sektoren und Aktien zu erfassen, in denen eine Rotation stattfindet.' }, { title: 'Trend + Gegentrend-Mischbetrieb', desc: 'Unterscheidet zwischen starken Trend- und Seitwärtsphasen, um die Logik automatisch umzuschalten.' }, { title: 'Adaptive Erholungslogik', desc: 'Aktiviert einen intelligenten Erholungsalgorithmus, der die Erholungsgeschwindigkeit an die Marktbedingungen anpasst.' }, { title: 'Infrastruktur mit extrem niedriger Latenz', desc: 'Nutzt Mikrochancen am Markt durch Systemhandel mit minimierter Latenz.' }] },
+    features: {
+      title: 'RealQuant-Strategien',
+      subtitle: 'RealQuant kombiniert unabhängig voneinander agierende Breakout-Strategien, um diverse Ausbruchsbedingungen und Preiserweiterungsphasen zu erfassen. Prozentbasiertes Risikomanagement (Stop Loss), News-Filter und Marktschlussschutz gewährleisten maximale Stabilität.',
+      disclaimer: 'Kein Martingale, kein Grid, keine Lot-Eskalation nach Verlusten.',
+      safetyHighlights: [
+        { label: 'NO Martingale', desc: 'Kein Martingale' },
+        { label: 'NO Grid System', desc: 'Kein Grid' },
+        { label: 'NO Lot Escalation', desc: 'Feste Positionsgrößen' },
+        { label: 'Mandatory Stop Loss', desc: 'Fester % Stop Loss' },
+      ],
+      items: [
+        {
+          tag: 'ARCHITECTURE',
+          title: 'Multi-Breakout-Architektur',
+          desc: 'Kombiniert mehrere unabhängige Breakout-Algorithmen zur präzisen Erfassung von Momentum-Ausbrüchen in wechselnden Marktphasen.',
+        },
+        {
+          tag: 'MOMENTUM',
+          title: 'Erfassung von Preiserweiterungen',
+          desc: 'Erkennt Volatilitätsexpansion und Trendbeschleunigung in Echtzeit, um Trades mit hohem Chance-Risiko-Verhältnis auszuführen.',
+        },
+        {
+          tag: 'RISK CONTROL',
+          title: 'Prozentbasiertes Risikomanagement',
+          desc: 'Obligatorischer prozentualer Stop Loss bei jedem Trade schützt das Gesamtkapital vor unerwarteten Verlusten.',
+        },
+        {
+          tag: 'FILTERING',
+          title: 'High-Impact-News-Filter',
+          desc: 'Pausiert den Handel automatisch vor und nach wichtigen Wirtschaftsdaten (CPI, FOMC), um Extremausschläge zu meiden.',
+        },
+        {
+          tag: 'PROTECTION',
+          title: 'Marktschlussschutz',
+          desc: 'Sichert Positionen vor Wochenendschluss, um Wochenend-Gaps und Liquiditätsengpässe auszuschließen.',
+        },
+        {
+          tag: 'DISCIPLINE',
+          title: 'Strikte Non-Martingale-Disziplin',
+          desc: 'Konsequenter Verzicht auf toxische Verdopplungs- oder Grid-Strategien zugunsten mathematisch geprüfter Positionsgrößen.',
+        },
+      ],
+    },
     quantStrategies: { title: 'RealQuant-Strategien', items: [{ name: 'Alpha-Strategie', desc: 'Währungspaar AUD/CAD' }, { name: 'Beta-Strategie', desc: 'MultiFOREX-Währungspaare' }, { name: 'Gamma-Strategie', desc: 'XAU/USD Gold-Futures' }, { name: 'Delta-Strategie', desc: 'Währungspaar EUR/USD' }, { name: 'Epsilon-Strategie', desc: 'MultiFOREX2-Währungspaare' }, { name: 'Hexa-Strategie', desc: 'Währungspaar USDJPY' }] },
     performance: {
       notice: 'Detaillierte Backtest-Handelshistorie kann in der Community überprüft werden',
@@ -434,10 +653,9 @@ export const translations = {
       floatingButton: '1:1 Chat',
       faqs: [
         { question: 'Sind Backtesting und tatsächliche Renditen echt?', answer: 'Backtesting und tatsächliche Renditen sind zu 100 % echt und können nicht manipuliert werden, da es sich um Bildschirme handelt, die von der Handelsplattform bereitgestellt werden.' },
-        { question: 'Ist RealQuant kostenlos?', answer: 'Ja. Es ist 100 % kostenlos. Wir erhalten keine Verwaltungsgebühren auf Gewinne und erheben keine separaten monatlichen Gebühren für das Programm.' },
         { question: 'Was ist der Mindestanlagebetrag?', answer: 'Da es eine Mindestkontraktmenge für Positionen gibt, ist dies ab $1,000 möglich.' },
-        { question: 'Ist meine Investition sicher?', answer: 'RealQuant erhält keine Kundengelder direkt. Es ist ein System, bei dem Ihr Börsenkonto und RealQuant verbunden sind, und wir haben nur die Befugnis, Kauf- und Verkaufsentscheidungen für Positionen zu treffen, nicht die Befugnis, Gelder einzuzahlen oder abzuheben, sodass Ihr Vermögen sicher ist.' },
-        { question: 'Welche Strategie wird verwendet, um Gewinne zu erzielen?', answer: 'RealQuant ist ein Quant-Programm, das durch die Kombination fortschrittlicher Algorithmen (Rotationssystem, dynamische Volatilitätsanpassung, Trend + Gegentrend-Mischbetrieb, adaptive Erholungslogik) erstellt wurde. Es erzielt Gewinne durch den Handel mit AUDCAD (Währungspaar Australischer Dollar/Kanadischer Dollar) und XAUUSD (Gold).' },
+        { question: 'Ist meine Investition sicher?', answer: 'RealQuant erhält keine Kundengelder direkt. Es ist ein System, bei dem Ihr Börsenkonto und RealQuant verbunden sind, und wir haben nur die Befugnis, Kauf- und Verkaufsentscheidungen für Positionen zu treffen, nicht die Befugnis, Gelder einzuzahlen oder abzuheben.' },
+        { question: 'Welche Strategie wird verwendet, um Gewinne zu erzielen?', answer: 'RealQuant kombiniert unabhängig voneinander agierende Breakout-Strategien, um diverse Ausbruchsbedingungen und Preiserweiterungsphasen profitabel zu nutzen. Die Stabilität wird durch prozentbasiertes Risikomanagement (Stop Loss), High-Impact-News-Filter und Marktschlussschutz maximiert. (Wir verwenden kein Martingale, kein Grid und keine Erhöhung der Kontraktgröße nach Verlusten.)' },
         { question: 'Wie richte ich die Strategie ein?', answer: 'Die Einrichtung der Strategie erfordert keine individuelle Absicht des Kunden und es ist keine separate Einrichtung erforderlich. (100 % automatisiert rund um die Uhr) Ein Leitfaden wird erstellt, wenn Sie der Community beitreten. Bitte beachten Sie den Leitfaden.' },
         { question: 'Wie hebe ich Gewinne ab?', answer: 'Ein Leitfaden wird erstellt, wenn Sie der Community beitreten. Bitte beachten Sie den Leitfaden.' }
       ]
@@ -449,9 +667,51 @@ export const translations = {
   },
   fr: {
     nav: { home: 'Accueil', partners: 'Partenaires', strategies: 'Stratégies RealQuant', quantStrategies: 'Stratégies RealQuant', performance: 'Backtesting', actualReturns: 'Rendements réels', admin: 'Admin' },
-    hero: { title: 'Des rendements réels prouvés par les données. RealQuant', subtitle: 'RealQuant génère des rendements stables en éliminant les émotions et en se concentrant uniquement sur le profit grâce à des algorithmes avancés et à l\'analyse de données massives.', cta: 'Rejoindre la communauté' },
+    hero: { title: 'Des rendements réels prouvés par les données. RealQuant', subtitle: 'RealQuant vise des rendements stables en éliminant les émotions et en se concentrant uniquement sur le profit grâce à des algorithmes avancés et à l\'analyse de données massives.', cta: 'Rejoindre la communauté' },
     partners: { tag: '01 / PARTENAIRES', title: 'Soutenu par les leaders de l\'industrie et les institutions', desc: 'Fait confiance par les plus grandes institutions financières et partenaires technologiques du monde entier.', viewMore: 'VOIR PLUS +' },
-    features: { title: 'Stratégies RealQuant', items: [{ title: 'Modèles de prédiction basés sur le ML', desc: 'Analyse des millions de données de marché en temps réel pour capturer le moment optimal de trading.' }, { title: 'Système de gestion des risques', desc: 'Maximise la stabilité du portefeuille avec une allocation d\'actifs dynamique répondant à la volatilité du marché.' }, { title: 'Système de rotation', desc: 'Suit les flux de fonds du marché pour capturer les secteurs et les actions où une rotation se produit.' }, { title: 'Opération mixte tendance + contre-tendance', desc: 'Distingue les sections de tendance forte et les sections de contre-tendance pour changer automatiquement de logique.' }, { title: 'Logique de récupération adaptative', desc: 'Active un algorithme de récupération intelligent qui ajuste la vitesse de récupération en fonction des conditions du marché.' }, { title: 'Infrastructure à ultra-faible latence', desc: 'Saisit les micro-opportunités du marché grâce à un trading système à latence minimisée.' }] },
+    features: {
+      title: 'Stratégies RealQuant',
+      subtitle: 'RealQuant associe des stratégies de breakout fonctionnant de manière autonome pour capturer les conditions de cassure et les phases d\'expansion des prix. La gestion rigoureuse des risques en pourcentage (Stop Loss), les filtres de nouvelles et la protection de clôture maximisent la stabilité.',
+      disclaimer: 'Nous n\'utilisons pas de Martingale, de Grid ou d\'augmentation de lots après des pertes.',
+      safetyHighlights: [
+        { label: 'NO Martingale', desc: 'Zéro Martingale' },
+        { label: 'NO Grid System', desc: 'Sans Grid' },
+        { label: 'NO Lot Escalation', desc: 'Lots Maîtrisés' },
+        { label: 'Mandatory Stop Loss', desc: 'Stop Loss Fixe %' },
+      ],
+      items: [
+        {
+          tag: 'ARCHITECTURE',
+          title: 'Moteur Multi-Breakout',
+          desc: 'Combine plusieurs algorithmes de breakout indépendants pour saisir précisément les cassures de momentum sur divers marchés.',
+        },
+        {
+          tag: 'MOMENTUM',
+          title: 'Capture de l\'Expansion des Prix',
+          desc: 'Détecte l\'expansion de volatilité et l\'accélération de tendance en temps réel pour exécuter des transactions à haut ratio gain/risque.',
+        },
+        {
+          tag: 'RISK CONTROL',
+          title: 'Gestion des Risques en Pourcentage',
+          desc: 'Application systématique d\'un Stop Loss en pourcentage fixe sur chaque trade pour éliminer tout risque de perte unitaire majeure.',
+        },
+        {
+          tag: 'FILTERING',
+          title: 'Filtre d\'Actualités à Fort Impact',
+          desc: 'Interrompt automatiquement le trading lors des annonces économiques majeures (CPI, FOMC) pour éviter les mouvements erratiques.',
+        },
+        {
+          tag: 'PROTECTION',
+          title: 'Protection de Clôture du Marché',
+          desc: 'Sécurise les positions avant le week-end afin d\'éliminer les risques de gap d\'ouverture et de slippage lié au manque de liquidité.',
+        },
+        {
+          tag: 'DISCIPLINE',
+          title: 'Discipline Stricte Sans Martingale',
+          desc: 'Rejet total des systèmes de doublement et de grid dangereux au profit d\'un dimensionnement quantitatif scientifiquement validé.',
+        },
+      ],
+    },
     quantStrategies: { title: 'Stratégies RealQuant', items: [{ name: 'Stratégie Alpha', desc: 'Paire de devises AUD/CAD' }, { name: 'Stratégie Bêta', desc: 'Paires de devises MultiFOREX' }, { name: 'Stratégie Gamma', desc: 'Contrats à terme sur l\'or XAU/USD' }, { name: 'Stratégie Delta', desc: 'Paire de devises EUR/USD' }, { name: 'Stratégie Epsilon', desc: 'Paires de devises MultiFOREX2' }, { name: 'Stratégie Hexa', desc: 'Paire de devises USDJPY' }] },
     performance: {
       notice: 'L\'historique détaillé des transactions du backtest peut être consulté dans la communauté',
@@ -496,10 +756,9 @@ export const translations = {
       floatingButton: 'Chat 1:1',
       faqs: [
         { question: 'Le backtesting et les rendements réels sont-ils réels ?', answer: 'Le backtesting et les rendements réels sont 100 % réels et ne peuvent pas être manipulés car il s\'agit d\'écrans fournis par la plateforme de trading.' },
-        { question: 'RealQuant est-il gratuit ?', answer: 'Oui. C\'est 100 % gratuit. Nous ne percevons pas de frais de gestion sur les bénéfices, et nous ne facturons pas de frais mensuels distincts pour le programme.' },
         { question: 'Quel est le montant minimum d\'investissement ?', answer: 'Puisqu\'il existe une quantité minimale de contrat pour les positions, c\'est possible à partir de $1,000.' },
-        { question: 'Mon investissement est-il sûr ?', answer: 'RealQuant ne reçoit pas directement les fonds des clients. C\'est un système où votre compte d\'échange et RealQuant sont connectés, et nous n\'avons que l\'autorité de prendre des décisions d\'achat et de vente pour les positions, pas l\'autorité de déposer ou de retirer des fonds, donc vos actifs sont en sécurité.' },
-        { question: 'Quelle stratégie est utilisée pour réaliser des profits ?', answer: 'RealQuant est un programme quant créé en combinant des algorithmes avancés (système de rotation, adaptation dynamique à la volatilité, opération mixte tendance + contre-tendance, logique de récupération adaptative). Il crée des profits en négociant l\'AUDCAD (paire de devises Dollar australien/Dollar canadien) et l\'XAUUSD (Or).' },
+        { question: 'Mon investissement est-il sûr ?', answer: 'RealQuant ne reçoit pas directement les fonds des clients. C\'est un système où votre compte d\'échange et RealQuant sont connectés, et nous n\'avons que l\'autorité de prendre des décisions d\'achat et de vente pour les positions, pas l\'autorité de déposer ou de retirer des fonds.' },
+        { question: 'Quelle stratégie est utilisée pour réaliser des profits ?', answer: 'RealQuant est conçu en combinant des stratégies de breakout fonctionnant de manière autonome pour capturer diverses conditions de cassure et phases d\'expansion des prix. La stabilité est renforcée par une gestion du risque basée sur un pourcentage (Stop Loss), des filtres d\'actualités à fort impact et une protection à la clôture du marché. (Nous n\'utilisons pas de Martingale, de Grid ni d\'augmentation de la taille des contrats après des pertes.)' },
         { question: 'Comment configurer la stratégie ?', answer: 'La configuration de la stratégie ne nécessite pas l\'intention individuelle du client et aucune configuration séparée n\'est requise. (100 % automatisé 24h/24, 7j/7) Un guide est préparé lorsque vous entrez dans la communauté. Veuillez vous référer au guide.' },
         { question: 'Comment retirer des profits ?', answer: 'Un guide est préparé lorsque vous entrez dans la communauté. Veuillez vous référer au guide.' }
       ]
@@ -511,9 +770,51 @@ export const translations = {
   },
   hi: {
     nav: { home: 'होम', partners: 'साझेदार', strategies: 'RealQuant रणनीतियाँ', quantStrategies: 'RealQuant रणनीतियाँ', performance: 'बैकटेस्टिंग', actualReturns: 'वास्तविक रिटर्न', admin: 'व्यवस्थापक' },
-    hero: { title: 'डेटा द्वारा सिद्ध वास्तविक रिटर्न। RealQuant', subtitle: 'RealQuant उन्नत एल्गोरिदम और बड़े डेटा विश्लेषण के माध्यम से भावनाओं को समाप्त करके और पूरी तरह से लाभ पर ध्यान केंद्रित करके स्थिर रिटर्न उत्पन्न करता है।', cta: 'समुदाय में शामिल हों' },
+    hero: { title: 'डेटा द्वारा सिद्ध वास्तविक रिटर्न। RealQuant', subtitle: 'RealQuant उन्नत एल्गोरिदम और बड़े डेटा विश्लेषण के माध्यम से भावनाओं को समाप्त करके और पूरी तरह से लाभ पर ध्यान केंद्रित करके स्थिर रिटर्न प्राप्त करने का प्रयास करता है।', cta: 'समुदाय में शामिल हों' },
     partners: { tag: '01 / साझेदार', title: 'उद्योग के नेताओं और संस्थानों द्वारा समर्थित', desc: 'दुनिया भर के प्रमुख वित्तीय संस्थानों और प्रौद्योगिकी भागीदारों द्वारा विश्वसनीय।', viewMore: 'और देखें +' },
-    features: { title: 'RealQuant रणनीतियाँ', items: [{ title: 'एमएल-आधारित भविष्यवाणी मॉडल', desc: 'इष्टतम ट्रेडिंग समय को पकड़ने के लिए वास्तविक समय में लाखों बाजार डेटा बिंदुओं का विश्लेषण करता है।' }, { title: 'जोख임 प्रबंधन प्रणाली', desc: 'बाजार की अस्थिरता का जवाब देने वाले गतिशील परिसंपत्ति आवंटन के साथ पोर्टफोलियो स्थिरता को अधिकतम करता है।' }, { title: 'रोटेशन सिस्टम', desc: 'बाजार निधि प्रवाह को ट्रैक करता है ताकि उन क्षेत्रों और शेयरों को पकड़ा जा सके जहां रोटेशन होता है।' }, { title: 'ट्रेंड + काउंटर-ट्रेंड मिश्रित ऑपरेशन', desc: 'लॉजिक को स्वचालित रूप से स्विच करने के लिए मजबूत ट्रेंड और रेंज-बाउंड सेक्शन के बीच अंतर करता है।' }, { title: 'अनुकूली पुनर्प्राप्ति तर्क', desc: 'एक बुद्धिमान पुनर्प्राप्ति एल्गोरिदम को सक्रिय करता है जो बाजार की स्थितियों के आधार पर पुनर्प्राप्ति गति को समायोजित करता है।' }, { title: 'अल्ट्रा-लो लेटेंसी इन्फ्रास्ट्रक्चर', desc: 'न्यूनतम विलंबता सिस्टम ट्रेडिंग के साथ बाजार में सूक्ष्म अवसरों को जब्त करता है।' }] },
+    features: {
+      title: 'RealQuant रणनीतियाँ',
+      subtitle: 'RealQuant विभिन्न ब्रेकआउट स्थितियों और मूल्य विस्तार चरणों को पकड़ने और व्यापार करने के लिए स्वतंत्र रूप से काम करने वाली ब्रेकआउट रणनीतियों को जोड़ता है। प्रतिशत-आधारित जोखिम प्रबंधन (Stop Loss), उच्च प्रभाव समाचार फिल्टर और बाजार बंद सुरक्षा के माध्यम से स्थिरता बढ़ाई जाती है।',
+      disclaimer: 'हम मार्टिंगेल, ग्रिड या नुकसान के बाद अनुबंध का आकार बढ़ाने का उपयोग नहीं करते हैं।',
+      safetyHighlights: [
+        { label: 'NO Martingale', desc: 'मार्टिंगेल मुक्त' },
+        { label: 'NO Grid System', desc: 'ग्रिड मुक्त' },
+        { label: 'NO Lot Escalation', desc: 'निश्चित लॉट साइज' },
+        { label: 'Mandatory Stop Loss', desc: 'प्रतिशत स्टॉप लॉस' },
+      ],
+      items: [
+        {
+          tag: 'ARCHITECTURE',
+          title: 'मल्टी-ब्रेकआउट आर्किटेक्चर',
+          desc: 'विभिन्न बाजार स्थितियों में गति ब्रेकआउट को सटीक रूप से पकड़ने के लिए कई स्वतंत्र ब्रेकआउट एल्गोरिदम को जोड़ता है।',
+        },
+        {
+          tag: 'MOMENTUM',
+          title: 'मूल्य विस्तार चरण का पता लगाना',
+          desc: 'उच्च जोखिम-इनाम अनुपात वाले ट्रेडों को निष्पादित करने के लिए वास्तविक समय में अस्थिरता विस्तार और प्रवृत्ति त्वरण की पहचान करता है।',
+        },
+        {
+          tag: 'RISK CONTROL',
+          title: 'प्रतिशत-आधारित जोखिम प्रबंधन',
+          desc: 'अप्रत्याशित भारी नुकसान को रोकने के लिए प्रत्येक व्यापार पर अनिवार्य प्रतिशत स्टॉप लॉस लागू किया जाता है।',
+        },
+        {
+          tag: 'FILTERING',
+          title: 'उच्च प्रभाव समाचार फ़िल्टर',
+          desc: 'असामान्य अस्थिरता से बचने के लिए प्रमुख आर्थिक डेटा (CPI, FOMC) के समय स्वचालित रूप से ट्रेडिंग रोक देता है।',
+        },
+        {
+          tag: 'PROTECTION',
+          title: 'बाजार बंद होने की सुरक्षा',
+          desc: 'सप्ताहांत के अंतराल (Gap) और तरलता की कमी के जोखिम को खत्म करने के लिए सप्ताहांत से पहले पदों को सुरक्षित करता है।',
+        },
+        {
+          tag: 'DISCIPLINE',
+          title: 'सख्त गैर-मार्टिंगेल अनुशासन',
+          desc: 'विषाक्त ग्रिड और दोहरीकरण रणनीतियों को पूरी तरह से त्यागकर केवल गणितीय रूप से सत्यापित पोजीशन साइजिंग पर काम करता है।',
+        },
+      ],
+    },
     quantStrategies: { title: 'RealQuant रणनीतियाँ', items: [{ name: 'अल्फा रणनीति', desc: 'AUD/CAD मुद्रा जोड़ी' }, { name: 'बीटा रणनीति', desc: 'MultiFOREX मुद्रा जोड़े' }, { name: 'गामा रणनीति', desc: 'XAU/USD गोल्ड फ्यूचर्स' }, { name: 'डेल्टा रणनीति', desc: 'EUR/USD मुद्रा जोड़ी' }, { name: 'एप्सिलॉन रणनीति', desc: 'MultiFOREX2 मुद्रा जोड़े' }, { name: 'हेक्सा रणनीति', desc: 'USDJPY मुद्रा जोड़ी' }] },
     performance: {
       notice: 'विस्तृत बैकटेस्ट ट्रेडिंग इतिहास समुदाय में देखा जा सकता है',
@@ -558,10 +859,9 @@ export const translations = {
       floatingButton: '1:1 चैट',
       faqs: [
         { question: 'क्या बैकटेस्टिंग और वास्तविक रिटर्न वास्तविक हैं?', answer: 'बैकटेस्टिंग और वास्तविक रिटर्न 100% वास्तविक हैं और इनके साथ छेड़छाड़ नहीं की जा सकती क्योंकि ये ट्रेडिंग प्लेटफॉर्म द्वारा प्रदान की गई स्क्रीन हैं।' },
-        { question: 'क्या RealQuant मुफ़्त है?', answer: 'हाँ। यह 100% मुफ़्त है। हम लाभ के लिए प्रबंधन शुल्क नहीं लेते हैं, और न ही हम कार्यक्रम के लिए अलग से मासिक शुल्क लेते हैं।' },
         { question: 'न्यूनतम निवेश राशि क्या है?', answer: 'चूंकि पोजीशन के लिए न्यूनतम अनुबंध राशि होती है, इसलिए यह $1,000 से संभव है।' },
-        { question: 'क्या मेरा निवेश सुरक्षित है?', answer: 'RealQuant सीधे ग्राहकों से धन प्राप्त नहीं करता है। यह एक ऐसी प्रणाली है जहाँ आपका एक्सचेंज खाता और RealQuant जुड़े हुए हैं, और हमारे पास केवल पोजीशन खरीदने और बेचने के निर्णय लेने का अधिकार है, न कि धन जमा करने या निकालने का अधिकार, इसलिए आपकी संपत्ति सुरक्षित है।' },
-        { question: 'लाभ प्राप्त करने के लिए किस रणनीति का उपयोग किया जाता है?', answer: 'RealQuant एक मात्रात्मक कार्यक्रम है जिसे उन्नत एल्गोरिदम (रोटेशन सिस्टम, गतिशील अस्थिरता अनुकूलन, ट्रेंड + काउंटर-ट्रेंड मिश्रित ऑपरेशन, अनुकूली पुनर्प्राप्ति तर्क) के संयोजन से बनाया गया है। यह AUDCAD (ऑस्ट्रेलियाई डॉलर/कनाडाई डॉलर मुद्रा जोड़ी) और XAUUSD (सोना) का व्यापार करके लाभ कमाता है।' },
+        { question: 'क्या मेरा निवेश सुरक्षित है?', answer: 'RealQuant सीधे ग्राहकों से धन प्राप्त नहीं करता है। यह एक ऐसी प्रणाली है जहाँ आपका एक्सचेंज खाता और RealQuant जुड़े हुए हैं, और हमारे पास केवल पोजीशन खरीदने और बेचने के निर्णय लेने का अधिकार है, न कि धन जमा करने या निकालने का अधिकार।' },
+        { question: 'लाभ प्राप्त करने के लिए किस रणनीति का उपयोग किया जाता है?', answer: 'RealQuant को स्वतंत्र रूप से काम करने वाली ब्रेकआउट रणनीतियों को जोड़कर विभिन्न ब्रेकआउट स्थितियों और मूल्य विस्तार चरणों को पकड़ने और व्यापार करने के लिए डिज़ाइन किया गया है। प्रतिशत-आधारित जोखिम प्रबंधन (Stop Loss), उच्च प्रभाव समाचार फिल्टर और बाजार बंद सुरक्षा के माध्यम से स्थिरता बढ़ाई जाती है। (हम मार्टिंगेल, ग्रिड या नुकसान के बाद अनुबंध का आकार बढ़ाने का उपयोग नहीं करते हैं।)' },
         { question: 'मैं रणनीति कैसे सेट करूँ?', answer: 'रणनीति सेट करने के लिए ग्राहक के व्यक्तिगत इरादे की आवश्यकता नहीं होती है और किसी अलग सेटिंग की आवश्यकता नहीं होती है। (24/7 100% स्वचालित) जब आप समुदाय में शामिल होते हैं तो एक गाइड तैयार की जाती है। कृपया गाइड देखें।' },
         { question: 'मैं लाभ कैसे निकालूँ?', answer: 'जब आप समुदाय में शामिल होते हैं तो एक गाइड तैयार की जाती है। कृपया गाइड देखें।' }
       ]
@@ -573,9 +873,51 @@ export const translations = {
   },
   es: {
     nav: { home: 'Inicio', partners: 'Socios', strategies: 'Estrategias RealQuant', quantStrategies: 'Estrategias RealQuant', performance: 'Backtesting', actualReturns: 'Rentabilidades reales', admin: 'Admin' },
-    hero: { title: 'Rentabilidades reales probadas por datos. RealQuant', subtitle: 'RealQuant genera rendimientos estables al eliminar las emociones y centrarse únicamente en el beneficio a través de algoritmos avanzados y análisis de grandes datos.', cta: 'Unirse a la comunidad' },
+    hero: { title: 'Rentabilidades reales probadas por datos. RealQuant', subtitle: 'RealQuant busca rendimientos estables al eliminar las emociones y centrarse únicamente en el beneficio a través de algoritmos avanzados y análisis de big data.', cta: 'Unirse a la comunidad' },
     partners: { tag: '01 / SOCIOS', title: 'Respaldado por líderes de la industria e instituciones', desc: 'Confiado por las principales instituciones financieras y socios tecnológicos de todo el mundo.', viewMore: 'VER MÁS +' },
-    features: { title: 'Estrategias RealQuant', items: [{ title: 'Modelos de predicción basados en ML', desc: 'Analiza millones de datos de market en tiempo real para capturar el momento óptimo de negociación.' }, { title: 'Sistema de gestión de riesgos', desc: 'Maximiza la estabilidad de la cartera con una asignación dinámica de activos que responde a la volatilidad del mercado.' }, { title: 'Sistema de rotación', desc: 'Rastrea los flujos de fondos del mercado para capturar sectores y acciones donde ocurre la rotación.' }, { title: 'Operación mixta de tendencia + contratendencia', desc: 'Distingue entre secciones de tendencia fuerte y secciones de rango para cambiar automáticamente la lógica.' }, { title: 'Lógica de recuperación adaptativa', desc: 'Activa un algoritmo de recuperación inteligente que ajusta la velocidad de recuperación según las condiciones del mercado.' }, { title: 'Infraestructura de latencia ultrabaja', desc: 'Aprovecha las microoportunidades del mercado con un sistema de trading de latencia minimizada.' }] },
+    features: {
+      title: 'Estrategias RealQuant',
+      subtitle: 'RealQuant combina estrategias de breakout independientes para capturar condiciones de ruptura y fases de expansión de precios. La estabilidad se maximiza mediante una gestión de riesgo por porcentaje (Stop Loss), filtros de noticias y protección de cierre de mercado.',
+      disclaimer: 'No utilizamos Martingala, Grid ni aumento de contratos tras pérdidas.',
+      safetyHighlights: [
+        { label: 'NO Martingale', desc: 'Cero Martingala' },
+        { label: 'NO Grid System', desc: 'Sin Grid' },
+        { label: 'NO Lot Escalation', desc: 'Tamaño de Lote Fijo' },
+        { label: 'Mandatory Stop Loss', desc: 'Stop Loss Fijo %' },
+      ],
+      items: [
+        {
+          tag: 'ARCHITECTURE',
+          title: 'Motor Multi-Breakout',
+          desc: 'Combina múltiples algoritmos de breakout independientes para capturar con precisión las rupturas en diversos entornos de mercado.',
+        },
+        {
+          tag: 'MOMENTUM',
+          title: 'Captura de Expansión de Precios',
+          desc: 'Detecta en tiempo real la expansión de volatilidad y la aceleración de la tendencia para ejecutar operaciones con alto ratio beneficio/riesgo.',
+        },
+        {
+          tag: 'RISK CONTROL',
+          title: 'Gestión de Riesgo por Porcentaje',
+          desc: 'Aplicación obligatoria de Stop Loss porcentual en cada operación para blindar la cuenta ante pérdidas unitarias severas.',
+        },
+        {
+          tag: 'FILTERING',
+          title: 'Filtro de Noticias de Alto Impacto',
+          desc: 'Pausa automáticamente las operaciones en torno a noticias críticas (CPI, FOMC) para evitar picos de volatilidad anormales.',
+        },
+        {
+          tag: 'PROTECTION',
+          title: 'Protección de Cierre de Mercado',
+          desc: 'Asegura las posiciones antes del fin de semana para eliminar riesgos de gap y deslizamientos por falta de liquidez.',
+        },
+        {
+          tag: 'DISCIPLINE',
+          title: 'Disciplina Estricta Sin Martingala',
+          desc: 'Exclusión absoluta de promedios a la baja o doblaje de lotes, operando únicamente con dimensionamiento cuantitativo verificado.',
+        },
+      ],
+    },
     quantStrategies: { title: 'Estrategias RealQuant', items: [{ name: 'Estrategia Alfa', desc: 'Par de divisas AUD/CAD' }, { name: 'Estrategia Beta', desc: 'Pares de divisas MultiFOREX' }, { name: 'Estrategia Gamma', desc: 'Futuros de oro XAU/USD' }, { name: 'Estrategia Delta', desc: 'Par de divisas EUR/USD' }, { name: 'Estrategia Epsilon', desc: 'Pares de divisas MultiFOREX2' }, { name: 'Estrategia Hexa', desc: 'Par de divisas USDJPY' }] },
     performance: {
       notice: 'El historial detallado de operaciones de backtest se puede consultar en la comunidad',
@@ -620,10 +962,9 @@ export const translations = {
       floatingButton: 'Chat 1:1',
       faqs: [
         { question: '¿Son reales el backtesting y los rendimientos reales?', answer: 'El backtesting y los rendimientos reales son 100% reales y no pueden ser manipulados ya que son pantallas proporcionadas por la plataforma de trading.' },
-        { question: '¿Es RealQuant gratis?', answer: 'Sí. Es 100% gratis. No recibimos comisiones de gestión por los beneficios, ni cobramos cuotas mensuales por el programa.' },
         { question: '¿Cuál es el monto mínimo de inversión?', answer: 'Dado que existe una cantidad mínima de contrato para las posiciones, es posible desde $1,000.' },
-        { question: '¿Es segura mi inversión?', answer: 'RealQuant no recibe fondos de los clientes directamente. Es un sistema donde su cuenta de intercambio y RealQuant están conectados, y solo tenemos la autoridad para tomar decisiones de compra y venta de posiciones, no la autoridad para depositar o retirar fondos, por lo que sus activos están seguros.' },
-        { question: '¿Qué estrategia se utiliza para lograr beneficios?', answer: 'RealQuant es un programa cuantitativo creado mediante la combinación de algoritmos avanzados (sistema de rotación, adaptación dinámica a la volatilidad, operación mixta de tendencia + contratendencia, lógica de recuperación adaptativa). Crea beneficios operando AUDCAD (par de divisas Dólar australiano/Dólar canadiense) y XAUUSD (Oro).' },
+        { question: '¿Es segura mi inversión?', answer: 'RealQuant no recibe fondos de los clientes directamente. Es un sistema donde su cuenta de intercambio y RealQuant están conectados, y solo tenemos la autoridad para tomar decisiones de compra y venta de posiciones, no la autoridad para depositar o retirar fondos.' },
+        { question: '¿Qué estrategia se utiliza para lograr beneficios?', answer: 'RealQuant está diseñado combinando estrategias de breakout que operan de manera independiente para capturar y negociar diversas condiciones de ruptura y fases de expansión de precios. La estabilidad se mejora mediante la gestión de riesgo basada en porcentajes (Stop Loss), filtros de noticias de alto impacto y protección de cierre de mercado. (No utilizamos Martingala, Grid ni aumento de contratos tras pérdidas.)' },
         { question: '¿Cómo configuro la estrategia?', answer: 'La configuración de la estrategia no requiere la intención individual del cliente y no se requiere una configuración por separado. (100% automatizado 24/7) Se prepara una guía cuando ingresas a la comunidad. Por favor, consulta la guía.' },
         { question: '¿Cómo retiro los beneficios?', answer: 'Se prepara una guía cuando ingresas a la comunidad. Por favor, consulta la guía.' }
       ]
@@ -635,9 +976,51 @@ export const translations = {
   },
   ar: {
     nav: { home: 'الرئيسية', partners: 'الشركاء', strategies: 'استراتيجيات RealQuant', quantStrategies: 'استراتيجيات RealQuant', performance: 'الاختبار العكسي', actualReturns: 'العوائد الحقيقية', admin: 'المسؤول' },
-    hero: { title: 'عوائد حقيقية مثبتة بالبيانات. RealQuant', subtitle: 'تحقق RealQuant عوائد مستقرة من خلال القضاء على العواطف والتركيز فقط على الربح من خلال الخوارزميات المتقدمة وتحليل البيانات الضخمة.', cta: 'انضم إلى المجتمع' },
+    hero: { title: 'عوائد حقيقية مثبتة بالبيانات. RealQuant', subtitle: 'تسعى RealQuant لتحقيق عوائد مستقرة من خلال القضاء على العواطف والتركيز فقط على الربح عبر الخوارزميات المتقدمة وتحليل البيانات الضخمة.', cta: 'انضم إلى المجتمع' },
     partners: { tag: '01 / الشركاء', title: 'مدعوم من قادة الصناعة والمؤسسات', desc: 'موثوق به من قبل المؤسسات المالية الرائدة وشركاء التكنولوجيا في جميع أنحاء العالم.', viewMore: 'عرض المزيد +' },
-    features: { title: 'استراتيجيات RealQuant', items: [{ title: 'نماذج التنبؤ القائمة على تعلم الآلة', desc: 'تحلل الملايين من نقاط بيانات السوق في الوقت الفعلي لالتقاط التوقيت الأمثل للتداول.' }, { title: 'نظام إدارة المخاطر', desc: 'يزيد من استقرار المحفظة من خلال تخصيص الأصول الديناميكي الذي يستجيب لتقلبات السوق.' }, { title: 'نظام التدوير', desc: 'يتتبع تدفقات أموال السوق لالتقاط القطاعات والأسهم التي يحدث فيها التدوير.' }, { title: 'عملية مختلطة للاتجاه + الاتجاه المعاكس', desc: 'يميز بين أقسام الاتجاه القوي وأقسام النطاق لتبديل المنطق تلقائياً.' }, { title: 'منطق الاسترداد التكيفي', desc: 'ينشط خوارزمية استرداد ذكية تضبط سرعة الاسترداد بناءً على ظروف السوق.' }, { title: 'بنية تحتية ذات زمن وصول منخفض للغاية', desc: 'تغتنم الفرص الدقيقة في السوق من خلال تداول النظام بزمن وصول ضئيل.' }] },
+    features: {
+      title: 'استراتيجيات RealQuant',
+      subtitle: 'تم تصميم RealQuant من خلال الجمع بين استراتيجيات الاختراق المستقلة لالتقاط شروط الاختراق المختلفة ومراحل توسع الأسعار والتداول عليها. يتم تعظيم الاستقرار من خلال إدارة المخاطر بالنسبة المئوية (Stop Loss)، وفلاتر الأخبار عالية التأثير، وحماية إغلاق السوق.',
+      disclaimer: 'نحن لا نستخدم أسلوب مارتينجال، أو الشبكة (Grid)، أو زيادة حجم العقد بعد الخسائر.',
+      safetyHighlights: [
+        { label: 'NO Martingale', desc: 'بدون مارتينجال' },
+        { label: 'NO Grid System', desc: 'بدون شبكة' },
+        { label: 'NO Lot Escalation', desc: 'حجم لوت ثابت' },
+        { label: 'Mandatory Stop Loss', desc: 'وقف خسارة نسبي' },
+      ],
+      items: [
+        {
+          tag: 'ARCHITECTURE',
+          title: 'هندسة الاختراق المتعدد',
+          desc: 'تجمع خوارزميات اختراق متعددة ومستقلة لالتقاط اختراقات الزخم بدقة عبر ظروف السوق المتغيرة.',
+        },
+        {
+          tag: 'MOMENTUM',
+          title: 'التقاط مرحلة توسع السعر',
+          desc: 'تكتشف توسع التقلبات وتسارع الاتجاه في الوقت الفعلي لتنفيذ صفقات ذات نسبة عائد إلى مخاطرة عالية.',
+        },
+        {
+          tag: 'RISK CONTROL',
+          title: 'إدارة المخاطر بالنسبة المئوية',
+          desc: 'وقف خسارة إلزامي محدد كنسبة مئوية من الحساب في كل صفقة يمنع تماماً الخسائر الفردية المفاجئة.',
+        },
+        {
+          tag: 'FILTERING',
+          title: 'فلتر الأخبار عالية التأثير',
+          desc: 'إيقاف التداول مؤقتاً وبشكل تلقائي أثناء البيانات الاقتصادية الهامة (CPI, FOMC) لتجنب التقلبات الحادة.',
+        },
+        {
+          tag: 'PROTECTION',
+          title: 'حماية إغلاق السوق',
+          desc: 'تأمين المراكز قبل عطلة نهاية الأسبوع للتخلص من مخاطر فجوات الافتتاح ونقص السيولة.',
+        },
+        {
+          tag: 'DISCIPLINE',
+          title: 'انضباط صارم خالٍ من المارتينجال',
+          desc: 'الاستبعاد التام للشبكات الخطرة ومضاعفة العقود، والاعتماد فقط على أحجام صفقات مثبتة كمياً ورياضياً.',
+        },
+      ],
+    },
     quantStrategies: { title: 'استراتيجيات RealQuant', items: [{ name: 'استراتيجية ألفا', desc: 'زوج العملات AUD/CAD' }, { name: 'استراتيجية بيتا', desc: 'أزواج العملات MultiFOREX' }, { name: 'استراتيجية غاما', desc: 'عقود الذهب الآجلة XAU/USD' }, { name: 'استراتيجية دلتا', desc: 'زوج العملات EUR/USD' }, { name: 'استراتيجية إبسيلون', desc: 'أزواج العملات MultiFOREX2' }, { name: 'استراتيجية هيكسا', desc: 'زوج العملات USDJPY' }] },
     performance: {
       notice: 'يمكن التحقق من تاريخ تداول الاختبار العكسي المفصل في المجتمع',
@@ -682,10 +1065,9 @@ export const translations = {
       floatingButton: 'دردشة 1:1',
       faqs: [
         { question: 'هل الاختبار العكسي والعوائد الفعلية حقيقية؟', answer: 'الاختبار العكسي والعوائد الفعلية حقيقية بنسبة 100% ولا يمكن التلاعب بها لأنها شاشات مقدمة من منصة التداول.' },
-        { question: 'هل RealQuant مجاني؟', answer: 'نعم. إنه مجاني بنسبة 100%. نحن لا نتلقى رسوم إدارة على الأرباح، ولا نفرض رسومًا شهرية منفصلة للبرنامج.' },
         { question: 'ما هو الحد الأدنى لمبلغ الاستثمار؟', answer: 'بما أن هناك حداً أدنى لكمية العقد للمراكز، فمن الممكن البدء من $1,000.' },
-        { question: 'هل استثماري آمن؟', answer: 'لا تتلقى RealQuant أموال العملاء مباشرة. إنه نظام يتم فيه ربط حساب البورصة الخاص بك و RealQuant، ولدينا السلطة فقط لاتخاذ قرارات البيع والشراء للمراكز، وليس لدينا السلطة لإيداع أو سحب الأموال، لذا فإن أصولك آمنة.' },
-        { question: 'ما هي الاستراتيجية المستخدمة لتحقيق الأرباح؟', answer: 'RealQuant هو برنامج كمي تم إنشاؤه من خلال الجمع بين الخوارزميات المتقدمة (نظام التدوير، التكيف الديناميكي مع التقلبات، عملية مختلطة للاتجاه + الاتجاه المعاكس، منطق الاسترداد التكيفي). يحقق أرباحاً من خلال تداول AUDCAD (زوج عملات الدولار الأسترالي/الدولار الكندي) و XAUUSD (الذهب).' },
+        { question: 'هل استثماري آمن؟', answer: 'لا تتلقى RealQuant أموال العملاء مباشرة. إنه نظام يتم فيه ربط حساب البورصة الخاص بك و RealQuant، ولدينا السلطة فقط لاتخاذ قرارات البيع والشراء للمراكز، وليس لدينا السلطة لإيداع أو سحب الأموال.' },
+        { question: 'ما هي الاستراتيجية المستخدمة لتحقيق الأرباح؟', answer: 'تم تصميم RealQuant من خلال الجمع بين استراتيجيات الاختراق التي تعمل بشكل مستقل لالتقاط شروط الاختراق المختلفة ومراحل توسع الأسعار والتداول عليها. تم تعزيز الاستقرار من خلال إدارة المخاطر القائمة على النسبة المئوية (Stop Loss)، وفلاتر الأخبار عالية التأثير، وحماية إغلاق السوق. (نحن لا نستخدم أسلوب مارتينجال، أو الشبكة (Grid)، أو زيادة حجم العقد بعد الخسائر.)' },
         { question: 'كيف أقوم بإعداد الاستراتيجية؟', answer: 'لا يتطلب إعداد الاستراتيجية نية فردية من العميل ولا يلزم إعداد منفصل. (آلي بنسبة 100% على مدار الساعة طوال أيام الأسبوع) يتم إعداد دليل عند دخولك المجتمع. يرجى الرجوع إلى الدليل.' },
         { question: 'كيف أسحب الأرباح؟', answer: 'يتم إعداد دليل عند دخولك المجتمع. يرجى الرجوع إلى الدليل.' }
       ]

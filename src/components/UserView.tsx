@@ -1,7 +1,7 @@
-import React, { useState } from 'react'; // synced
+import React, { useState } from 'react';
 import { translations, Language, Post } from '../data/content';
 import { BacktestChart } from './BacktestChart';
-import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity } from 'lucide-react';
+import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity, TrendingUp, ShieldCheck, AlertTriangle, Clock, Ban, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface UserViewProps {
@@ -15,12 +15,12 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
   const displayedPosts = posts.slice(0, 6);
 
   const featureIcons = [
-    <BarChart3 size={32} style={{ color: themeColor }} />,
-    <Shield size={32} style={{ color: themeColor }} />,
-    <RefreshCw size={32} style={{ color: themeColor }} />,
     <GitBranch size={32} style={{ color: themeColor }} />,
-    <Activity size={32} style={{ color: themeColor }} />,
-    <Zap size={32} style={{ color: themeColor }} />,
+    <TrendingUp size={32} style={{ color: themeColor }} />,
+    <ShieldCheck size={32} style={{ color: themeColor }} />,
+    <AlertTriangle size={32} style={{ color: themeColor }} />,
+    <Clock size={32} style={{ color: themeColor }} />,
+    <Shield size={32} style={{ color: themeColor }} />,
   ];
 
   return (
@@ -63,21 +63,21 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                 </>
               ) : lang === 'en' ? (
                 <>
-                  RealQuant creates stable returns by<br className="block sm:hidden" />
-                  excluding emotions and focusing solely on profit<br className="block sm:hidden" />
+                  RealQuant pursues stable returns by<br className="block sm:hidden" />
+                  eliminating emotions and focusing solely on profit<br className="block sm:hidden" />
                   through advanced algorithms and big data analysis.
                 </>
               ) : lang === 'zh' ? (
                 <>
                   RealQuant 通过先进的算法和大数据分析，<br className="block sm:hidden" />
                   排除情感干扰，专注于盈利，<br className="block sm:hidden" />
-                  创造稳定的收益。
+                  追求稳定的收益。
                 </>
               ) : lang === 'ja' ? (
                 <>
-                  RealQuant は、高度なアルゴリズムと<br className="block sm:hidden" />
+                  RealQuantは、高度なアルゴリズムと<br className="block sm:hidden" />
                   ビッグデータ分析を通じて感情を排除し、<br className="block sm:hidden" />
-                  利益のみに集中することで、安定した収益を創出します。
+                  利益のみに集中することで、安定した収益を追求します。
                 </>
               ) : t.hero.subtitle}
             </p>
@@ -98,28 +98,91 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
       {/* Features Section */}
       <section id="strategies" className="py-32 bg-zinc-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{t.features.title}</h2>
-            <div className="w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: themeColor }}></div>
+          <div className="text-center mb-16 max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">{t.features.title}</h2>
+            <div className="w-24 h-1 mx-auto rounded-full mb-6" style={{ backgroundColor: themeColor }}></div>
+            {(t.features as any).subtitle && (
+              <p className="text-sm md:text-lg text-gray-300 leading-relaxed break-keep mb-8">
+                {(t.features as any).subtitle}
+              </p>
+            )}
+
+            {/* Safety Guardrails Banner */}
+            {Array.isArray((t.features as any).safetyHighlights) && (t.features as any).safetyHighlights.length > 0 ? (
+              <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-2 sm:p-2.5 bg-zinc-900/90 border border-white/10 rounded-2xl">
+                {(t.features as any).safetyHighlights.map((hl: any, idx: number) => {
+                  const isStopLoss = idx === 3;
+                  return (
+                    <span
+                      key={idx}
+                      className={`px-3 py-1.5 rounded-xl border text-xs sm:text-sm font-semibold flex items-center gap-1.5 ${
+                        isStopLoss
+                          ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+                          : 'bg-red-500/10 border-red-500/30 text-red-400'
+                      }`}
+                    >
+                      {isStopLoss ? <CheckCircle2 size={14} className="text-emerald-400" /> : <Ban size={14} className="text-red-400" />}
+                      <span>{hl.label}</span>
+                      {hl.desc && <span className="opacity-75 font-normal text-[11px] sm:text-xs">({hl.desc})</span>}
+                    </span>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-2 sm:p-2.5 bg-zinc-900/90 border border-white/10 rounded-2xl">
+                <span className="px-3 py-1.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs sm:text-sm font-semibold flex items-center gap-1.5">
+                  <Ban size={14} className="text-red-400" />
+                  No Martingale
+                </span>
+                <span className="px-3 py-1.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs sm:text-sm font-semibold flex items-center gap-1.5">
+                  <Ban size={14} className="text-red-400" />
+                  No Grid System
+                </span>
+                <span className="px-3 py-1.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs sm:text-sm font-semibold flex items-center gap-1.5">
+                  <Ban size={14} className="text-red-400" />
+                  No Lot Escalation
+                </span>
+                <span className="px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold flex items-center gap-1.5">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  Fixed % Stop Loss
+                </span>
+              </div>
+            )}
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-12 mb-20">
-            {t.features.items.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-900 border border-white/5 hover:border-white/20 transition-colors group"
-              >
-                <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-black flex items-center justify-center mb-4 sm:mb-8 group-hover:scale-110 transition-transform">
-                  {React.cloneElement(featureIcons[index] as React.ReactElement, { size: window.innerWidth < 640 ? 20 : 32 })}
-                </div>
-                <h3 className="text-sm sm:text-2xl font-semibold mb-2 sm:mb-4">{item.title}</h3>
-                <p className="text-[10px] sm:text-base text-gray-400 leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-20">
+            {t.features.items.map((item, index) => {
+              const itemTag = (item as any).tag;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-900/80 border border-white/10 hover:border-white/25 transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:shadow-black/60"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-black border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        {React.cloneElement(featureIcons[index] as React.ReactElement, { size: 24 })}
+                      </div>
+                      {itemTag && (
+                        <span className="text-[11px] font-mono tracking-wider font-semibold px-2.5 py-1 rounded-full border border-white/10 bg-black/60 text-gray-300">
+                          {itemTag}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-base sm:text-xl font-bold mb-3 text-white group-hover:text-white transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-400 leading-relaxed break-keep">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Operable Items Title */}

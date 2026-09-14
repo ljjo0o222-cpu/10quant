@@ -59,7 +59,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
                     { code: 'ru', name: 'Русский' },
                     { code: 'de', name: 'Deutsch' },
                     { code: 'fr', name: 'Français' },
-                    { code: 'hi', name: '히न्दी' },
+                    { code: 'hi', name: 'हिन्दी' },
                     { code: 'es', name: 'Español' },
                     { code: 'ar', name: 'العربية' },
                   ].map((l) => (
