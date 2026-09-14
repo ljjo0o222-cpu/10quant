@@ -59,7 +59,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
                 <>
                   RealQuant는 고도화된 알고리즘과<br className="block sm:hidden" />
                   빅데이터 분석을 통해 감정을 배제하고,<br className="block sm:hidden" />
-                  수익에만 집중하여 안정적인 수익을 창출합니다.
+                  수익에만 집중하여 안정적인 수익을 추구합니다.
                 </>
               ) : lang === 'en' ? (
                 <>
