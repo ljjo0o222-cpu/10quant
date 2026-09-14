@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { translations, Language, Post } from '../data/content';
 import { BacktestChart } from './BacktestChart';
-import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity, TrendingUp, ShieldCheck, AlertTriangle, Clock, Ban, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity, TrendingUp, ShieldCheck, AlertTriangle, Clock, Ban, CheckCircle2, ChevronDown, HelpCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface UserViewProps {
@@ -13,6 +13,34 @@ interface UserViewProps {
 export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) => {
   const t = translations[lang];
   const displayedPosts = posts.slice(0, 6);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0); // 첫 번째 FAQ 기본 오픈
+
+  const detailedFaqs = [
+    {
+      q: '백테스팅 데이터와 실제 수익률은 검증되었나요?',
+      a: '리얼퀀트의 백테스팅 및 실계좌 거래 수익률 데이터는 100% 검증된 수치입니다. 공인된 글로벌 거래 플랫폼(MT4/MT5)과 외환 규제기관의 표준 거래 환경에서 기록된 데이터로서 임의로 조작할 수 없습니다. 6년 이상의 정밀 틱 데이터 백테스트와 실제 계좌 운용을 통해 4.18의 프로핏 팩터와 13.23%의 최대 낙폭(MDD) 제어를 완벽히 입증했습니다. 투명한 검증을 위해 커뮤니티에서 실시간 계좌 내역을 상시 공개하고 있습니다.'
+    },
+    {
+      q: '최소 투자 금액은 얼마부터 시작할 수 있나요?',
+      a: '리얼퀀트 솔루션은 계약 단위별 정밀한 리스크 관리와 포지션 분할 매매를 위해 최소 $1,000부터 운용이 가능합니다. 자본 규모에 맞추어 사전에 정의된 리스크 비율에 따라 계약 수가 최적으로 자동 계산되므로 안정적인 복리 운용을 지원합니다. 무리한 고레버리지를 지양하고 철저한 자금 관리 원칙을 준수합니다.'
+    },
+    {
+      q: '투자 원금과 예치 자산은 어떻게 안전하게 보호되나요?',
+      a: '리얼퀀트는 고객의 투자금을 절대 직접 수취하거나 관리하지 않습니다. 고객 본인 명의의 글로벌 정식 규제 외환·CFD 거래소 계정에 자금을 예치하고, 리얼퀀트는 API 연동 또는 공인 카피트레이딩 시스템을 통해 오직 주문 진입과 청산 권한만을 가집니다. 입출금에 대한 모든 통제권은 전적으로 고객에게 귀속되어 있으므로 자금 유용이나 사기 리스크로부터 100% 안전합니다.'
+    },
+    {
+      q: '어떤 퀀트 알고리즘 전략과 원리로 수익을 창출하나요?',
+      a: '리얼퀀트는 독립적으로 작동하는 다중 브레이크아웃(Breakout) 전략을 상호 유기적으로 결합하여 시장의 변동성 확대 및 추세 돌파 구간을 정밀하게 포착합니다. 특히 계좌 파산의 주원인이 되는 마틴게일(Martingale, 손실 시 2배 베팅)과 그리드(Grid, 물타기 분할 매수) 방식을 절대 사용하지 않습니다. 모든 포지션에 100% 필수 손절(Stop Loss)을 적용하며, 미국 CPI·FOMC 등 고위험 경제지표 발표 시점 자동 거래 회피 및 주말 갭 리스크 방지 기술이 탑재되어 있어 어떠한 급변 장세에서도 시드가 안전하게 보호됩니다.'
+    },
+    {
+      q: '초보자도 쉽게 이용할 수 있나요? 별도의 프로그램 설치가 필요한가요?',
+      a: '초보자도 즉시 참여하실 수 있습니다. 복잡한 지표 설정이나 개인 PC에 프로그램을 24시간 켜둘 필요가 없으며, 전용 클라우드 서버와 거래소 연동을 통해 24시간 100% 전자동으로 작동합니다. 공식 텔레그램 커뮤니티 입장 시 계좌 개설부터 연동까지 단계별 상세 가이드와 1:1 전담 매니저 지원을 제공해 드립니다.'
+    },
+    {
+      q: '수익금 및 원금 출금은 언제든지 가능한가요?',
+      a: '네, 언제든지 전액 출금이 가능합니다. 고객 본인 명의의 거래소 계좌이므로 의무 락업(Lock-up) 기간이나 수수료 페널티가 전혀 없으며, 본인이 원하실 때 실시간으로 원하는 금액만큼 본인의 은행 계좌나 가상자산 지갑으로 자유롭게 출금하실 수 있습니다.'
+    }
+  ];
 
   const featureIcons = [
     <GitBranch size={32} style={{ color: themeColor }} />,
@@ -395,6 +423,87 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* FAQ Section (GEO & SEO Optimization with 300+ chars answers) */}
+      <section id="faq" className="py-24 bg-zinc-950/80 border-t border-white/5 relative">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
+              <HelpCircle size={14} />
+              <span>FAQ & Answers</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">자주 묻는 질문</h2>
+            <div className="w-20 h-1 mx-auto rounded-full mb-6" style={{ backgroundColor: themeColor }}></div>
+            <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto font-light">
+              리얼퀀트(RealQuant) 퀀트 투자 솔루션과 알고리즘 트레이딩에 대해 가장 많이 묻는 핵심 질문에 투명하게 답해 드립니다.
+            </p>
+          </motion.div>
+
+          <div className="space-y-4">
+            {detailedFaqs.map((faq, index) => {
+              const isOpen = openFaqIndex === index;
+              return (
+                <div
+                  key={index}
+                  className="rounded-2xl border border-white/10 bg-zinc-900/60 overflow-hidden transition-all duration-200 hover:border-white/20"
+                >
+                  <button
+                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                    className="w-full px-6 py-5 flex items-center justify-between text-left transition-colors"
+                  >
+                    <div className="flex items-center space-x-4 pr-4">
+                      <span className="text-sm md:text-base font-mono font-bold" style={{ color: themeColor }}>
+                        0{index + 1}
+                      </span>
+                      <h3 className="text-base md:text-lg font-bold text-white leading-snug">
+                        {faq.q}
+                      </h3>
+                    </div>
+                    <ChevronDown
+                      size={20}
+                      className={`text-gray-400 flex-shrink-0 transition-transform duration-300 ${
+                        isOpen ? 'rotate-180 text-white' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-6 pb-6 pt-1 text-sm md:text-base text-gray-300 leading-relaxed border-t border-white/5 bg-black/20">
+                      <p className="whitespace-pre-line break-keep font-light">
+                        {faq.a}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-12 p-6 rounded-2xl bg-zinc-900/40 border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <h4 className="text-white font-bold text-base">더 궁금하신 사항이 있으신가요?</h4>
+              <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                24시간 운영되는 리얼퀀트 공식 텔레그램 커뮤니티와 1:1 상담 채널에서 즉시 답변해 드립니다.
+              </p>
+            </div>
+            <a
+              href="https://t.me/realquant77"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full text-white text-sm font-bold transition-all hover:scale-105 whitespace-nowrap"
+              style={{ backgroundColor: themeColor }}
+            >
+              1:1 실시간 문의하기
+            </a>
+          </div>
         </div>
       </section>
     </main>

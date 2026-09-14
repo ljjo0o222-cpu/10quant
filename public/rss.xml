@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>리얼퀀트 (RealQuant) - 데이터 기반 정량적 퀀트 투자 솔루션</title>
+    <link>https://realquant.top/</link>
+    <description>리얼퀀트(RealQuant)는 고도화된 알고리즘과 빅데이터 분석을 통해 감정을 배제하고 안정적인 수익을 추구하는 퀀트 투자 전문 기업입니다.</description>
+    <language>ko</language>
+    <lastBuildDate>Mon, 14 Sep 2026 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://realquant.top/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>리얼퀀트 알고리즘 트레이딩 전략 및 리스크 관리 아키텍처</title>
+      <link>https://realquant.top/#strategies</link>
+      <description><![CDATA[RealQuant는 독립적으로 작동하는 다중 브레이크아웃 전략을 결합하여 다양한 가격 돌파 조건과 변동성 확장 구간을 포착합니다. 마틴게일(Martingale)과 물타기(Grid) 방식을 철저히 배제하며, 퍼센트 기반 정량적 손절(Stop Loss), 고영향 경제지표 뉴스 필터링, 시장 마감 보호 장치를 탑재하여 안정적인 자산 우상향을 지향합니다.]]></description>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="true">https://realquant.top/#strategies</guid>
+      <category>퀀트투자</category>
+    </item>
+
+    <item>
+      <title>2026년 3월 퀀트 트레이딩 운용 성과 보고서</title>
+      <link>https://realquant.top/#actual-returns</link>
+      <description><![CDATA[어닝 서프라이즈 및 글로벌 매크로 지표 변동성 구간에서 자체 머신러닝 모델의 선제적 포지셔닝으로 높은 수익률을 기록했습니다. 시스템 트레이딩을 통해 안정적인 리스크 대비 초과수익(알파)을 창출했습니다.]]></description>
+      <pubDate>Tue, 31 Mar 2026 18:00:00 +0900</pubDate>
+      <guid isPermaLink="false">realquant-post-2026-03</guid>
+      <category>실제수익률</category>
+    </item>
+
+    <item>
+      <title>2026년 2월 시장 중립형 롱숏 알고리즘 성과 분석</title>
+      <link>https://realquant.top/#actual-returns</link>
+      <description><![CDATA[글로벌 매크로 지표 혼조세 속에서도 정량적 롱숏(Long-Short) 시스템을 통해 시장 중립적 수익을 창출하며 변동성을 효과적으로 방어했습니다.]]></description>
+      <pubDate>Sat, 28 Feb 2026 18:00:00 +0900</pubDate>
+      <guid isPermaLink="false">realquant-post-2026-02</guid>
+      <category>실제수익률</category>
+    </item>
+
+    <item>
+      <title>2026년 1월 새해 시장 변동성 대응 퀀트 운용 성과</title>
+      <link>https://realquant.top/#actual-returns</link>
+      <description><![CDATA[새해 효과(January Effect)와 수급 데이터를 사전에 감지한 알고리즘 포지셔닝으로 월간 높은 수익률을 기록하였습니다.]]></description>
+      <pubDate>Sat, 31 Jan 2026 18:00:00 +0900</pubDate>
+      <guid isPermaLink="false">realquant-post-2026-01</guid>
+      <category>실제수익률</category>
+    </item>
+
+    <item>
+      <title>리얼퀀트 자주 묻는 질문(FAQ) - 원금 안전성, 최소 투자금 및 자동화 안내</title>
+      <link>https://realquant.top/#faq</link>
+      <description><![CDATA[RealQuant는 고객의 자금을 직접 수취하지 않습니다. 고객 본인 명의의 글로벌 제휴 거래소 계정과 실시간 API/카피트레이딩으로 안전하게 연동되며, 진입과 청산 권한만 가질 뿐 입출금 권한은 전적으로 고객에게 귀속됩니다. 24/7 완전 자동화로 초보자도 손쉽게 참여 가능합니다.]]></description>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="true">https://realquant.top/#faq</guid>
+      <category>FAQ</category>
+    </item>
+  </channel>
+</rss>

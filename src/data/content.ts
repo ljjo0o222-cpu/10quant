@@ -11,7 +11,7 @@ export const translations = {
       admin: '관리자',
     },
     hero: {
-      title: '데이터로 증명하는 리얼한 수익. 리얼퀀트',
+      title: '데이터로 증명하는 퀀트 투자 솔루션, 리얼퀀트',
       subtitle: 'RealQuant는 고도화된 알고리즘과 빅데이터 분석을 통해 감정을 배제하고, 수익에만 집중하여 안정적인 수익을 추구합니다.',
       cta: '커뮤니티 입장하기',
     },
