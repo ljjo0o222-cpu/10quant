@@ -16,6 +16,20 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
   const t = translations[lang].nav;
   const whyNav = whyRealQuantTranslations[lang]?.navTitle || whyRealQuantTranslations.ko.navTitle;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = React.useState(false);
+
+  const langList = [
+    { code: 'ko', name: '한국어' },
+    { code: 'en', name: 'English' },
+    { code: 'zh', name: '中文' },
+    { code: 'ja', name: '日本語' },
+    { code: 'ru', name: 'Русский' },
+    { code: 'de', name: 'Deutsch' },
+    { code: 'fr', name: 'Français' },
+    { code: 'hi', name: 'हिन्दी' },
+    { code: 'es', name: 'Español' },
+    { code: 'ar', name: 'العربية' },
+  ];
 
   return (
     <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
@@ -57,32 +71,37 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
           <div className="flex items-center space-x-2 md:space-x-4">
             <div className="relative group">
               <button
-                className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors px-2 py-1.5 md:px-3 md:py-2 rounded-md border border-white/10 hover:border-white/30"
+                type="button"
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className="flex items-center space-x-1.5 text-gray-300 hover:text-white transition-colors px-2 py-1.5 md:px-3 md:py-2 rounded-md border border-white/10 hover:border-white/30 cursor-pointer"
+                aria-label="Language selector"
               >
                 <Globe size={16} />
-                <span className="text-xs md:text-sm font-medium uppercase">{lang}</span>
+                <span className="text-xs md:text-sm font-semibold uppercase">{lang}</span>
               </button>
-              <div className="absolute right-0 mt-2 w-40 md:w-48 bg-zinc-900 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+              <div 
+                className={`absolute right-0 mt-2 w-40 md:w-48 bg-zinc-900 border border-white/10 rounded-xl shadow-2xl transition-all duration-200 z-50 overflow-hidden ${
+                  isLangMenuOpen 
+                    ? 'opacity-100 visible' 
+                    : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'
+                }`}
+              >
                 <div className="py-1 grid grid-cols-1 max-h-[70vh] overflow-y-auto">
-                  {[
-                    { code: 'ko', name: '한국어' },
-                    { code: 'en', name: 'English' },
-                    { code: 'zh', name: '中文' },
-                    { code: 'ja', name: '日本語' },
-                    { code: 'ru', name: 'Русский' },
-                    { code: 'de', name: 'Deutsch' },
-                    { code: 'fr', name: 'Français' },
-                    { code: 'hi', name: 'हिन्दी' },
-                    { code: 'es', name: 'Español' },
-                    { code: 'ar', name: 'العربية' },
-                  ].map((l) => (
+                  {langList.map((l) => (
                     <button
                       key={l.code}
-                      onClick={() => setLang(l.code as Language)}
-                      className={`px-4 py-2 text-sm text-left hover:bg-white/10 transition-colors ${lang === l.code ? 'text-white font-bold' : 'text-gray-400'}`}
+                      type="button"
+                      onClick={() => {
+                        setLang(l.code as Language);
+                        setIsLangMenuOpen(false);
+                      }}
+                      className={`px-4 py-2 text-sm text-left hover:bg-white/10 transition-colors flex items-center justify-between cursor-pointer ${
+                        lang === l.code ? 'text-white font-bold bg-white/5' : 'text-gray-400'
+                      }`}
                       style={lang === l.code ? { color: themeColor } : {}}
                     >
-                      {l.name}
+                      <span>{l.name}</span>
+                      {lang === l.code && <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: themeColor }} />}
                     </button>
                   ))}
                 </div>
@@ -93,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-300 hover:text-white p-2"
+                className="text-gray-300 hover:text-white p-2 cursor-pointer"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -104,8 +123,8 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-black border-b border-white/10 max-h-[80vh] overflow-y-auto">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden bg-black border-b border-white/10 max-h-[85vh] overflow-y-auto">
+          <div className="px-3 pt-2 pb-4 space-y-1">
             {view === 'user' && (
               <>
                 <a href="#home" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.home}</a>
@@ -126,6 +145,35 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
                   <span>{t.calculator || '월복리 계산기'}</span>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">POPUP</span>
                 </button>
+                
+                {/* Mobile Language Grid */}
+                <div className="pt-3 mt-3 border-t border-white/10">
+                  <div className="px-3 pb-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+                    <Globe size={13} />
+                    <span>Language ({lang.toUpperCase()})</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-1.5 px-1">
+                    {langList.map((l) => (
+                      <button
+                        key={l.code}
+                        type="button"
+                        onClick={() => {
+                          setLang(l.code as Language);
+                          setIsMenuOpen(false);
+                        }}
+                        className={`px-3 py-2 text-xs rounded-lg text-left transition-colors flex items-center justify-between ${
+                          lang === l.code 
+                            ? 'bg-white/15 text-white font-bold' 
+                            : 'bg-zinc-900/60 text-zinc-400 hover:text-white hover:bg-zinc-800'
+                        }`}
+                        style={lang === l.code ? { borderColor: themeColor } : {}}
+                      >
+                        <span>{l.name}</span>
+                        <span className="text-[10px] uppercase font-mono opacity-60">{l.code}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </>
             )}
           </div>

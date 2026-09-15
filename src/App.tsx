@@ -5,6 +5,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { Language, ViewMode, Post, initialPosts } from './data/content';
+import { 
+  getInitialLanguage, 
+  detectLanguageFromGeoIP, 
+  saveUserLanguagePreference 
+} from './utils/geoLanguage';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { UserView } from './components/UserView';
@@ -14,12 +19,35 @@ import { ChatSupport } from './components/ChatSupport';
 import { CompoundCalculator } from './components/CompoundCalculator';
 
 export default function App() {
-  const [lang, setLang] = useState<Language>('ko');
+  // Automatically detects initial language from access region / browser / timezone. Defaults to 'en' if not matched.
+  const [lang, setLang] = useState<Language>(() => getInitialLanguage());
   const [view, setView] = useState<ViewMode>('user');
   const [themeColor, setThemeColor] = useState<string>('#2563eb'); // Default blue
   const [posts, setPosts] = useState<Post[]>(initialPosts);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState<boolean>(false);
+
+  // Background IP-based geolocation check if user hasn't explicitly saved a choice
+  useEffect(() => {
+    let isMounted = true;
+    try {
+      const hasManualPreference = typeof window !== 'undefined' && 
+        !!localStorage.getItem('realquant_user_lang');
+
+      if (!hasManualPreference) {
+        detectLanguageFromGeoIP().then((geoLang) => {
+          if (isMounted && geoLang) {
+            setLang(geoLang);
+          }
+        });
+      }
+    } catch {
+      // Ignore
+    }
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // Update document title and direction based on language
   useEffect(() => {
@@ -28,11 +56,16 @@ export default function App() {
     document.documentElement.lang = lang;
   }, [lang]);
 
+  const handleLanguageChange = (newLang: Language) => {
+    setLang(newLang);
+    saveUserLanguagePreference(newLang);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-black font-sans selection:bg-blue-500/30">
       <Header
         lang={lang}
-        setLang={setLang}
+        setLang={handleLanguageChange}
         view={view}
         setView={setView}
         themeColor={themeColor}

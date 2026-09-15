@@ -170,7 +170,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       resultText: '시장 위기 속에서도 자산을 지켜내며 꾸준히 누적 우상향',
       graphLabel: '안정적 우상향 복리 곡선'
     },
-    bannerQuote: '오래 지나지 못해 청산되거나 사라지는 수많은 단기 프로그램들 사이에서, RealQuant는 끝까지 살아남아 장기 수익률을 증명하는 진짜 퀀트 시스템입니다.',
+    bannerQuote: '오래 지나지 못해 청산되거나 사라지는 수많은 단기 프로그램들 사이에서, RealQuant는 끝까지 살아남아 장기 수익률을 추구하는 진짜 퀀트 시스템입니다.',
     bannerCta: '수익률 시뮬레이션 해보기',
     pills: ['감정 0% 철저한 원칙 실행', '원금을 지키는 MDD 통제', '검증된 장기 복리 성장']
   },
@@ -277,7 +277,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       resultText: 'Capital preserved during deep bear markets, steadily compounding over time',
       graphLabel: 'Steady upward compound trajectory'
     },
-    bannerQuote: 'While countless bots boast short-term spikes only to disappear in liquidation, RealQuant stands firm—proving true long-term compounding profitability.',
+    bannerQuote: 'While countless short-term bots boast brief gains only to be liquidated and disappear, RealQuant stands firm—a true quant system pursuing sustainable long-term profitability.',
     bannerCta: 'Simulate Compound Returns',
     pills: ['0% Emotion Strict Execution', 'Capital-Preserving MDD Control', 'Proven Long-Term Compounding']
   },
@@ -384,7 +384,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       resultText: '在暴跌狂潮中牢牢护住本金，持续稳定复利递增',
       graphLabel: '稳健平滑的指数级复利上行曲线'
     },
-    bannerQuote: '在那些昙花一现、迅速爆仓消失的短期脚本面前，RealQuant 始终屹立不倒，以长达数年的实证数据，证明真正量化复利的持久生命力。',
+    bannerQuote: '在那些不久便爆仓或销声匿迹的众多短期脚本中，RealQuant 始终坚守到底，是坚持追求长期收益率的真正量化系统。',
     bannerCta: '测算复利收益潜力',
     pills: ['0% 情绪严格执行', '守护本金 MDD 严控', '经受考验的长期复利']
   },
@@ -491,7 +491,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       resultText: '下落局面でも元本を守り抜き、継続して右肩上がりの複利成長を維持',
       graphLabel: '安定した右肩上がりの複利曲線'
     },
-    bannerQuote: '短期のハイリターンを掲げては消えていく無数のシステムの中で、RealQuantは最後まで生き残り、本物の長期複利利回りを証明し続けます。',
+    bannerQuote: '短期のハイリターンを掲げては消えていく無数のシステムの中で、RealQuantは最後まで生き残り、本物の長期複利利回りを追求し続けるクオンツシステムです。',
     bannerCta: '複利シミュレーションを試す',
     pills: ['感情0%の徹底規律実行', '元本を守るMDD徹底管理', '実証された長期複利成長']
   },
@@ -569,7 +569,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     section2Badge: 'Выживание важнее хайпа',
     section2Title: 'Краткосрочные боты vs Настоящий долгосрочный квант',
-    section2Subtitle: 'Многие боты хвастаются сверхприбылью за день или неделю, но быстро сливают депозит. RealQuant доказывает стабильную доходность годами.',
+    section2Subtitle: 'Многие программы приукрашивают доходность за день, неделю или месяц, но вскоре сливаются. RealQuant нацелен на повышение долгосрочной доходности.',
     shortTermHype: {
       badge: 'Ловушка типичных роботов',
       title: 'Боты с завышенной доходностью',
@@ -586,19 +586,19 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     realQuantProof: {
       badge: 'Философия RealQuant',
-      title: 'Настоящий квант с проверенной доходностью',
+      title: 'Настоящий квант, стремящийся к долгосрочной доходности',
       headline: 'Сила сложного процента: стабильные 5–15% в месяц',
       features: [
         'Нулевая терпимость к ликвидациям: бескомпромиссные механические стопы',
         'Архитектура защиты капитала: ограничение максимальной просадки (MDD < 15%)',
-        '100% прозрачные исторические бэктесты по 1-минутным свечам за 5+ лет',
+        '100% прозрачные исторические данные бэктеста золота (Gold) за 5+ лет',
         'Подтвержденная устойчивость на реальных счетах через бычьи и медвежьи фазы'
       ],
       resultLabel: 'Итог',
-      resultText: 'Сохранение депозита в кризисы и непрерывный сложный рост капитала более 5 лет',
+      resultText: 'Сохранение капитала в кризисы и непрерывный сложный рост капитала',
       graphLabel: 'Стабильная экспоненциальная кривая'
     },
-    bannerQuote: 'В то время как однодневные программы обещают горы золота и исчезают после ликвидации, RealQuant выживает и доказывает силу сложного процента.',
+    bannerQuote: 'Среди множества однодневных программ, исчезающих после ликвидации, RealQuant выживает до конца и представляет собой настоящий квант, стремящийся к долгосрочной доходности.',
     bannerCta: 'Рассчитать сложный процент',
     pills: ['0% эмоций — строгие правила', 'Защита капитала и контроль MDD', 'Проверенный долгосрочный рост']
   },
@@ -676,7 +676,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     section2Badge: 'Überlebensfähigkeit zählt',
     section2Title: 'Kurzfristige Hype-Bots vs. Langfristig bewährter echter Quant',
-    section2Subtitle: 'Viele Bots prahlen mit extremen Renditen über wenige Tage, werden aber bald liquidiert. RealQuant beweist nachhaltige Erträge über Jahre.',
+    section2Subtitle: 'Viele Programme übertreiben kurzfristige Tages-, Wochen- oder Monatsrenditen, werden aber bald liquidiert. RealQuant strebt nach einer Maximierung der langfristigen Rentabilität.',
     shortTermHype: {
       badge: 'Die Falle typischer Trading-Bots',
       title: 'Kurzfristige Hype-Programme',
@@ -693,19 +693,19 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     realQuantProof: {
       badge: 'Die RealQuant-Philosophie',
-      title: 'Echtes Quant-System mit langfristigem Ertrag',
+      title: 'Echtes Quant-System, das auf langfristigen Ertrag ausgerichtet ist',
       headline: 'Die Kraft von 5–15% monatlichem stetigem Zinseszins',
       features: [
         'Null Toleranz für Liquidationen: kompromisslose mechanische Stop-Loss-Orders',
         'Verteidigungsorientierte Architektur: Begrenzung des maximalen Drawdowns (MDD < 15%)',
-        'Vollständig transparente 5-Jahres-Backtests auf 1-Minuten-Basis',
+        '100% transparente Gold-Backtest-Daten über mehr als 5 Jahre',
         'Auf echten Konten über mehrere Bullen- und Bärenzyklen verifiziert'
       ],
       resultLabel: 'Ergebnis',
-      resultText: 'Kapitalschutz in Krisenphasen und kontinuierlicher Zinseszinszuwachs über 5+ Jahre',
+      resultText: 'Kapitalschutz in Krisenphasen und kontinuierlicher Zinseszinszuwachs',
       graphLabel: 'Stetig steigende Zinseszins-Kurve'
     },
-    bannerQuote: 'Während unzählige Programme nach kurzer Zeit liquidiert werden und verschwinden, beweist RealQuant kontinuierlich die Kraft echter langfristiger Zinseszinsen.',
+    bannerQuote: 'Während unzählige kurzlebige Programme nach Liquidationen verschwinden, überlebt RealQuant bis zum Schluss und ist ein echtes Quant-System, das auf langfristigen Ertrag ausgerichtet ist.',
     bannerCta: 'Zinseszins simulieren',
     pills: ['0% Emotionen — Strikte Regeln', 'Kapitalschutz mit MDD-Kontrolle', 'Nachgewiesener Zinseszins']
   },
@@ -783,7 +783,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     section2Badge: 'La survie avant tout',
     section2Title: 'Bots éphémères vs Vrai système quantitatif durable',
-    section2Subtitle: 'De nombreux robots vantent des rendements spectaculaires sur quelques jours avant d’être liquidés. RealQuant démontre une rentabilité composée sur plusieurs années.',
+    section2Subtitle: 'De nombreux programmes vantent des rendements spectaculaires sur quelques jours avant d’être liquidés. RealQuant vise à maximiser la rentabilité à long terme.',
     shortTermHype: {
       badge: 'Le piège des robots classiques',
       title: 'Logiciels aux promesses mirifiques',
@@ -800,19 +800,19 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     realQuantProof: {
       badge: 'La Philosophie RealQuant',
-      title: 'Un véritable système quantitatif durable',
+      title: 'Un véritable système quantitatif visant des rendements à long terme',
       headline: 'La puissance d’une croissance composée résiliente de 5 à 15% par mois',
       features: [
         'Zéro tolérance pour la liquidation : stop-loss mécaniques non négociables',
         'Architecture défensive limitant strictement le Drawdown maximal (MDD < 15%)',
-        'Backtests historiques 100% transparents sur données 1 minute depuis plus de 5 ans',
+        'Données de backtest complètes et transparentes sur l\'or (Gold) depuis plus de 5 ans',
         'Validation sur comptes réels à travers les phases haussières et baissières'
       ],
       resultLabel: 'Bilan',
-      resultText: 'Préservation absolue du capital en temps de crise et croissance continue depuis 5+ ans',
+      resultText: 'Préservation du capital en temps de crise et croissance continue des intérêts composés',
       graphLabel: 'Trajectoire exponentielle régulière'
     },
-    bannerQuote: 'Tandis que de multiples outils éphémères disparaissent après liquidation, RealQuant traverse les cycles et prouve la force des intérêts composés à long terme.',
+    bannerQuote: 'Tandis que de multiples outils éphémères disparaissent après liquidation, RealQuant traverse les cycles et reste un véritable système quantitatif visant des rendements à long terme.',
     bannerCta: 'Simuler les rendements composés',
     pills: ['0% d’émotion — Règles d’airain', 'Contrôle MDD & Sécurité du capital', 'Rendement composé éprouvé']
   },
@@ -890,7 +890,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     section2Badge: 'अल्पकालिक दिखावा बनाम दीर्घकालिक अस्तित्व',
     section2Title: 'अल्पकालिक हाइप बॉट्स vs दीर्घकालिक सिद्ध असली क्वांट',
-    section2Subtitle: 'कई बॉट दैनिक या साप्ताहिक मुनाफे का झूठा दिखावा करते हैं लेकिन जल्द ही लिक्विडेट हो जाते हैं। RealQuant वर्षों से स्थिर चक्रवृद्धि मुनाफा साबित कर रहा है।',
+    section2Subtitle: 'कई प्रोग्राम दैनिक, साप्ताहिक या मासिक रिटर्न का अतिशयोक्तिपूर्ण प्रचार करते हैं लेकिन जल्द ही लिक्विडेट हो जाते हैं। RealQuant दीर्घकालिक लाभ को अधिकतम करने की दिशा पर केंद्रित है।',
     shortTermHype: {
       badge: 'साधारण बॉट्स का जाल',
       title: 'अल्पकालिक हाइप प्रोग्राम',
@@ -907,19 +907,19 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     realQuantProof: {
       badge: 'RealQuant दर्शन',
-      title: 'दीर्घकालिक लाभ साबित करने वाला असली क्वांट',
+      title: 'दीर्घकालिक लाभ का लक्ष्य रखने वाला असली क्वांट',
       headline: 'हर महीने 5~15% की निरंतर चक्रवृद्धि शक्ति',
       features: [
         'लिक्विडेशन पर शून्य सहनशीलता: गैर-परक्राम्य यांत्रिक स्टॉप-लॉस',
         'अधिकतम गिरावट (MDD < 15%) को सीमित करने वाला रक्षात्मक ढांचा',
-        '5+ वर्षों के 1-मिनट कैंडल डेटा पर 100% पारदर्शी बैक-टेस्टिंग',
+        'गोल्ड (Gold) के 5+ वर्षों के पूर्ण बैकटेस्ट डेटा का पारदर्शी खुलासा',
         'असली खातों पर कई वर्षों के तेजी और मंदी के चक्रों में सत्यापित'
       ],
       resultLabel: 'परिणाम',
-      resultText: 'संकट में भी मूलधन सुरक्षित और 5+ वर्षों से निरंतर चक्रवृद्धि लाभ',
+      resultText: 'संकट में भी पूंजी सुरक्षित और निरंतर चक्रवृद्धि लाभ',
       graphLabel: 'स्थिर ऊपर की ओर चक्रवृद्धि वक्र'
     },
-    bannerQuote: 'जहाँ कई बॉट जल्दी खत्म हो जाते हैं, वहीं RealQuant अंत तक टिककर वास्तविक दीर्घकालिक चक्रवृद्धि लाभ साबित करता है।',
+    bannerQuote: 'जहाँ कई अल्पकालिक बॉट जल्दी खत्म हो जाते हैं, वहीं RealQuant अंत तक टिककर वास्तविक दीर्घकालिक लाभ का लक्ष्य रखने वाला सच्चा क्वांट सिस्टम है।',
     bannerCta: 'चक्रवृद्धि मुनाफे का सिमुलेशन करें',
     pills: ['0% भावना — सख्त नियम', 'पूंजी सुरक्षा व MDD नियंत्रण', 'सिद्ध दीर्घकालिक चक्रवृद्धि']
   },
@@ -997,7 +997,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     section2Badge: 'Supervivencia sobre el bombo publicitario',
     section2Title: 'Bots de hype a corto plazo vs Auténtico Quant a largo plazo',
-    section2Subtitle: 'Muchos bots presumen de retornos diarios o mensuales asombrosos, pero acaban liquidados en poco tiempo. RealQuant demuestra rentabilidad compuesta real a lo largo de los años.',
+    section2Subtitle: 'Muchos programas exageran llamativos rendimientos diarios o mensuales, pero acaban siendo liquidados en poco tiempo. RealQuant persigue la dirección de maximizar el rendimiento a largo plazo.',
     shortTermHype: {
       badge: 'La trampa de los bots convencionales',
       title: 'Programas de exageración a corto plazo',
@@ -1014,19 +1014,19 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     realQuantProof: {
       badge: 'La Filosofía RealQuant',
-      title: 'Un verdadero sistema cuantitativo a largo plazo',
+      title: 'Un auténtico sistema cuantitativo enfocado en el rendimiento a largo plazo',
       headline: 'El poder del interés compuesto constante del 5 al 15% mensual',
       features: [
         'Tolerancia cero a la liquidación: órdenes de stop-loss mecánicas innegociables',
         'Arquitectura defensiva limitando el Drawdown Máximo (MDD < 15%)',
-        'Backtests históricos 100% transparentes sobre velas de 1 minuto durante más de 5 años',
+        'Divulgación 100% transparente de datos de backtest de Oro (Gold) de más de 5 años',
         'Verificación en cuentas reales a través de ciclos alcistas y bajistas'
       ],
       resultLabel: 'Desenlace',
-      resultText: 'Preservación del capital en crisis y crecimiento compuesto ininterrumpido durante 5+ años',
+      resultText: 'Preservación del capital en crisis y crecimiento compuesto continuo',
       graphLabel: 'Curva exponencial ascendente constante'
     },
-    bannerQuote: 'Mientras incontables herramientas desaparecen tras ser liquidadas, RealQuant permanece y demuestra la verdadera fuerza del interés compuesto a largo plazo.',
+    bannerQuote: 'Mientras incontables programas efímeros desaparecen tras ser liquidados, RealQuant permanece y es un auténtico sistema cuantitativo enfocado en el rendimiento a largo plazo.',
     bannerCta: 'Simular rendimientos compuestos',
     pills: ['0% Emoción — Reglas Estrictas', 'Control MDD y Protección de Capital', 'Crecimiento Compuesto Comprobado']
   },
@@ -1104,7 +1104,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     section2Badge: 'البقاء والاستمرارية',
     section2Title: 'برامج التداول الوهمية القصيرة vs نظام كوانت الحقيقي طويل الأمد',
-    section2Subtitle: 'الكثير من البرامج تتباهى بعوائد يومية أو أسبوعية مبالغ فيها، لكنها سرعان ما تتمرجن وتختفي. RealQuant يثبت عوائد تراكمية حقيقية لسنوات.',
+    section2Subtitle: 'العديد من البرامج تبالغ في عوائد يومية أو شهرية زائفة لكن سرعان ما تتعرض للتصفية. يسعى RealQuant نحو تعظيم العوائد طويلة الأجل.',
     shortTermHype: {
       badge: 'فخ البوتات التقليدية',
       title: 'برامج الترويج اللحظي',
@@ -1121,19 +1121,19 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
     },
     realQuantProof: {
       badge: 'فلسفة RealQuant',
-      title: 'نظام كوانت حقيقي يثبت عوائد طويلة الأمد',
+      title: 'نظام كوانت حقيقي يسعى لتحقيق عوائد طويلة الأمد',
       headline: 'قوة العائد التراكمي المستقر بنسبة 5~15% شهرياً',
       features: [
         'لا تهاون مع التصفية: أوامر وقف خسارة ميكانيكية غير قابلة للتفاوض',
         'هيكل دفاعي يحد من أقصى تراجع (MDD) بأقل من 15%',
-        'بيانات اختبارات تاريخية شفافة بنسبة 100% لشموع دقيقة واحدة لأكثر من 5 سنوات',
+        'كشف شفاف بنسبة 100% لبيانات الاختبارات التاريخية الكاملة للذهب لأكثر من 5 سنوات',
         'متحقق منها على حسابات حقيقية عبر دورات الصعود والهبوط لعدة سنوات'
       ],
       resultLabel: 'النتيجة',
-      resultText: 'حماية رأس المال في الأزمات ونمو تراكمي مستمر لأكثر من 5 سنوات',
+      resultText: 'حماية رأس المال في الأزمات ونمو تراكمي مستمر',
       graphLabel: 'منحنى أرباح تراكمي تصاعدي ثابت'
     },
-    bannerQuote: 'بينما تتلاشى الأنظمة السريعة بعد التصفية، يقف RealQuant ثابتاً ليثبت قوة العوائد التراكمية الحقيقية على المدى الطويل.',
+    bannerQuote: 'بينما تتلاشى البرامج اللحظية بعد التصفية، يظل RealQuant صامداً كنظام كوانت حقيقي يسعى لتحقيق عوائد طويلة الأمد.',
     bannerCta: 'محاكاة الأرباح التراكمية',
     pills: ['0% عواطف — انضباط تام', 'حماية رأس المال وضبط MDD', 'نمو تراكمي مثبت']
   }
