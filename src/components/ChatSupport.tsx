@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageCircle, X, Headphones, ChevronRight, HelpCircle, ExternalLink } from 'lucide-react';
-import { Language, translations } from '../data/content';
+import { MessageCircle, X, Headphones, ChevronRight, HelpCircle, Calculator } from 'lucide-react';
+import { Language, translations, calculatorTranslations } from '../data/content';
 
 interface ChatSupportProps {
   lang: Language;
   themeColor: string;
+  onOpenCalculator: () => void;
 }
 
-export const ChatSupport: React.FC<ChatSupportProps> = ({ lang, themeColor }) => {
+export const ChatSupport: React.FC<ChatSupportProps> = ({ lang, themeColor, onOpenCalculator }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedFaq, setSelectedFaq] = useState<number | null>(null);
 
   const t = translations[lang].chatSupport;
+  const calcT = calculatorTranslations[lang] || calculatorTranslations.ko;
 
   const telegramLink = 'https://t.me/realquant77';
 
@@ -24,7 +26,7 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ lang, themeColor }) =>
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="absolute bottom-20 right-0 w-[calc(100vw-48px)] sm:w-[360px] bg-zinc-950 border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+            className="absolute bottom-36 right-0 w-[calc(100vw-48px)] sm:w-[380px] bg-zinc-950 border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="p-4 sm:p-6 border-b border-white/5 flex justify-between items-center bg-zinc-900/50">
@@ -40,8 +42,31 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ lang, themeColor }) =>
               </button>
             </div>
 
+            {/* Quick Link to Compound Calculator Popup above FAQ */}
+            <div className="px-3 sm:px-4 pt-3 pb-1 bg-zinc-900/30">
+              <button
+                type="button"
+                onClick={() => {
+                  setIsOpen(false);
+                  onOpenCalculator();
+                }}
+                className="w-full flex items-center justify-between p-2.5 sm:p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 hover:bg-emerald-500/20 text-emerald-300 transition-all text-xs font-semibold group cursor-pointer"
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-6 h-6 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                    <Calculator size={14} />
+                  </div>
+                  <span>{calcT.openPopup}</span>
+                </div>
+                <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-medium">
+                  <span className="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/20 font-mono">MDD</span>
+                  <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                </div>
+              </button>
+            </div>
+
             {/* FAQ List */}
-            <div className="flex-1 overflow-y-auto max-h-[250px] sm:max-h-[320px] p-3 sm:p-4 space-y-1 sm:space-y-2 custom-scrollbar">
+            <div className="flex-1 overflow-y-auto max-h-[220px] sm:max-h-[280px] p-3 sm:p-4 space-y-1 sm:space-y-2 custom-scrollbar">
               <div className="flex justify-between items-center px-2 mb-2 sm:mb-4">
                 <span className="text-[10px] sm:text-xs text-gray-500 font-medium uppercase tracking-wider">{t.faqList}</span>
               </div>
@@ -107,31 +132,69 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ lang, themeColor }) =>
         )}
       </AnimatePresence>
 
-      {/* Floating Button */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-zinc-900 border border-white/10 shadow-2xl group transition-all duration-300 hover:border-white/20"
-      >
-        <div className="relative">
-          <Headphones 
-            size={28} 
-            className="transition-colors duration-300"
-            style={{ color: isOpen ? '#fff' : themeColor }}
-          />
-          {isOpen && (
-            <motion.div 
-              layoutId="active-dot"
-              className="absolute -top-1 -right-1 w-3 h-3 rounded-full border-2 border-zinc-900"
-              style={{ backgroundColor: themeColor }}
+      {/* Floating Buttons: Compound Calculator (ABOVE) & 1:1 Chat (BELOW) */}
+      <div className="flex flex-col items-center gap-3">
+        {/* Compound Calculator Floating Button (Directly ABOVE 1:1 Chat) */}
+        <motion.button
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.94 }}
+          onClick={onOpenCalculator}
+          aria-label={calcT.title}
+          className="relative flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-zinc-900/95 border border-emerald-500/40 shadow-2xl group transition-all duration-300 hover:border-emerald-400 hover:shadow-emerald-500/25 backdrop-blur-md cursor-pointer"
+        >
+          <div className="relative">
+            <Calculator 
+              size={26} 
+              className="text-emerald-400 group-hover:text-emerald-300 transition-all duration-300 group-hover:scale-110" 
             />
-          )}
-        </div>
-        <span className="text-[10px] font-bold mt-1 text-gray-500 group-hover:text-gray-300 transition-colors">
-          {t.floatingButton}
-        </span>
-      </motion.button>
+            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+          </div>
+          <span className="text-[10px] font-bold mt-1 text-emerald-400 group-hover:text-emerald-300 transition-colors">
+            {calcT.floatingButton}
+          </span>
+
+          {/* Hover Tooltip on Desktop */}
+          <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 hidden sm:group-hover:flex items-center pointer-events-none z-50">
+            <div className="bg-zinc-900 border border-emerald-500/30 px-3 py-1.5 rounded-xl shadow-2xl whitespace-nowrap text-xs font-semibold text-emerald-300 flex items-center gap-1.5">
+              <span>{calcT.title}</span>
+              <span className="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono">
+                MDD
+              </span>
+            </div>
+            <div className="w-2 h-2 bg-zinc-900 border-r border-b border-emerald-500/30 transform -rotate-45 -ml-1"></div>
+          </div>
+        </motion.button>
+
+        {/* 1:1 Chat Floating Button */}
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={t.title}
+          className="flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-zinc-900/95 border border-white/10 shadow-2xl group transition-all duration-300 hover:border-white/20 backdrop-blur-md cursor-pointer"
+        >
+          <div className="relative">
+            <Headphones 
+              size={26} 
+              className="transition-colors duration-300"
+              style={{ color: isOpen ? '#fff' : themeColor }}
+            />
+            {isOpen && (
+              <motion.div 
+                layoutId="active-dot"
+                className="absolute -top-1 -right-1 w-3 h-3 rounded-full border-2 border-zinc-900"
+                style={{ backgroundColor: themeColor }}
+              />
+            )}
+          </div>
+          <span className="text-[10px] font-bold mt-1 text-gray-400 group-hover:text-gray-200 transition-colors">
+            {t.floatingButton}
+          </span>
+        </motion.button>
+      </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
         .custom-scrollbar::-webkit-scrollbar {

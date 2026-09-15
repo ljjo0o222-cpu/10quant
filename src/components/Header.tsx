@@ -8,9 +8,10 @@ interface HeaderProps {
   view: ViewMode;
   setView: (view: ViewMode) => void;
   themeColor: string;
+  onOpenCalculator?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, themeColor }) => {
+export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, themeColor, onOpenCalculator }) => {
   const t = translations[lang].nav;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -26,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 items-center">
             {view === 'user' ? (
               <>
                 <a href="#home" className="text-gray-300 hover:text-white transition-colors">{t.home}</a>
@@ -35,7 +36,14 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
                 <a href="#actual-returns" className="text-gray-300 hover:text-white transition-colors">{t.actualReturns}</a>
                 <a href="#partners" className="text-gray-300 hover:text-white transition-colors">{t.partners}</a>
                 <a href="#faq" className="text-gray-300 hover:text-white transition-colors">{t.faq || 'FAQ'}</a>
-                <a href="#compound-calculator" className="text-gray-300 hover:text-white transition-colors">{t.calculator || '월복리 계산기'}</a>
+                <button
+                  type="button"
+                  onClick={() => onOpenCalculator?.()}
+                  className="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 hover:bg-emerald-500/20 cursor-pointer"
+                >
+                  <span>{t.calculator || '월복리 계산기'}</span>
+                  <span className="text-[10px] font-mono px-1 py-0.2 rounded bg-emerald-500/20 text-emerald-300">POPUP</span>
+                </button>
               </>
             ) : (
               <span className="text-gray-300 font-medium">{translations[lang].admin.title}</span>
@@ -103,7 +111,17 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
                 <a href="#actual-returns" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.actualReturns}</a>
                 <a href="#partners" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.partners}</a>
                 <a href="#faq" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.faq || 'FAQ'}</a>
-                <a href="#compound-calculator" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.calculator || '월복리 계산기'}</a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    onOpenCalculator?.();
+                  }}
+                  className="w-full text-left px-3 py-2 text-base font-semibold text-emerald-400 hover:text-emerald-300 flex items-center justify-between"
+                >
+                  <span>{t.calculator || '월복리 계산기'}</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">POPUP</span>
+                </button>
               </>
             )}
           </div>

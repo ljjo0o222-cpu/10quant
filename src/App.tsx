@@ -11,6 +11,7 @@ import { UserView } from './components/UserView';
 import { AdminView } from './components/AdminView';
 import { AdminLogin } from './components/AdminLogin';
 import { ChatSupport } from './components/ChatSupport';
+import { CompoundCalculator } from './components/CompoundCalculator';
 
 export default function App() {
   const [lang, setLang] = useState<Language>('ko');
@@ -18,6 +19,7 @@ export default function App() {
   const [themeColor, setThemeColor] = useState<string>('#2563eb'); // Default blue
   const [posts, setPosts] = useState<Post[]>(initialPosts);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState<boolean>(false);
 
   // Update document title and direction based on language
   useEffect(() => {
@@ -34,6 +36,7 @@ export default function App() {
         view={view}
         setView={setView}
         themeColor={themeColor}
+        onOpenCalculator={() => setIsCalculatorOpen(true)}
       />
       
       {view === 'user' ? (
@@ -63,9 +66,21 @@ export default function App() {
             view={view}
             setView={setView}
           />
-          <ChatSupport lang={lang} themeColor={themeColor} />
+          <ChatSupport 
+            lang={lang} 
+            themeColor={themeColor} 
+            onOpenCalculator={() => setIsCalculatorOpen(true)}
+          />
         </>
       )}
+
+      {/* Monthly Compound Calculator Modal Popup */}
+      <CompoundCalculator
+        lang={lang}
+        themeColor={themeColor}
+        isOpen={isCalculatorOpen}
+        onClose={() => setIsCalculatorOpen(false)}
+      />
     </div>
   );
 }

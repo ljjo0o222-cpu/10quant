@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import {
   Calculator,
   TrendingUp,
@@ -13,7 +13,8 @@ import {
   ArrowUpRight,
   ShieldAlert,
   Sparkles,
-  Info
+  Info,
+  X
 } from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 import { Language, calculatorTranslations } from '../data/content';
@@ -21,6 +22,8 @@ import { Language, calculatorTranslations } from '../data/content';
 interface CompoundCalculatorProps {
   lang: Language;
   themeColor: string;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 interface CurrencyOption {
@@ -43,7 +46,7 @@ const CURRENCIES: CurrencyOption[] = [
   { code: 'INR', symbol: '₹', label: 'INR (₹)', defaultAmount: 500000, step: 50000 },
 ];
 
-export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, themeColor }) => {
+export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, themeColor, isOpen, onClose }) => {
   const t = calculatorTranslations[lang] || calculatorTranslations.ko;
 
   const [selectedCurrencyCode, setSelectedCurrencyCode] = useState<string>('USD');
@@ -57,6 +60,22 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
   const [mdd, setMdd] = useState<number>(13.2); // % target maximum drawdown
   const [scenarioSeed, setScenarioSeed] = useState<number>(42);
   const [showTable, setShowTable] = useState<boolean>(false);
+
+  // ESC key listener & body scroll lock
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, onClose]);
 
   const handleCurrencyChange = (code: string) => {
     setSelectedCurrencyCode(code);
@@ -217,34 +236,85 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
   };
 
   return (
-    <section id="compound-calculator" className="py-24 bg-zinc-950 relative overflow-hidden border-t border-white/5">
-      {/* Subtle background glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[120] flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-hidden">
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 bg-black/85 backdrop-blur-md cursor-pointer"
+          />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16 max-w-3xl mx-auto"
-        >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Calculator className="w-3.5 h-3.5 mr-1" />
-            {t.tag}
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
-            {t.title}
-          </h2>
-          <div className="w-20 h-1 mx-auto rounded-full mb-6" style={{ backgroundColor: themeColor }}></div>
-          <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-            {t.subtitle}
-          </p>
-        </motion.div>
+          {/* Modal Container */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 20 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full max-w-6xl max-h-[92vh] bg-zinc-950 border border-white/15 rounded-2xl sm:rounded-3xl shadow-2xl shadow-black overflow-hidden flex flex-col z-10 font-sans"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="compound-calculator-title"
+          >
+            {/* Sticky Header */}
+            <div className="px-5 sm:px-8 py-4 sm:py-5 border-b border-white/10 flex items-center justify-between bg-zinc-900/95 backdrop-blur-md sticky top-0 z-20">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                  <Calculator className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-widest">{t.tag}</span>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">
+                      MDD 시뮬레이터
+                    </span>
+                  </div>
+                  <h2 id="compound-calculator-title" className="text-white font-extrabold text-base sm:text-xl md:text-2xl leading-tight">
+                    {t.title}
+                  </h2>
+                </div>
+              </div>
 
-        {/* Main Grid: Input Form + Results Display */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+              <div className="flex items-center gap-2 sm:gap-3">
+                {/* Currency selector in header */}
+                <div className="flex items-center gap-1.5 bg-zinc-800/90 border border-white/10 rounded-xl px-2 sm:px-3 py-1.5">
+                  <DollarSign className="w-3.5 h-3.5 text-emerald-400 hidden sm:block" />
+                  <select
+                    value={selectedCurrencyCode}
+                    aria-label={t.currency}
+                    onChange={(e) => handleCurrencyChange(e.target.value)}
+                    className="bg-transparent text-emerald-400 font-bold text-xs sm:text-sm focus:outline-none cursor-pointer"
+                  >
+                    {CURRENCIES.map((c) => (
+                      <option key={c.code} value={c.code} className="bg-zinc-900 text-white font-normal">
+                        {c.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Close Button */}
+                <button
+                  onClick={onClose}
+                  aria-label={t.close || '닫기'}
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-zinc-800/90 border border-white/10 hover:bg-zinc-700 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 flex-shrink-0"
+                >
+                  <X className="w-4 h-4 sm:w-5 sm:h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Scrollable Content Body */}
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-6 custom-scrollbar">
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed -mt-1 sm:-mt-2">
+                {t.subtitle}
+              </p>
+
+              {/* Main Grid: Input Form + Results Display */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Left Column: Input Form (5 cols) */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -816,21 +886,18 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
         </div>
 
         {/* Mandatory Bottom Disclaimer as specifically instructed */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="p-6 rounded-2xl bg-zinc-900/50 border border-amber-500/20 text-gray-300"
-        >
+        <div className="p-5 sm:p-6 rounded-2xl bg-zinc-900/60 border border-amber-500/20 text-gray-300">
           <h4 className="text-amber-400 font-bold text-sm sm:text-base flex items-center gap-2 mb-2">
             <span>{t.disclaimerTitle}</span>
           </h4>
           <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
             {t.disclaimerText}
           </p>
-        </motion.div>
+        </div>
       </div>
-    </section>
+    </motion.div>
+  </div>
+)}
+</AnimatePresence>
   );
 };

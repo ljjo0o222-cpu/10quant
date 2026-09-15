@@ -1218,6 +1218,9 @@ export const calculatorTranslations: Record<Language, {
   tableEnd: string;
   disclaimerTitle: string;
   disclaimerText: string;
+  floatingButton: string;
+  openPopup: string;
+  close: string;
 }> = {
   ko: {
     tag: '복리 시뮬레이터',
@@ -1265,7 +1268,10 @@ export const calculatorTranslations: Record<Language, {
     tableProfit: '당월 수익',
     tableEnd: '기말 자산',
     disclaimerTitle: '※ 결과를 어떻게 읽어야 하나요?',
-    disclaimerText: '이 계산기는 월복리 기준이며, 수익률이 일정하다는 가정의 시뮬레이션이므로, 실제 결과를 보장하지 않습니다.'
+    disclaimerText: '이 계산기는 월복리 기준이며, 수익률이 일정하다는 가정의 시뮬레이션이므로, 실제 결과를 보장하지 않습니다.',
+    floatingButton: '월복리',
+    openPopup: '월복리 계산기 열기',
+    close: '닫기'
   },
   en: {
     tag: 'Compound Simulator',
@@ -1313,7 +1319,10 @@ export const calculatorTranslations: Record<Language, {
     tableProfit: 'Monthly Profit',
     tableEnd: 'Ending Balance',
     disclaimerTitle: '※ How should I interpret the results?',
-    disclaimerText: 'This calculator is based on monthly compounding and assumes a constant rate of return as a simulation, which does not guarantee actual results.'
+    disclaimerText: 'This calculator is based on monthly compounding and assumes a constant rate of return as a simulation, which does not guarantee actual results.',
+    floatingButton: 'Compound',
+    openPopup: 'Open Compound Calculator',
+    close: 'Close'
   },
   zh: {
     tag: '复利模拟器',
@@ -1361,7 +1370,10 @@ export const calculatorTranslations: Record<Language, {
     tableProfit: '当月收益',
     tableEnd: '月末资产',
     disclaimerTitle: '※ 如何解读计算结果？',
-    disclaimerText: '本计算器基于月度复利标准，是在收益率保持恒定的假设下进行的模拟，并不保证实际投资结果。'
+    disclaimerText: '本计算器基于月度复利标准，是在收益率保持恒定的假设下进行的模拟，并不保证实际投资结果。',
+    floatingButton: '复利',
+    openPopup: '打开复利计算器',
+    close: '关闭'
   },
   ja: {
     tag: '複利シミュレーター',
@@ -1409,7 +1421,10 @@ export const calculatorTranslations: Record<Language, {
     tableProfit: '当月利益',
     tableEnd: '月末資産',
     disclaimerTitle: '※ 結果をどのように読み解くべきですか？',
-    disclaimerText: 'この計算機は月複利を基準としており、利回りが一定であると仮定したシミュレーションであるため、実際の結果を保証するものではありません。'
+    disclaimerText: 'この計算機は月複利を基準としており、利回りが一定であると仮定したシミュレーションであるため、実際の結果を保証するものではありません。',
+    floatingButton: '複利計算',
+    openPopup: '複利計算機を開く',
+    close: '閉じる'
   },
   ru: {
     tag: 'Симулятор сложных процентов',
@@ -1457,7 +1472,10 @@ export const calculatorTranslations: Record<Language, {
     tableProfit: 'Прибыль за месяц',
     tableEnd: 'Конец месяца',
     disclaimerTitle: '※ Как следует интерпретировать результаты?',
-    disclaimerText: 'Этот калькулятор основан на ежемесячной капитализации и симуляции с постоянной доходностью, поэтому он не гарантирует фактических результатов.'
+    disclaimerText: 'Этот калькулятор основан на ежемесячной капитализации и симуляции с постоянной доходностью, поэтому он не гарантирует фактических результатов.',
+    floatingButton: 'Калькулятор',
+    openPopup: 'Открыть калькулятор',
+    close: 'Закрыть'
   },
   de: {
     tag: 'Zinseszins-Simulator',
@@ -1505,7 +1523,10 @@ export const calculatorTranslations: Record<Language, {
     tableProfit: 'Monatsgewinn',
     tableEnd: 'Endguthaben',
     disclaimerTitle: '※ Wie sind die Ergebnisse zu interpretieren?',
-    disclaimerText: 'Dieser Rechner basiert auf monatlichem Zinseszins und stellt eine Simulation unter der Annahme gleichbleibender Renditen dar. Er garantiert keine tatsächlichen Ergebnisse.'
+    disclaimerText: 'Dieser Rechner basiert auf monatlichem Zinseszins und stellt eine Simulation unter der Annahme gleichbleibender Renditen dar. Er garantiert keine tatsächlichen Ergebnisse.',
+    floatingButton: 'Rechner',
+    openPopup: 'Zinsrechner öffnen',
+    close: 'Schließen'
   },
   fr: {
     tag: 'Simulateur d’intérêts composés',
@@ -1553,7 +1574,10 @@ export const calculatorTranslations: Record<Language, {
     tableProfit: 'Gain du mois',
     tableEnd: 'Solde final',
     disclaimerTitle: '※ Comment interpréter les résultats ?',
-    disclaimerText: 'Ce calculateur repose sur une capitalisation mensuelle et une simulation à rendement constant, ne garantissant en aucun cas les performances futures réelles.'
+    disclaimerText: 'Ce calculateur repose sur une capitalisation mensuelle et une simulation à rendement constant, ne garantissant en aucun cas les performances futures réelles.',
+    floatingButton: 'Calculateur',
+    openPopup: 'Ouvrir le calculateur',
+    close: 'Fermer'
   },
   hi: {
     tag: 'चक्रवृद्धि सिम्युलेटर',
@@ -1601,7 +1625,10 @@ export const calculatorTranslations: Record<Language, {
     tableProfit: 'मासिक लाभ',
     tableEnd: 'अंतिम शेष',
     disclaimerTitle: '※ परिणामों की व्याख्या कैसे करें?',
-    disclaimerText: 'यह कैलकुलेटर मासिक चक्रवृद्धि पर आधारित है और स्थिर रिटर्न की धारणा के साथ एक सिमुलेशन है, जो वास्तविक परिणामों की गारंटी नहीं देता है।'
+    disclaimerText: 'यह कैलकुलेटर मासिक चक्रवृद्धि पर आधारित है और स्थिर रिटर्न की धारणा के साथ एक सिमुलेशन है, जो वास्तविक परिणामों की गारंटी नहीं देता है।',
+    floatingButton: 'कैलकुलेटर',
+    openPopup: 'चक्रवृद्धि कैलकुलेटर खोलें',
+    close: 'बंद करें'
   },
   es: {
     tag: 'Simulador de interés compuesto',
@@ -1649,7 +1676,10 @@ export const calculatorTranslations: Record<Language, {
     tableProfit: 'Beneficio del mes',
     tableEnd: 'Saldo final',
     disclaimerTitle: '※ ¿Cómo se deben interpretar los resultados?',
-    disclaimerText: 'Esta calculadora se basa en capitalización compuesta mensual y supone una tasa de retorno constante como simulación, por lo que no garantiza resultados reales.'
+    disclaimerText: 'Esta calculadora se basa en capitalización compuesta mensual y supone una tasa de retorno constante como simulación, por lo que no garantiza resultados reales.',
+    floatingButton: 'Calculadora',
+    openPopup: 'Abrir calculadora',
+    close: 'Cerrar'
   },
   ar: {
     tag: 'محاكي الفائدة المركبة',
@@ -1697,7 +1727,10 @@ export const calculatorTranslations: Record<Language, {
     tableProfit: 'ربح الشهر',
     tableEnd: 'الرصيد الختامي',
     disclaimerTitle: '※ كيف تقرأ هذه النتائج؟',
-    disclaimerText: 'تعتمد هذه الحاسبة على الفائدة المركبة الشهرية وتعد محاكاة بافتراض ثبات معدل العائد، وبالتالي لا تضمن نتائج فعلية.'
+    disclaimerText: 'تعتمد هذه الحاسبة على الفائدة المركبة الشهرية وتعد محاكاة بافتراض ثبات معدل العائد، وبالتالي لا تضمن نتائج فعلية.',
+    floatingButton: 'الحاسبة',
+    openPopup: 'فتح حاسبة الفائدة',
+    close: 'إغلاق'
   }
 };
 

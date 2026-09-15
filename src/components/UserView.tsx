@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { translations, Language, Post, faqSectionTranslations } from '../data/content';
 import { BacktestChart } from './BacktestChart';
-import { CompoundCalculator } from './CompoundCalculator';
 import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity, TrendingUp, ShieldCheck, AlertTriangle, Clock, Ban, CheckCircle2, ChevronDown, HelpCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -504,9 +503,6 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
           </motion.div>
         </div>
       </section>
-
-      {/* Monthly Compound Calculator Section (Directly under FAQ) */}
-      <CompoundCalculator lang={lang} themeColor={themeColor} />
     </main>
   );
 };
