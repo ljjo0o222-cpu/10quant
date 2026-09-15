@@ -1,5 +1,6 @@
 import React from 'react';
 import { translations, Language, ViewMode } from '../data/content';
+import { whyRealQuantTranslations } from '../data/whyRealQuant';
 import { Globe, Settings, Menu, X } from 'lucide-react';
 
 interface HeaderProps {
@@ -13,6 +14,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, themeColor, onOpenCalculator }) => {
   const t = translations[lang].nav;
+  const whyNav = whyRealQuantTranslations[lang]?.navTitle || whyRealQuantTranslations.ko.navTitle;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
@@ -27,10 +29,11 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 items-center">
+          <nav className="hidden md:flex space-x-6 lg:space-x-8 items-center">
             {view === 'user' ? (
               <>
                 <a href="#home" className="text-gray-300 hover:text-white transition-colors">{t.home}</a>
+                <a href="#why-realquant" className="text-gray-300 hover:text-white transition-colors">{whyNav}</a>
                 <a href="#strategies" className="text-gray-300 hover:text-white transition-colors">{t.strategies}</a>
                 <a href="#performance" className="text-gray-300 hover:text-white transition-colors">{t.performance}</a>
                 <a href="#actual-returns" className="text-gray-300 hover:text-white transition-colors">{t.actualReturns}</a>
@@ -106,6 +109,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, view, setView, th
             {view === 'user' && (
               <>
                 <a href="#home" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.home}</a>
+                <a href="#why-realquant" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{whyNav}</a>
                 <a href="#strategies" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.strategies}</a>
                 <a href="#performance" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.performance}</a>
                 <a href="#actual-returns" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white" onClick={() => setIsMenuOpen(false)}>{t.actualReturns}</a>

@@ -40,7 +40,12 @@ export default function App() {
       />
       
       {view === 'user' ? (
-        <UserView lang={lang} themeColor={themeColor} posts={posts} />
+        <UserView 
+          lang={lang} 
+          themeColor={themeColor} 
+          posts={posts} 
+          onOpenCalculator={() => setIsCalculatorOpen(true)}
+        />
       ) : !isAuthenticated ? (
         <AdminLogin 
           lang={lang} 

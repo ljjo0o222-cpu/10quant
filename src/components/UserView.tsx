@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { translations, Language, Post, faqSectionTranslations } from '../data/content';
 import { BacktestChart } from './BacktestChart';
+import { WhyRealQuant } from './WhyRealQuant';
 import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity, TrendingUp, ShieldCheck, AlertTriangle, Clock, Ban, CheckCircle2, ChevronDown, HelpCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -8,9 +9,10 @@ interface UserViewProps {
   lang: Language;
   themeColor: string;
   posts: Post[];
+  onOpenCalculator?: () => void;
 }
 
-export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) => {
+export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts, onOpenCalculator }) => {
   const t = translations[lang];
   const faqText = faqSectionTranslations[lang] || faqSectionTranslations.ko;
   const displayedPosts = posts.slice(0, 6);
@@ -73,6 +75,13 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
           </motion.div>
         </div>
       </section>
+
+      {/* Why RealQuant Section */}
+      <WhyRealQuant 
+        lang={lang} 
+        themeColor={themeColor} 
+        onOpenCalculator={onOpenCalculator} 
+      />
 
       {/* Features Section */}
       <section id="strategies" className="py-20 sm:py-28 md:py-32 bg-zinc-950">
