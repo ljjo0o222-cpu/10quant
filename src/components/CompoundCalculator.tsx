@@ -318,7 +318,7 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                     <div className="flex justify-between items-baseline">
                       <span className="text-xs sm:text-sm font-semibold text-gray-300 flex items-center gap-1">
                         <DollarSign className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>얼마를 넣을까요?</span>
+                        <span>{t.principalPrompt}</span>
                       </span>
                       <b className="text-sm sm:text-base font-extrabold text-emerald-400 font-mono">
                         {formatCurrency(principal)}
@@ -364,10 +364,10 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                     <div className="flex justify-between items-baseline">
                       <span className="text-xs sm:text-sm font-semibold text-gray-300 flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5 text-gray-400" />
-                        <span>얼마 동안 둘까요?</span>
+                        <span>{t.periodPrompt}</span>
                       </span>
                       <b className="text-xs sm:text-sm font-extrabold text-white font-mono">
-                        {months}{t.monthsSuffix} ({((months / 12).toFixed(1))}년)
+                        {months}{t.monthsSuffix} ({((months / 12).toFixed(1))}{t.yearsSuffix})
                       </b>
                     </div>
                     <input
@@ -392,7 +392,7 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                               : 'bg-zinc-800/60 border-white/5 text-gray-400 hover:text-white hover:bg-zinc-800'
                           }`}
                         >
-                          {p >= 12 ? `${p / 12}년` : `${p}개월`}
+                          {p >= 12 ? `${p / 12}${t.yearsSuffix}` : `${p}${t.monthsSuffix}`}
                         </button>
                       ))}
                     </div>
@@ -403,10 +403,10 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                     <div className="flex justify-between items-baseline">
                       <span className="text-xs sm:text-sm font-semibold text-gray-300 flex items-center gap-1">
                         <Percent className="w-3.5 h-3.5 text-gray-400" />
-                        <span>월 목표 수익률</span>
+                        <span>{t.monthlyRatePrompt}</span>
                       </span>
                       <b className="text-xs sm:text-sm font-extrabold text-emerald-400 font-mono">
-                        월 {monthlyRate.toFixed(1)}%
+                        {monthlyRate.toFixed(1)}%
                       </b>
                     </div>
                     <input
@@ -442,7 +442,7 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                     <div className="flex justify-between items-baseline">
                       <span className="text-xs sm:text-sm font-semibold text-amber-300 flex items-center gap-1">
                         <ShieldAlert className="w-3.5 h-3.5 text-amber-400" />
-                        <span>허용 MDD (최대 낙폭)</span>
+                        <span>{t.mddPrompt}</span>
                       </span>
                       <b className="text-xs sm:text-sm font-extrabold text-amber-400 font-mono">
                         -{mdd.toFixed(1)}%
@@ -506,7 +506,7 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                       className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg sm:rounded-xl border border-white/10 text-xs text-gray-400 hover:text-white hover:bg-zinc-800 active:scale-98 transition-all"
                     >
                       <RefreshCw className="w-3 h-3" />
-                      <span>초기화</span>
+                      <span>{t.reset}</span>
                     </button>
                   </div>
                 </div>
@@ -517,14 +517,14 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                   <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/95 to-zinc-950 border border-emerald-500/30 rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-xl">
                     <div className="flex justify-between items-center pb-2.5 sm:pb-3 border-b border-white/10">
                       <span className="text-[11px] sm:text-xs font-semibold text-gray-400">
-                        {months}{t.monthsSuffix} 뒤 예상 금액
+                        {months}{t.monthsSuffix} {t.expectedAmountAfter}
                       </span>
                       <div className="flex items-center gap-1.5">
                         <span className="text-[10px] sm:text-xs font-bold font-mono px-2 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300">
                           MDD -{simulation.actualMdd.toFixed(1)}%
                         </span>
                         <span className="text-[10px] sm:text-xs font-bold font-mono px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300">
-                          {simulation.multiplier.toFixed(2)}배
+                          {simulation.multiplier.toFixed(2)}x
                         </span>
                       </div>
                     </div>
@@ -574,11 +574,11 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                       <div className="flex items-center gap-2.5 text-[10px] text-gray-400">
                         <span className="flex items-center gap-1 text-emerald-400">
                           <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                          <span>현실(MDD)</span>
+                          <span>{t.realisticLegend}</span>
                         </span>
                         <span className="flex items-center gap-1 text-cyan-400/80">
                           <span className="w-2 h-0.5 bg-cyan-400"></span>
-                          <span>이론치</span>
+                          <span>{t.theoreticalLegend}</span>
                         </span>
                       </div>
                     </div>
@@ -609,7 +609,7 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                             tickLine={false}
                             axisLine={false}
                             tickFormatter={(value) => {
-                              if (value >= 100000000) return `${(value / 100000000).toFixed(0)}억`;
+                              if (selectedCurrencyCode === 'KRW' && value >= 100000000) return `${(value / 100000000).toFixed(0)}억`;
                               if (value >= 1000000) return `${(value / 1000000).toFixed(1)}M`;
                               if (value >= 1000) return `${(value / 1000).toFixed(0)}k`;
                               return value;
@@ -625,11 +625,11 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                                       {data.month} {t.monthsSuffix}
                                     </div>
                                     <div className="text-emerald-400 font-bold flex justify-between gap-3">
-                                      <span>현실:</span>
+                                      <span>{t.realisticLegend}:</span>
                                       <span>{formatCurrency(data.realisticTotal)}</span>
                                     </div>
                                     <div className="text-cyan-400/80 flex justify-between gap-3">
-                                      <span>이론:</span>
+                                      <span>{t.theoreticalLegend}:</span>
                                       <span>{formatCurrency(data.theoreticalTotal)}</span>
                                     </div>
                                   </div>
@@ -661,7 +661,7 @@ export const CompoundCalculator: React.FC<CompoundCalculatorProps> = ({ lang, th
                     {/* Monthly table toggle */}
                     <div className="mt-2 pt-2 border-t border-white/5 flex justify-between items-center text-[11px]">
                       <span className="text-gray-400">
-                        기록된 최대 낙폭: <b className="text-amber-400 font-mono">-{simulation.actualMdd.toFixed(1)}%</b>
+                        {t.recordedMdd}: <b className="text-amber-400 font-mono">-{simulation.actualMdd.toFixed(1)}%</b>
                       </span>
                       <button
                         type="button"

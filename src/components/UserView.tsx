@@ -58,15 +58,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts }) =
               )}
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mx-auto mb-10 font-normal leading-relaxed break-keep max-w-2xl">
-              {lang === 'ko' ? (
-                'RealQuant는 고도화된 알고리즘과 빅데이터 분석을 통해 감정을 배제하고, 수익에만 집중하여 안정적인 수익을 추구합니다.'
-              ) : lang === 'en' ? (
-                'RealQuant pursues stable returns by eliminating emotions and focusing solely on profit through advanced algorithms and big data analysis.'
-              ) : lang === 'zh' ? (
-                'RealQuant 通过先进的算法和大数据分析，排除情感干扰，专注于盈利，追求稳定的收益。'
-              ) : lang === 'ja' ? (
-                'RealQuantは、高度なアルゴリズムとビッグデータ分析を通じて感情を排除し、利益のみに集中することで、安定した収益を追求します。'
-              ) : t.hero.subtitle}
+              {t.hero.subtitle}
             </p>
             <a
               href="https://t.me/realquant7"
