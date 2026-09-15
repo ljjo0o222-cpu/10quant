@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, themeColor, view, setView 
     <footer className="bg-black border-t border-white/10 py-12 mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="pt-8 flex flex-col justify-between items-center">
-          <p className="text-gray-500 text-xs text-center max-w-4xl mb-8 leading-relaxed whitespace-pre-line">
+          <p className="text-gray-500 text-xs text-center max-w-4xl mb-8 leading-relaxed whitespace-pre-line break-keep">
             {t.disclaimer}
           </p>
           <div className="w-full flex flex-col items-center space-y-4">

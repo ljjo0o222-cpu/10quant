@@ -1248,7 +1248,7 @@ export const calculatorTranslations: Record<Language, {
     actualMddRecorded: '시뮬레이션 최대 낙폭',
     realisticFinal: '현실 시뮬레이션 최종 자산',
     theoreticalFinal: '이론상 최종 자산',
-    regenerateSimulation: '새 변동성 시나리오 생성',
+    regenerateSimulation: '시나리오 생성',
     tableDrawdown: '고점 대비 낙폭 (MDD)',
     tableRealisticReturn: '당월 수익률',
     resultTitle: '복리 계산 결과 요약',

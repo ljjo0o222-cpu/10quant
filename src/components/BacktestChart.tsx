@@ -55,20 +55,20 @@ export const BacktestChart: React.FC<BacktestChartProps> = ({ themeColor, lang }
   return (
     <div className="w-full bg-zinc-900/50 rounded-3xl p-6 sm:p-10 border border-white/5 backdrop-blur-sm shadow-2xl">
       {/* Report Header */}
-      <div className="mb-12 text-center">
-        <p className="text-blue-400/80 text-sm font-medium mb-4 tracking-tight">
+      <div className="mb-8 sm:mb-12 text-center">
+        <p className="text-blue-400 text-xs sm:text-sm font-medium mb-2 sm:mb-3 tracking-tight break-keep max-w-2xl mx-auto">
           {t.notice}
         </p>
-        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{t.title}</h3>
-        <p className="text-gray-400 font-mono text-sm sm:text-base">{t.subtitle}</p>
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-2 break-keep">{t.title}</h3>
+        <p className="text-gray-400 text-xs sm:text-sm break-keep">{t.subtitle}</p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-3 md:grid-cols-4 gap-2 sm:gap-6 mb-12">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-6 mb-10 sm:mb-12">
         {Object.entries(t.stats).map(([key, label]) => (
-          <div key={key} className="bg-white/5 rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-white/5 hover:bg-white/10 transition-colors">
-            <p className="text-[8px] sm:text-xs text-gray-300 uppercase tracking-wider mb-1 truncate">{label}</p>
-            <p className={`text-xs sm:text-xl font-bold ${key === 'roe' || key === 'totalProfit' ? 'text-blue-400' : 'text-white'}`}>
+          <div key={key} className="bg-white/5 rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/5 hover:bg-white/10 transition-colors">
+            <p className="text-[11px] sm:text-xs text-gray-400 uppercase tracking-wider mb-1 break-keep leading-tight">{label}</p>
+            <p className={`text-sm sm:text-lg md:text-xl font-bold tabular-nums ${key === 'roe' || key === 'totalProfit' ? 'text-blue-400' : 'text-white'}`}>
               {t.values[key as keyof typeof t.values]}
             </p>
           </div>
