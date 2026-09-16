@@ -17,6 +17,7 @@ import { AdminView } from './components/AdminView';
 import { AdminLogin } from './components/AdminLogin';
 import { ChatSupport } from './components/ChatSupport';
 import { CompoundCalculator } from './components/CompoundCalculator';
+import { FloatingTelegramInquiry } from './components/FloatingTelegramInquiry';
 
 export default function App() {
   // Automatically detects initial language from access region / browser / timezone. Defaults to 'en' if not matched.
@@ -26,6 +27,33 @@ export default function App() {
   const [posts, setPosts] = useState<Post[]>(initialPosts);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState<boolean>(false);
+
+  // Top event banner visibility with localStorage 24h suppression support
+  const [isBannerVisible, setIsBannerVisible] = useState<boolean>(() => {
+    try {
+      if (typeof window !== 'undefined') {
+        const hideUntil = localStorage.getItem('realquant_event_banner_hide_until');
+        if (hideUntil && Date.now() < Number(hideUntil)) {
+          return false;
+        }
+      }
+    } catch {
+      // ignore
+    }
+    return true;
+  });
+
+  const handleCloseBanner = (hideForToday: boolean = false) => {
+    setIsBannerVisible(false);
+    try {
+      const expireTime = hideForToday 
+        ? Date.now() + 24 * 60 * 60 * 1000 // 24 hours
+        : Date.now() + 12 * 60 * 60 * 1000; // 12 hours
+      localStorage.setItem('realquant_event_banner_hide_until', expireTime.toString());
+    } catch {
+      // ignore
+    }
+  };
 
   // Background IP-based geolocation check if user hasn't explicitly saved a choice
   useEffect(() => {
@@ -70,6 +98,8 @@ export default function App() {
         setView={setView}
         themeColor={themeColor}
         onOpenCalculator={() => setIsCalculatorOpen(true)}
+        isBannerVisible={isBannerVisible}
+        onCloseBanner={handleCloseBanner}
       />
       
       {view === 'user' ? (
@@ -78,6 +108,7 @@ export default function App() {
           themeColor={themeColor} 
           posts={posts} 
           onOpenCalculator={() => setIsCalculatorOpen(true)}
+          isBannerVisible={isBannerVisible}
         />
       ) : !isAuthenticated ? (
         <AdminLogin 
@@ -108,6 +139,10 @@ export default function App() {
             lang={lang} 
             themeColor={themeColor} 
             onOpenCalculator={() => setIsCalculatorOpen(true)}
+          />
+          <FloatingTelegramInquiry 
+            lang={lang} 
+            themeColor={themeColor} 
           />
         </>
       )}

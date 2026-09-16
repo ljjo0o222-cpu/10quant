@@ -14,7 +14,7 @@ export const translations = {
     },
     "hero": {
       "title": "데이터로 증명하는 퀀트 투자 솔루션, 리얼퀀트",
-      "subtitle": "RealQuant는 고도화된 알고리즘과 빅데이터 분석을 통해 감정을 배제하고, 수익에만 집중하여 안정적인 수익을 추구합니다.",
+      "subtitle": "RealQuant는 고도화된 알고리즘과 빅데이터 분석을 통해 감정을 배제하고,\n통계적 검증을 거친 정교한 전략으로 안정적인 수익을 추구합니다.",
       "cta": "커뮤니티 입장하기"
     },
     "partners": {
@@ -243,7 +243,7 @@ export const translations = {
     },
     "hero": {
       "title": "Real Returns Proven by Data. RealQuant",
-      "subtitle": "RealQuant pursues stable returns by eliminating emotions and focusing solely on profit through advanced algorithms and big data analysis.",
+      "subtitle": "RealQuant pursues stable returns by eliminating emotions and executing sophisticated, statistically validated strategies through advanced algorithms and big data analysis.",
       "cta": "Join Community"
     },
     "partners": {
@@ -472,7 +472,7 @@ export const translations = {
     },
     "hero": {
       "title": "数据证明的真实收益。RealQuant",
-      "subtitle": "RealQuant 通过先进的算法和大数据分析，排除情感干扰，专注于盈利，追求稳定的收益。",
+      "subtitle": "RealQuant 通过先进的算法和大数据分析，排除情感干扰，以经过统计学验证的精密策略追求稳健收益。",
       "cta": "加入社区"
     },
     "partners": {
@@ -701,7 +701,7 @@ export const translations = {
     },
     "hero": {
       "title": "データで証明するリアルな収益。RealQuant",
-      "subtitle": "RealQuantは、高度なアルゴリズムとビッグデータ分析を通じて感情を排除し、利益のみに集中することで、安定した収益を追求します。",
+      "subtitle": "RealQuantは、高度なアルゴリズムとビッグデータ分析を通じて感情を排除し、統計的検証を経た精緻な戦略により安定した収益を追求します。",
       "cta": "コミュニティに参加"
     },
     "partners": {
@@ -930,7 +930,7 @@ export const translations = {
     },
     "hero": {
       "title": "Реальная доходность, подтвержденная данными. RealQuant",
-      "subtitle": "RealQuant стремится к стабильной доходности, исключая эмоции и фокусируясь исключительно на прибыли благодаря передовым алгоритмам и анализу больших данных.",
+      "subtitle": "RealQuant стремится к стабильной доходности, исключая эмоции и применяя статистически проверенные выверенные стратегии на основе передовых алгоритмов и анализа больших данных.",
       "cta": "Вступить в сообщество"
     },
     "partners": {
@@ -1159,7 +1159,7 @@ export const translations = {
     },
     "hero": {
       "title": "Durch Daten belegte reale Renditen. RealQuant",
-      "subtitle": "RealQuant strebt stabile Erträge an, indem Emotionen ausgeschaltet werden und der Fokus durch fortschrittliche Algorithmen und Big-Data-Analysen ausschließlich auf Profitabilität liegt.",
+      "subtitle": "RealQuant strebt stabile Erträge an, indem Emotionen ausgeschaltet werden und statistisch validierte, präzise Strategien durch fortschrittliche Algorithmen und Big-Data-Analysen umgesetzt werden.",
       "cta": "Community beitreten"
     },
     "partners": {
@@ -1388,7 +1388,7 @@ export const translations = {
     },
     "hero": {
       "title": "Des rendements réels prouvés par les données. RealQuant",
-      "subtitle": "RealQuant vise des rendements stables en éliminant les émotions et en se concentrant uniquement sur le profit grâce à des algorithmes avancés et à l'analyse de données massives.",
+      "subtitle": "RealQuant vise des rendements stables en éliminant les émotions et en déployant des stratégies sophistiquées et statistiquement validées grâce à des algorithmes avancés et à l'analyse de mégadonnées.",
       "cta": "Rejoindre la communauté"
     },
     "partners": {
@@ -1617,7 +1617,7 @@ export const translations = {
     },
     "hero": {
       "title": "डेटा द्वारा सिद्ध वास्तविक रिटर्न। RealQuant",
-      "subtitle": "RealQuant उन्नत एल्गोरिदम और बड़े डेटा विश्लेषण के माध्यम से भावनाओं को समाप्त करके और पूरी तरह से लाभ पर ध्यान केंद्रित करके स्थिर रिटर्न प्राप्त करने का प्रयास करता है।",
+      "subtitle": "RealQuant उन्नत एल्गोरिदम और बड़े डेटा विश्लेषण के माध्यम से भावनाओं को समाप्त करके, सांख्यिकीय रूप से सत्यापित परिष्कृत रणनीतियों के साथ स्थिर रिटर्न प्राप्त करने का प्रयास करता है।",
       "cta": "समुदाय में शामिल हों"
     },
     "partners": {
@@ -1846,7 +1846,7 @@ export const translations = {
     },
     "hero": {
       "title": "Rentabilidades reales probadas por datos. RealQuant",
-      "subtitle": "RealQuant busca rendimientos estables al eliminar las emociones y centrarse únicamente en el beneficio a través de algoritmos avanzados y análisis de big data.",
+      "subtitle": "RealQuant busca rendimientos estables al eliminar las emociones y aplicar estrategias sofisticadas y validadas estadísticamente a través de algoritmos avanzados y análisis de big data.",
       "cta": "Unirse a la comunidad"
     },
     "partners": {
@@ -2075,7 +2075,7 @@ export const translations = {
     },
     "hero": {
       "title": "عوائد حقيقية مثبتة بالبيانات. RealQuant",
-      "subtitle": "تسعى RealQuant لتحقيق عوائد مستقرة من خلال القضاء على العواطف والتركيز فقط على الربح عبر الخوارزميات المتقدمة وتحليل البيانات الضخمة.",
+      "subtitle": "تسعى RealQuant لتحقيق عوائد مستقرة من خلال القضاء على العواطف وتطبيق استراتيجيات متطورة ومثبتة إحصائياً عبر الخوارزميات المتقدمة وتحليل البيانات الضخمة.",
       "cta": "انضم إلى المجتمع"
     },
     "partners": {
@@ -2299,7 +2299,7 @@ export const faqSectionTranslations = {
     "subtitle": "리얼퀀트(RealQuant) 퀀트 투자 솔루션과 알고리즘 트레이딩에 대해 가장 많이 묻는 핵심 질문에 투명하게 답해 드립니다.",
     "moreTitle": "더 궁금하신 사항이 있으신가요?",
     "moreDesc": "24시간 운영되는 리얼퀀트 공식 텔레그램 커뮤니티와 1:1 상담 채널에서 즉시 답변해 드립니다.",
-    "inquiryButton": "1:1 실시간 문의하기"
+    "inquiryButton": "1:1 문의하기"
   },
   "en": {
     "tag": "FAQ & Answers",

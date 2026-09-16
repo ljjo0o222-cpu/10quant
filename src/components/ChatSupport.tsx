@@ -19,14 +19,14 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ lang, themeColor, onOp
   const telegramLink = 'https://t.me/realquant77';
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100] font-sans">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[100] font-sans">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="absolute bottom-36 right-0 w-[calc(100vw-48px)] sm:w-[380px] bg-zinc-950 border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+            className="absolute bottom-28 sm:bottom-36 right-0 w-[calc(100vw-32px)] sm:w-[380px] bg-zinc-950 border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="p-4 sm:p-6 border-b border-white/5 flex justify-between items-center bg-zinc-900/50">
@@ -133,26 +133,26 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ lang, themeColor, onOp
       </AnimatePresence>
 
       {/* Floating Buttons: Compound Calculator (ABOVE) & 1:1 Chat (BELOW) */}
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-2.5 sm:gap-3">
         {/* Compound Calculator Floating Button (Directly ABOVE 1:1 Chat) */}
         <motion.button
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.94 }}
           onClick={onOpenCalculator}
           aria-label={calcT.title}
-          className="relative flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-zinc-900/95 border border-emerald-500/40 shadow-2xl group transition-all duration-300 hover:border-emerald-400 hover:shadow-emerald-500/25 backdrop-blur-md cursor-pointer"
+          className="relative flex flex-col items-center justify-center w-11 h-11 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-zinc-900/95 border border-emerald-500/40 shadow-2xl group transition-all duration-300 hover:border-emerald-400 hover:shadow-emerald-500/25 backdrop-blur-md cursor-pointer"
         >
-          <div className="relative">
+          <div className="relative flex items-center justify-center">
             <Calculator 
-              size={26} 
-              className="text-emerald-400 group-hover:text-emerald-300 transition-all duration-300 group-hover:scale-110" 
+              className="w-5 h-5 sm:w-[26px] sm:h-[26px] text-emerald-400 group-hover:text-emerald-300 transition-all duration-300 group-hover:scale-110" 
             />
-            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+            <span className="absolute -top-1 -right-1 flex h-2 w-2 sm:h-2.5 sm:w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-emerald-500"></span>
             </span>
           </div>
-          <span className="text-[10px] font-bold mt-1 text-emerald-400 group-hover:text-emerald-300 transition-colors">
+          {/* Text is hidden on mobile, visible on desktop */}
+          <span className="hidden sm:inline-block text-[10px] font-bold mt-1 text-emerald-400 group-hover:text-emerald-300 transition-colors">
             {calcT.floatingButton}
           </span>
 
@@ -174,23 +174,23 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ lang, themeColor, onOp
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsOpen(!isOpen)}
           aria-label={t.title}
-          className="flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-zinc-900/95 border border-white/10 shadow-2xl group transition-all duration-300 hover:border-white/20 backdrop-blur-md cursor-pointer"
+          className="flex flex-col items-center justify-center w-11 h-11 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-zinc-900/95 border border-white/10 shadow-2xl group transition-all duration-300 hover:border-white/20 backdrop-blur-md cursor-pointer"
         >
-          <div className="relative">
+          <div className="relative flex items-center justify-center">
             <Headphones 
-              size={26} 
-              className="transition-colors duration-300"
+              className="w-5 h-5 sm:w-[26px] sm:h-[26px] transition-colors duration-300"
               style={{ color: isOpen ? '#fff' : themeColor }}
             />
             {isOpen && (
               <motion.div 
                 layoutId="active-dot"
-                className="absolute -top-1 -right-1 w-3 h-3 rounded-full border-2 border-zinc-900"
+                className="absolute -top-1 -right-1 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border-2 border-zinc-900"
                 style={{ backgroundColor: themeColor }}
               />
             )}
           </div>
-          <span className="text-[10px] font-bold mt-1 text-gray-400 group-hover:text-gray-200 transition-colors">
+          {/* Text is hidden on mobile, visible on desktop */}
+          <span className="hidden sm:inline-block text-[10px] font-bold mt-1 text-gray-400 group-hover:text-gray-200 transition-colors">
             {t.floatingButton}
           </span>
         </motion.button>

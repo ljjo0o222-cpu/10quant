@@ -10,9 +10,16 @@ interface UserViewProps {
   themeColor: string;
   posts: Post[];
   onOpenCalculator?: () => void;
+  isBannerVisible?: boolean;
 }
 
-export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts, onOpenCalculator }) => {
+export const UserView: React.FC<UserViewProps> = ({ 
+  lang, 
+  themeColor, 
+  posts, 
+  onOpenCalculator,
+  isBannerVisible 
+}) => {
   const t = translations[lang];
   const faqText = faqSectionTranslations[lang] || faqSectionTranslations.ko;
   const displayedPosts = posts.slice(0, 6);
@@ -29,7 +36,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts, onO
   ];
 
   return (
-    <main className="flex-1 bg-black text-white pt-20">
+    <main className={`flex-1 bg-black text-white transition-all duration-300 ${isBannerVisible ? 'pt-[118px] sm:pt-[120px]' : 'pt-20'}`}>
       {/* Hero Section */}
       <section id="home" className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden py-16 sm:py-24">
         {/* Abstract Background */}
@@ -59,7 +66,7 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts, onO
                 t.hero.title
               )}
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mx-auto mb-10 font-normal leading-relaxed break-keep max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mx-auto mb-10 font-normal leading-relaxed break-keep max-w-3xl whitespace-normal md:whitespace-pre-line">
               {t.hero.subtitle}
             </p>
             <a
@@ -333,7 +340,9 @@ export const UserView: React.FC<UserViewProps> = ({ lang, themeColor, posts, onO
               transition={{ duration: 0.8 }}
               className="mb-12 sm:mb-16 max-w-4xl mx-auto"
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 sm:mb-6 break-keep">{t.partners.tag.split(' / ')[1]}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 sm:mb-6 break-keep">
+                {t.partners.tag?.includes(' / ') ? t.partners.tag.split(' / ')[1] : (t.partners.tag || 'Partners')}
+              </h2>
               <div className="w-20 sm:w-24 h-1 mx-auto rounded-full mb-6 sm:mb-8" style={{ backgroundColor: themeColor }}></div>
               <h3 className="text-lg sm:text-2xl lg:text-3xl font-bold text-white leading-snug mb-4 sm:mb-6 break-keep">
                 {lang === 'ko' || lang === 'en' ? (

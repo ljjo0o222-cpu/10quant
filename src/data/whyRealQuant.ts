@@ -121,12 +121,12 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
         {
           number: '02',
           title: '철저한 자산 비중 관리',
-          desc: '단일 종목 몰빵 금지, 포트폴리오 리스크 허용치에 맞춘 철저한 분할 배분',
+          desc: '단일 종목에 편향된 투자 금지, 포트폴리오 리스크 허용치에 맞춘 철저한 분할 배분',
           badge: '안전성'
         },
         {
           number: '03',
-          title: '기계적 칼손절 & 익절',
+          title: '기계적 손절 & 익절',
           desc: '기준 이탈 시 -2% 내외 기계적 즉각 손절. 손실은 짧게, 수익은 길게 추세 추종',
           badge: '원칙 수호'
         },
@@ -162,7 +162,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       headline: '월 5~15%의 지치지 않는 우상향 복리 마법',
       features: [
         '단 1회의 청산도 용납하지 않는 타협 없는 기계적 손절',
-        '최대 낙폭(MDD 15% 이내)을 엄격히 통제하는 방어 중심 설계',
+        '최대 낙폭을 엄격히 통제하는 방어 중심 설계',
         '골드 5년 이상 전수 백테스트 데이터 투명 공개',
         '실제 운용 계좌 실시간 연동으로 검증된 지속 가능성'
       ],
@@ -269,7 +269,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       headline: 'The power of resilient 5~15% monthly compounding growth',
       features: [
         'Zero tolerance for liquidation: non-negotiable mechanical stop-losses',
-        'Defense-first architecture capping Maximum Drawdown (MDD) under 15%',
+        'Defense-first architecture strictly controlling Maximum Drawdown (MDD)',
         '100% transparent Gold 5-year historical backtest data',
         'Real accounts verified over multi-year cycles across bear and bull markets'
       ],
@@ -376,7 +376,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       headline: '月化 5~15% 持之以恒、稳健向上的复利奇迹',
       features: [
         '对爆仓零容忍：不容妥协的毫秒级机械强制止损机制',
-        '防御优先架构：将最大回撤（MDD）严格压制在 15% 以内',
+        '防御优先架构：严格严密控制最大回撤（MDD）',
         '完全公开透明：黄金 5 年以上全量历史回测',
         '实盘账户多周期穿透验证，牛熊转换中持续稳健盈利'
       ],
@@ -483,7 +483,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       headline: '月利5〜15%がもたらす揺るぎない長期複利の力',
       features: [
         'ロスカットを絶対許さない妥協なき機械的ストップロス',
-        '最大ドローダウン（MDD 15%以内）を厳しく抑え込む防御重視設計',
+        '最大ドローダウン（MDD）を厳しく抑え込む防御重視設計',
         'ゴールド5年以上の全期間バックテストデータを完全開示',
         '実際の運用口座連携により複数年にわたる継続性を実証済み'
       ],
@@ -590,7 +590,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       headline: 'Сила сложного процента: стабильные 5–15% в месяц',
       features: [
         'Нулевая терпимость к ликвидациям: бескомпромиссные механические стопы',
-        'Архитектура защиты капитала: ограничение максимальной просадки (MDD < 15%)',
+        'Архитектура защиты капитала: строгий контроль максимальной просадки (MDD)',
         '100% прозрачные исторические данные бэктеста золота (Gold) за 5+ лет',
         'Подтвержденная устойчивость на реальных счетах через бычьи и медвежьи фазы'
       ],
@@ -697,7 +697,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       headline: 'Die Kraft von 5–15% monatlichem stetigem Zinseszins',
       features: [
         'Null Toleranz für Liquidationen: kompromisslose mechanische Stop-Loss-Orders',
-        'Verteidigungsorientierte Architektur: Begrenzung des maximalen Drawdowns (MDD < 15%)',
+        'Verteidigungsorientierte Architektur: Strenge Kontrolle des maximalen Drawdowns (MDD)',
         '100% transparente Gold-Backtest-Daten über mehr als 5 Jahre',
         'Auf echten Konten über mehrere Bullen- und Bärenzyklen verifiziert'
       ],
@@ -804,7 +804,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       headline: 'La puissance d’une croissance composée résiliente de 5 à 15% par mois',
       features: [
         'Zéro tolérance pour la liquidation : stop-loss mécaniques non négociables',
-        'Architecture défensive limitant strictement le Drawdown maximal (MDD < 15%)',
+        'Architecture défensive contrôlant strictement le Drawdown maximal (MDD)',
         'Données de backtest complètes et transparentes sur l\'or (Gold) depuis plus de 5 ans',
         'Validation sur comptes réels à travers les phases haussières et baissières'
       ],
@@ -911,7 +911,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       headline: 'हर महीने 5~15% की निरंतर चक्रवृद्धि शक्ति',
       features: [
         'लिक्विडेशन पर शून्य सहनशीलता: गैर-परक्राम्य यांत्रिक स्टॉप-लॉस',
-        'अधिकतम गिरावट (MDD < 15%) को सीमित करने वाला रक्षात्मक ढांचा',
+        'अधिकतम गिरावट (MDD) को कड़ाई से नियंत्रित करने वाला रक्षात्मक ढांचा',
         'गोल्ड (Gold) के 5+ वर्षों के पूर्ण बैकटेस्ट डेटा का पारदर्शी खुलासा',
         'असली खातों पर कई वर्षों के तेजी और मंदी के चक्रों में सत्यापित'
       ],
@@ -1018,7 +1018,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       headline: 'El poder del interés compuesto constante del 5 al 15% mensual',
       features: [
         'Tolerancia cero a la liquidación: órdenes de stop-loss mecánicas innegociables',
-        'Arquitectura defensiva limitando el Drawdown Máximo (MDD < 15%)',
+        'Arquitectura defensiva controlando estrictamente el Drawdown Máximo (MDD)',
         'Divulgación 100% transparente de datos de backtest de Oro (Gold) de más de 5 años',
         'Verificación en cuentas reales a través de ciclos alcistas y bajistas'
       ],
@@ -1125,7 +1125,7 @@ export const whyRealQuantTranslations: Record<Language, WhyRealQuantTranslation>
       headline: 'قوة العائد التراكمي المستقر بنسبة 5~15% شهرياً',
       features: [
         'لا تهاون مع التصفية: أوامر وقف خسارة ميكانيكية غير قابلة للتفاوض',
-        'هيكل دفاعي يحد من أقصى تراجع (MDD) بأقل من 15%',
+        'هيكل دفاعي يتحكم بصرامة في أقصى تراجع (MDD)',
         'كشف شفاف بنسبة 100% لبيانات الاختبارات التاريخية الكاملة للذهب لأكثر من 5 سنوات',
         'متحقق منها على حسابات حقيقية عبر دورات الصعود والهبوط لعدة سنوات'
       ],
