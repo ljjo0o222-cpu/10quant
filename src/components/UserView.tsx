@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { translations, Language, Post, faqSectionTranslations } from '../data/content';
 import { BacktestChart } from './BacktestChart';
 import { WhyRealQuant } from './WhyRealQuant';
-import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity, TrendingUp, ShieldCheck, AlertTriangle, Clock, Ban, CheckCircle2, ChevronDown, HelpCircle } from 'lucide-react';
-import { motion } from 'motion/react';
+import { ArrowRight, BarChart3, Shield, Zap, RefreshCw, GitBranch, Activity, TrendingUp, ShieldCheck, AlertTriangle, Clock, Ban, CheckCircle2, ChevronDown, HelpCircle, ZoomIn, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface UserViewProps {
   lang: Language;
@@ -24,6 +24,7 @@ export const UserView: React.FC<UserViewProps> = ({
   const faqText = faqSectionTranslations[lang] || faqSectionTranslations.ko;
   const displayedPosts = posts.slice(0, 6);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0); // 첫 번째 FAQ 기본 오픈
+  const [isImageZoomed, setIsImageZoomed] = useState(false);
   const faqs = t.chatSupport?.faqs || [];
 
   const featureIcons = [
@@ -292,21 +293,33 @@ export const UserView: React.FC<UserViewProps> = ({
             <p className="text-xs sm:text-sm md:text-base text-gray-300 font-normal mb-8 whitespace-pre-line break-keep max-w-2xl mx-auto leading-relaxed">{t.actualReturns.weeklyNotice}</p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-zinc-900 rounded-2xl p-4 sm:p-8 border border-zinc-800"
+              className="bg-zinc-900 rounded-2xl p-3 sm:p-6 lg:p-8 border border-zinc-800 shadow-2xl"
             >
-              <div className="relative w-full overflow-hidden rounded-xl bg-zinc-950 mb-6 sm:mb-8 border border-zinc-800/50">
+              {/* Actual Returns Image Container (Enlarged + Zoomable) */}
+              <div 
+                onClick={() => setIsImageZoomed(true)}
+                className="relative w-full overflow-hidden rounded-xl bg-zinc-950 mb-6 sm:mb-8 border border-zinc-800/80 shadow-2xl cursor-zoom-in group"
+                title={lang === 'ko' ? '클릭하여 원본 이미지 크게 보기' : 'Click to enlarge image'}
+              >
                 <img
                   src="/return.jpg"
                   alt="Actual Returns Chart"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]"
                 />
+
+                {/* Hover/Touch Enlarge Badge */}
+                <div className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white text-xs font-semibold flex items-center gap-1.5 shadow-lg group-hover:bg-black/95 transition-all">
+                  <ZoomIn size={14} className="text-emerald-400" />
+                  <span>{lang === 'ko' ? '클릭하여 원본 확대' : 'Click to enlarge'}</span>
+                </div>
               </div>
+
               <div className="grid grid-cols-2 gap-3 sm:gap-6">
                 <div className="bg-zinc-950 p-4 sm:p-6 rounded-xl border border-zinc-800/50 text-center">
                   <div className="text-xs sm:text-sm text-gray-400 mb-1 sm:mb-2">{t.actualReturns.totalGrowth}</div>
@@ -319,6 +332,53 @@ export const UserView: React.FC<UserViewProps> = ({
               </div>
             </motion.div>
           </div>
+
+          {/* Actual Returns Image Lightbox Modal */}
+          <AnimatePresence>
+            {isImageZoomed && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsImageZoomed(false)}
+                className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-md p-3 sm:p-6 flex flex-col items-center justify-center cursor-zoom-out"
+              >
+                <div 
+                  className="relative max-w-7xl max-h-[92vh] w-full flex flex-col items-center" 
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* Top Bar */}
+                  <div className="w-full flex justify-between items-center mb-3 px-1 sm:px-2">
+                    <div className="flex items-center gap-2 text-white font-bold text-sm sm:text-base">
+                      <BarChart3 size={18} style={{ color: themeColor }} />
+                      <span>{t.actualReturns.title}</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setIsImageZoomed(false)}
+                      className="p-2 rounded-full bg-zinc-800 hover:bg-zinc-700 text-white transition-colors cursor-pointer flex items-center justify-center"
+                      aria-label="Close"
+                    >
+                      <X size={20} />
+                    </button>
+                  </div>
+
+                  {/* Image Display */}
+                  <div className="overflow-auto max-h-[80vh] w-full rounded-2xl border border-zinc-700 bg-zinc-950 p-2 sm:p-4 shadow-2xl flex items-center justify-center">
+                    <img
+                      src="/return.jpg"
+                      alt="Actual Returns Chart Full"
+                      className="max-w-full max-h-[76vh] w-auto h-auto object-contain rounded-lg shadow-2xl"
+                    />
+                  </div>
+
+                  <p className="text-xs text-gray-400 mt-3 text-center">
+                    {lang === 'ko' ? '바깥 영역을 클릭하거나 닫기(X) 버튼을 누르면 닫힙니다.' : 'Click outside or press (X) to close.'}
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </section>
 
